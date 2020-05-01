@@ -1,73 +1,45 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  HospiHome
 //
-//  Created by Elser_10 on 4/29/20.
+//  Created by Elser_10 on 5/1/20.
 //  Copyright © 2020 Elser_10. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UITableViewController {
-
+class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var menuBar: MenuBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     fileprivate let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menuBar.homeController = self
+        menuBar.showCollectionView()
+        
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
-        
-        handleNavigationTitle()
     }
     
-    func handleNavigationTitle() {
-       let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        titleView.backgroundColor = .red
-        
-        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "elon"))
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.layer.cornerRadius = 20
-        profileImageView.layer.masksToBounds = true
-        
-        titleView.addSubview(profileImageView)
-        
-        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        let nameLabel = UILabel()
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Ahmed Samir Elserafy"
-        
-        titleView.addSubview(nameLabel)
-        
-        nameLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: titleView.rightAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        navigationItem.titleView = titleView
+    func hideWhenSwipe() {
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
 
-extension HomeViewController {
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! HomeCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chatController = storyboard?.instantiateViewController(identifier: "chat") as! ChatViewController
-        navigationController?.pushViewController(chatController, animated: true)
-        
-    }
-    
 }
-

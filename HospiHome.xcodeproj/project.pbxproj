@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1610C960245A2F11001B178B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C95F245A2F11001B178B /* AppDelegate.swift */; };
+		1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C961245A2F11001B178B /* SceneDelegate.swift */; };
+		1610C964245A2F11001B178B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C963245A2F11001B178B /* MessageViewController.swift */; };
+		1610C967245A2F11001B178B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1610C965245A2F11001B178B /* Main.storyboard */; };
+		1610C969245A2F13001B178B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1610C968245A2F13001B178B /* Assets.xcassets */; };
+		1610C96C245A2F13001B178B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1610C96A245A2F13001B178B /* LaunchScreen.storyboard */; };
+		1610C977245A2F14001B178B /* HospiHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C976245A2F14001B178B /* HospiHomeTests.swift */; };
+		1610C982245A2F14001B178B /* HospiHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C981245A2F14001B178B /* HospiHomeUITests.swift */; };
+		1610C990245A5BB7001B178B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C98F245A5BB7001B178B /* MessageCell.swift */; };
+		1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C991245A8C7A001B178B /* ChatViewController.swift */; };
+		1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C993245A8D67001B178B /* ChatInputContainerView.swift */; };
+		1610C996245A9087001B178B /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C995245A9087001B178B /* ChatCell.swift */; };
+		1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */; };
+		1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C99E245AC061001B178B /* CustomTabBarController.swift */; };
+		1610C9A1245AC8C2001B178B /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C9A0245AC8C2001B178B /* ArticlesViewController.swift */; };
+		1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610C9A2245ACB52001B178B /* ProfileViewController.swift */; };
+		1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611489D245B95B2000AACB8 /* RegisterViewController.swift */; };
+		161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1611489F245B98E6000AACB8 /* LoginViewController.swift */; };
+		161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A1245BC6B1000AACB8 /* HomeViewController.swift */; };
+		161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A3245BC8F7000AACB8 /* HomeCell.swift */; };
+		161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A5245BCA9B000AACB8 /* MenuBar.swift */; };
+		161148A8245BCBE1000AACB8 /* MenuBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A7245BCBE1000AACB8 /* MenuBarCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1610C973245A2F14001B178B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1610C954245A2F11001B178B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1610C95B245A2F11001B178B;
+			remoteInfo = HospiHome;
+		};
+		1610C97E245A2F14001B178B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1610C954245A2F11001B178B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1610C95B245A2F11001B178B;
+			remoteInfo = HospiHome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1610C95C245A2F11001B178B /* HospiHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospiHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1610C95F245A2F11001B178B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1610C961245A2F11001B178B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1610C963245A2F11001B178B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		1610C966245A2F11001B178B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1610C968245A2F13001B178B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1610C96B245A2F13001B178B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1610C96D245A2F13001B178B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1610C972245A2F14001B178B /* HospiHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HospiHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1610C976245A2F14001B178B /* HospiHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospiHomeTests.swift; sourceTree = "<group>"; };
+		1610C978245A2F14001B178B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1610C97D245A2F14001B178B /* HospiHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HospiHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1610C981245A2F14001B178B /* HospiHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospiHomeUITests.swift; sourceTree = "<group>"; };
+		1610C983245A2F14001B178B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1610C98F245A5BB7001B178B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		1610C991245A8C7A001B178B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1610C993245A8D67001B178B /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		1610C995245A9087001B178B /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
+		1610C99E245AC061001B178B /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		1610C9A0245AC8C2001B178B /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		1610C9A2245ACB52001B178B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1611489D245B95B2000AACB8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1611489F245B98E6000AACB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		161148A1245BC6B1000AACB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		161148A3245BC8F7000AACB8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		161148A5245BCA9B000AACB8 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		161148A7245BCBE1000AACB8 /* MenuBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1610C959245A2F11001B178B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C96F245A2F14001B178B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C97A245A2F14001B178B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1610C953245A2F11001B178B = {
+			isa = PBXGroup;
+			children = (
+				1610C95E245A2F11001B178B /* HospiHome */,
+				1610C975245A2F14001B178B /* HospiHomeTests */,
+				1610C980245A2F14001B178B /* HospiHomeUITests */,
+				1610C95D245A2F11001B178B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1610C95D245A2F11001B178B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1610C95C245A2F11001B178B /* HospiHome.app */,
+				1610C972245A2F14001B178B /* HospiHomeTests.xctest */,
+				1610C97D245A2F14001B178B /* HospiHomeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1610C95E245A2F11001B178B /* HospiHome */ = {
+			isa = PBXGroup;
+			children = (
+				1610C95F245A2F11001B178B /* AppDelegate.swift */,
+				1610C961245A2F11001B178B /* SceneDelegate.swift */,
+				1610C99D245AAE22001B178B /* Helper */,
+				1610C998245A90F0001B178B /* Controller */,
+				1610C997245A90D2001B178B /* View */,
+				1610C965245A2F11001B178B /* Main.storyboard */,
+				1610C968245A2F13001B178B /* Assets.xcassets */,
+				1610C96A245A2F13001B178B /* LaunchScreen.storyboard */,
+				1610C96D245A2F13001B178B /* Info.plist */,
+			);
+			path = HospiHome;
+			sourceTree = "<group>";
+		};
+		1610C975245A2F14001B178B /* HospiHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1610C976245A2F14001B178B /* HospiHomeTests.swift */,
+				1610C978245A2F14001B178B /* Info.plist */,
+			);
+			path = HospiHomeTests;
+			sourceTree = "<group>";
+		};
+		1610C980245A2F14001B178B /* HospiHomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1610C981245A2F14001B178B /* HospiHomeUITests.swift */,
+				1610C983245A2F14001B178B /* Info.plist */,
+			);
+			path = HospiHomeUITests;
+			sourceTree = "<group>";
+		};
+		1610C997245A90D2001B178B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				161148A5245BCA9B000AACB8 /* MenuBar.swift */,
+				161148A7245BCBE1000AACB8 /* MenuBarCell.swift */,
+				1610C993245A8D67001B178B /* ChatInputContainerView.swift */,
+				161148A3245BC8F7000AACB8 /* HomeCell.swift */,
+				1610C98F245A5BB7001B178B /* MessageCell.swift */,
+				1610C995245A9087001B178B /* ChatCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1610C998245A90F0001B178B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
+				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
+				1610C963245A2F11001B178B /* MessageViewController.swift */,
+				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
+				1610C991245A8C7A001B178B /* ChatViewController.swift */,
+				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
+				1610C9A0245AC8C2001B178B /* ArticlesViewController.swift */,
+				1610C9A2245ACB52001B178B /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1610C99D245AAE22001B178B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1610C95B245A2F11001B178B /* HospiHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1610C986245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHome" */;
+			buildPhases = (
+				1610C958245A2F11001B178B /* Sources */,
+				1610C959245A2F11001B178B /* Frameworks */,
+				1610C95A245A2F11001B178B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HospiHome;
+			productName = HospiHome;
+			productReference = 1610C95C245A2F11001B178B /* HospiHome.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1610C971245A2F14001B178B /* HospiHomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1610C989245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHomeTests" */;
+			buildPhases = (
+				1610C96E245A2F14001B178B /* Sources */,
+				1610C96F245A2F14001B178B /* Frameworks */,
+				1610C970245A2F14001B178B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1610C974245A2F14001B178B /* PBXTargetDependency */,
+			);
+			name = HospiHomeTests;
+			productName = HospiHomeTests;
+			productReference = 1610C972245A2F14001B178B /* HospiHomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1610C97C245A2F14001B178B /* HospiHomeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1610C98C245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHomeUITests" */;
+			buildPhases = (
+				1610C979245A2F14001B178B /* Sources */,
+				1610C97A245A2F14001B178B /* Frameworks */,
+				1610C97B245A2F14001B178B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1610C97F245A2F14001B178B /* PBXTargetDependency */,
+			);
+			name = HospiHomeUITests;
+			productName = HospiHomeUITests;
+			productReference = 1610C97D245A2F14001B178B /* HospiHomeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1610C954245A2F11001B178B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Elser_10;
+				TargetAttributes = {
+					1610C95B245A2F11001B178B = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					1610C971245A2F14001B178B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 1610C95B245A2F11001B178B;
+					};
+					1610C97C245A2F14001B178B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 1610C95B245A2F11001B178B;
+					};
+				};
+			};
+			buildConfigurationList = 1610C957245A2F11001B178B /* Build configuration list for PBXProject "HospiHome" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1610C953245A2F11001B178B;
+			productRefGroup = 1610C95D245A2F11001B178B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1610C95B245A2F11001B178B /* HospiHome */,
+				1610C971245A2F14001B178B /* HospiHomeTests */,
+				1610C97C245A2F14001B178B /* HospiHomeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1610C95A245A2F11001B178B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1610C96C245A2F13001B178B /* LaunchScreen.storyboard in Resources */,
+				1610C969245A2F13001B178B /* Assets.xcassets in Resources */,
+				1610C967245A2F11001B178B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C970245A2F14001B178B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C97B245A2F14001B178B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1610C958245A2F11001B178B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
+				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
+				161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */,
+				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
+				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
+				161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */,
+				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,
+				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
+				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
+				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
+				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
+				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
+				161148A8245BCBE1000AACB8 /* MenuBarCell.swift in Sources */,
+				1610C996245A9087001B178B /* ChatCell.swift in Sources */,
+				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
+				161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */,
+				1610C9A1245AC8C2001B178B /* ArticlesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C96E245A2F14001B178B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1610C977245A2F14001B178B /* HospiHomeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1610C979245A2F14001B178B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1610C982245A2F14001B178B /* HospiHomeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1610C974245A2F14001B178B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1610C95B245A2F11001B178B /* HospiHome */;
+			targetProxy = 1610C973245A2F14001B178B /* PBXContainerItemProxy */;
+		};
+		1610C97F245A2F14001B178B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1610C95B245A2F11001B178B /* HospiHome */;
+			targetProxy = 1610C97E245A2F14001B178B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1610C965245A2F11001B178B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1610C966245A2F11001B178B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1610C96A245A2F13001B178B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1610C96B245A2F13001B178B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1610C984245A2F14001B178B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1610C985245A2F14001B178B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1610C987245A2F14001B178B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1610C988245A2F14001B178B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1610C98A245A2F14001B178B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHomeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HospiHome.app/HospiHome";
+			};
+			name = Debug;
+		};
+		1610C98B245A2F14001B178B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHomeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HospiHome.app/HospiHome";
+			};
+			name = Release;
+		};
+		1610C98D245A2F14001B178B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHomeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HospiHome;
+			};
+			name = Debug;
+		};
+		1610C98E245A2F14001B178B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				INFOPLIST_FILE = HospiHomeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.AhmedElserafy.HospiHomeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HospiHome;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1610C957245A2F11001B178B /* Build configuration list for PBXProject "HospiHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1610C984245A2F14001B178B /* Debug */,
+				1610C985245A2F14001B178B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1610C986245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1610C987245A2F14001B178B /* Debug */,
+				1610C988245A2F14001B178B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1610C989245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1610C98A245A2F14001B178B /* Debug */,
+				1610C98B245A2F14001B178B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1610C98C245A2F14001B178B /* Build configuration list for PBXNativeTarget "HospiHomeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1610C98D245A2F14001B178B /* Debug */,
+				1610C98E245A2F14001B178B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1610C954245A2F11001B178B /* Project object */;
+}

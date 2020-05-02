@@ -9,15 +9,38 @@
 import UIKit
 
 class ArticlesViewController: UITableViewController {
+    
+    fileprivate let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        setupNavigationItem()
-    }
-    
-   func setupNavigationItem() {
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(r: 38, g: 141, b: 255)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationItem.title = "Articles"
     }
+   
+}
+
+extension ArticlesViewController{
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        <#code#>
+    }*/
+    
+   /* override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 4
+    }*/
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ArticlesCell
+        return cell
+    }
+
+
 }

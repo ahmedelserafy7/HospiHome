@@ -29,6 +29,10 @@
 		161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A3245BC8F7000AACB8 /* HomeCell.swift */; };
 		161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A5245BCA9B000AACB8 /* MenuBar.swift */; };
 		161148A8245BCBE1000AACB8 /* MenuBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A7245BCBE1000AACB8 /* MenuBarCell.swift */; };
+		161148AA245C11F6000AACB8 /* ArticlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148A9245C11F6000AACB8 /* ArticlesCell.swift */; };
+		161148AC245C9929000AACB8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148AB245C9929000AACB8 /* CardViewController.swift */; };
+		161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161148B3245CC6A3000AACB8 /* CardViewController.xib */; };
+		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		161148A3245BC8F7000AACB8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		161148A5245BCA9B000AACB8 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		161148A7245BCBE1000AACB8 /* MenuBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarCell.swift; sourceTree = "<group>"; };
+		161148A9245C11F6000AACB8 /* ArticlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCell.swift; sourceTree = "<group>"; };
+		161148AB245C9929000AACB8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		161148B3245CC6A3000AACB8 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +175,8 @@
 				161148A3245BC8F7000AACB8 /* HomeCell.swift */,
 				1610C98F245A5BB7001B178B /* MessageCell.swift */,
 				1610C995245A9087001B178B /* ChatCell.swift */,
+				161148A9245C11F6000AACB8 /* ArticlesCell.swift */,
+				161148B5245CD86C000AACB8 /* ProfileCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,12 +186,14 @@
 			children = (
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
-				1610C963245A2F11001B178B /* MessageViewController.swift */,
-				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
-				1610C991245A8C7A001B178B /* ChatViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
+				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
+				1610C963245A2F11001B178B /* MessageViewController.swift */,
+				1610C991245A8C7A001B178B /* ChatViewController.swift */,
 				1610C9A0245AC8C2001B178B /* ArticlesViewController.swift */,
 				1610C9A2245ACB52001B178B /* ProfileViewController.swift */,
+				161148B3245CC6A3000AACB8 /* CardViewController.xib */,
+				161148AB245C9929000AACB8 /* CardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */,
 				1610C96C245A2F13001B178B /* LaunchScreen.storyboard in Resources */,
 				1610C969245A2F13001B178B /* Assets.xcassets in Resources */,
 				1610C967245A2F11001B178B /* Main.storyboard in Resources */,
@@ -327,11 +340,14 @@
 			files = (
 				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
+				161148AA245C11F6000AACB8 /* ArticlesCell.swift in Sources */,
+				161148AC245C9929000AACB8 /* CardViewController.swift in Sources */,
 				161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */,
 				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
 				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
 				161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */,
 				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,
+				161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,

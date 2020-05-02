@@ -14,27 +14,60 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate let cellId = "cellId"
+    let searchController = UISearchController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBarSetup()
         
         menuBar.homeController = self
         menuBar.showCollectionView()
         
-        tableView.estimatedRowHeight = 120
+        navigationItem.title = "Home"
+        
+        tableView.estimatedRowHeight = 110
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-    func hideWhenSwipe() {
-        navigationController?.hidesBarsOnSwipe = true
+    func searchBarSetup() {
+        
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.placeholder = "Search Doctors"
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        
+        definesPresentationContext = true
     }
 }
 
+// MARK: UISearchBar
+extension HomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            
+        } else {
+            
+        }
+           self.tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if searchController.isActive {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+// MARK: TableViewDelegate, and DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        return 10
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

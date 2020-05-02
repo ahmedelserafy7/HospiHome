@@ -15,11 +15,10 @@ class MenuBar: UIView {
     var homeController: HomeViewController?
     let specialists = ["Dentistry", "Surgery", "Allergy", "Psychiatry", "Neurology"]
     func showCollectionView(){
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
-        
-        homeController?.hideWhenSwipe()
     }
     
     func selectDefaultItem() {
@@ -28,7 +27,7 @@ class MenuBar: UIView {
     }
 }
 
-extension MenuBar: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MenuBar: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -41,5 +40,9 @@ extension MenuBar: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         selectDefaultItem()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
     }
 }

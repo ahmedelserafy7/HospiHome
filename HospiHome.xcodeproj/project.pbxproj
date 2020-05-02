@@ -33,6 +33,8 @@
 		161148AC245C9929000AACB8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148AB245C9929000AACB8 /* CardViewController.swift */; };
 		161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161148B3245CC6A3000AACB8 /* CardViewController.xib */; };
 		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
+		1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */; };
+		1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD24245E1A7F0075178B /* DrProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		161148AB245C9929000AACB8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		161148B3245CC6A3000AACB8 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		1676DD24245E1A7F0075178B /* DrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +192,11 @@
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
 				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
+				1676DD24245E1A7F0075178B /* DrProfileViewController.swift */,
 				1610C963245A2F11001B178B /* MessageViewController.swift */,
 				1610C991245A8C7A001B178B /* ChatViewController.swift */,
 				1610C9A0245AC8C2001B178B /* ArticlesViewController.swift */,
+				1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */,
 				1610C9A2245ACB52001B178B /* ProfileViewController.swift */,
 				161148B3245CC6A3000AACB8 /* CardViewController.xib */,
 				161148AB245C9929000AACB8 /* CardViewController.swift */,
@@ -350,11 +356,13 @@
 				161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
+				1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */,
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
 				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
 				161148A8245BCBE1000AACB8 /* MenuBarCell.swift in Sources */,
 				1610C996245A9087001B178B /* ChatCell.swift in Sources */,
+				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
 				161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */,
 				1610C9A1245AC8C2001B178B /* ArticlesViewController.swift in Sources */,

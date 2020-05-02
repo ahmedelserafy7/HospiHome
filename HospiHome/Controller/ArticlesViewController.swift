@@ -29,18 +29,14 @@ extension ArticlesViewController{
         return 3
     }
     
-    /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        <#code#>
-    }*/
-    
-   /* override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 4
-    }*/
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ArticlesCell
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let articleDetailsViewController = storyboard?.instantiateViewController(identifier: "details") as! ArticleDetailsViewController
+        navigationController?.pushViewController(articleDetailsViewController, animated: true)
+    }
+    
 }

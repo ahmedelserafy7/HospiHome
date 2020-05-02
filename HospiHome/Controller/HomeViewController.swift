@@ -75,4 +75,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let drProfileViewController = storyboard?.instantiateViewController(identifier: "dr") as! DrProfileViewController
+        navigationController?.pushViewController(drProfileViewController, animated: true)
+    }
+    
 }

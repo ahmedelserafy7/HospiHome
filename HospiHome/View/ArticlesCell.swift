@@ -11,6 +11,10 @@ import UIKit
 class ArticlesCell: UITableViewCell {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var articleTimeLabel: UILabel!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var body: UILabel!
+    @IBOutlet var posterImageView: UIImageView!
+    
     override func awakeFromNib() {
         setupViews()
     }

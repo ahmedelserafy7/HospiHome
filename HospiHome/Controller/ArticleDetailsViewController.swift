@@ -9,11 +9,28 @@
 import UIKit
 
 class ArticleDetailsViewController: UIViewController {
+    var article: Article?
+    
+
+    @IBOutlet var posterImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var bodyLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavBar()
         hideWhenSwipe()
+        
+        if let article=article{
+            dateLabel.text = article.fullDate
+        bodyLabel.text = article.body
+        titleLabel.text = article.title
+        if let posterImage = article.posterImage{
+            posterImageView.image = UIImage(data: posterImage)
+        }
+        }
     }
     
     func setupNavBar() {

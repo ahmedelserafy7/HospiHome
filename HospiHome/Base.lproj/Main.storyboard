@@ -504,7 +504,10 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleTimeLabel" destination="D7X-2D-jfm" id="zMq-oa-TUm"/>
+                                    <outlet property="body" destination="8gm-CN-egs" id="o5V-Ep-SwG"/>
                                     <outlet property="gradientView" destination="oMH-Ev-5Pi" id="pT0-Aq-ou0"/>
+                                    <outlet property="posterImageView" destination="dln-Ku-L5b" id="Dpb-m1-8QR"/>
+                                    <outlet property="title" destination="8eI-QZ-zYa" id="CPR-EE-Og7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -670,6 +673,12 @@ Happy Pinning (and reading)!
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pqk-WP-eLa"/>
                     </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="HBG-M3-fJB" id="vHh-eR-KoW"/>
+                        <outlet property="dateLabel" destination="09w-Dn-T2t" id="0rK-ms-Phk"/>
+                        <outlet property="posterImageView" destination="H55-yQ-Bcp" id="e2A-P0-TuH"/>
+                        <outlet property="titleLabel" destination="jYb-wa-Vku" id="Rq1-4E-aTW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56O-Vq-Xz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

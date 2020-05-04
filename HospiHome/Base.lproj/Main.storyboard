@@ -1289,6 +1289,109 @@ Happy Pinning (and reading)!
             </objects>
             <point key="canvasLocation" x="877" y="899"/>
         </scene>
+        <!--Create Schedule View Controller-->
+        <scene sceneID="4bD-WS-9VV">
+            <objects>
+                <viewController storyboardIdentifier="schedule" id="4dO-p5-5w9" customClass="CreateScheduleViewController" customModule="HospiHome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ff-1I-XlL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-vx-lJ0">
+                                <rect key="frame" x="135" y="249" width="64" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69u-MY-NX7">
+                                <rect key="frame" x="219" y="249" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Leg-G9-hab"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="isWorkingSwitchAction:" destination="4dO-p5-5w9" eventType="valueChanged" id="zh5-wn-Ae7"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-tg-bev">
+                                <rect key="frame" x="190" y="841" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveSchedule:" destination="4dO-p5-5w9" eventType="touchUpInside" id="wqH-8g-dUq"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Koj-it-VVd">
+                                <rect key="frame" x="0.0" y="25" width="414" height="216"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="d6X-Yp-QI0">
+                                <rect key="frame" x="10" y="330" width="394" height="236.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vyF-LL-H1u">
+                                        <rect key="frame" x="0.0" y="0.0" width="189.5" height="236.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdH-ST-1b1">
+                                                <rect key="frame" x="0.0" y="0.0" width="189.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="4E5-Jt-OSQ">
+                                                <rect key="frame" x="0.0" y="20.5" width="189.5" height="216"/>
+                                                <connections>
+                                                    <action selector="fromTimePicker:" destination="4dO-p5-5w9" eventType="valueChanged" id="ZKd-5j-fVX"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-BN-n7w">
+                                        <rect key="frame" x="214.5" y="0.0" width="179.5" height="236.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-3x-2a9">
+                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-X6-Aa0">
+                                                <rect key="frame" x="0.0" y="20.5" width="179.5" height="216"/>
+                                                <connections>
+                                                    <action selector="toTimePicker:" destination="4dO-p5-5w9" eventType="valueChanged" id="PXJ-lG-eF3"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Koj-it-VVd" firstAttribute="trailing" secondItem="aoI-Tk-AUL" secondAttribute="trailing" id="3VL-Uo-1YU"/>
+                            <constraint firstItem="wSP-tg-bev" firstAttribute="centerX" secondItem="3ff-1I-XlL" secondAttribute="centerX" id="3o5-8g-aOt"/>
+                            <constraint firstItem="d6X-Yp-QI0" firstAttribute="leading" secondItem="3ff-1I-XlL" secondAttribute="leading" constant="10" id="8vo-rx-mHa"/>
+                            <constraint firstItem="d6X-Yp-QI0" firstAttribute="top" secondItem="4NQ-vx-lJ0" secondAttribute="bottom" constant="50" id="Bqi-TD-cV6"/>
+                            <constraint firstAttribute="trailing" secondItem="d6X-Yp-QI0" secondAttribute="trailing" constant="10" id="O6z-RA-QQM"/>
+                            <constraint firstItem="d6X-Yp-QI0" firstAttribute="top" secondItem="69u-MY-NX7" secondAttribute="bottom" constant="50" id="TeH-2o-Fav"/>
+                            <constraint firstItem="Koj-it-VVd" firstAttribute="leading" secondItem="aoI-Tk-AUL" secondAttribute="leading" id="Twj-3R-nbx"/>
+                            <constraint firstItem="69u-MY-NX7" firstAttribute="top" secondItem="Koj-it-VVd" secondAttribute="bottom" constant="8" id="YvA-ip-H4W"/>
+                            <constraint firstItem="Koj-it-VVd" firstAttribute="top" secondItem="3ff-1I-XlL" secondAttribute="top" constant="25" id="dCg-WD-5Ln"/>
+                            <constraint firstItem="69u-MY-NX7" firstAttribute="centerX" secondItem="3ff-1I-XlL" secondAttribute="centerX" constant="36.5" id="hsF-GT-pn1"/>
+                            <constraint firstItem="69u-MY-NX7" firstAttribute="centerY" secondItem="4NQ-vx-lJ0" secondAttribute="centerY" id="iE7-cg-xjN"/>
+                            <constraint firstAttribute="bottom" secondItem="wSP-tg-bev" secondAttribute="bottom" constant="25" id="jtF-P6-oKu"/>
+                            <constraint firstItem="69u-MY-NX7" firstAttribute="leading" secondItem="4NQ-vx-lJ0" secondAttribute="trailing" constant="20" id="q8a-5M-4c9"/>
+                            <constraint firstItem="4NQ-vx-lJ0" firstAttribute="centerX" secondItem="3ff-1I-XlL" secondAttribute="centerX" constant="-40" id="zFF-ZH-wp0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aoI-Tk-AUL"/>
+                    </view>
+                    <connections>
+                        <outlet property="dayPicker" destination="Koj-it-VVd" id="Bxq-lD-Mb7"/>
+                        <outlet property="fromTimePicker" destination="4E5-Jt-OSQ" id="d3H-lT-tez"/>
+                        <outlet property="isWorkingSwitch" destination="69u-MY-NX7" id="AZV-0g-cTd"/>
+                        <outlet property="toTimePicker" destination="NKq-X6-Aa0" id="wIu-Te-V8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI4-NT-XQf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="-564"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2" width="300" height="168"/>

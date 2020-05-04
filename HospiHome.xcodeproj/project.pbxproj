@@ -56,6 +56,8 @@
 		A8019E4224600B6E00C6B0FD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E4124600B6E00C6B0FD /* Article.swift */; };
 		A8019E442460108C00C6B0FD /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E432460108C00C6B0FD /* ArticlesResponse.swift */; };
 		A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E45246032F200C6B0FD /* AvatarResponse.swift */; };
+		A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */; };
+		A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC5246084160016CD29 /* DoctorSchedule.swift */; };
 		A841EA8C246049FC00348B78 /* SepcialitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +134,8 @@
 		A8019E4124600B6E00C6B0FD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A8019E432460108C00C6B0FD /* ArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
 		A8019E45246032F200C6B0FD /* AvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarResponse.swift; sourceTree = "<group>"; };
+		A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
+		A8260FC5246084160016CD29 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
 		A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepcialitiesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +254,7 @@
 				1610C9A2245ACB52001B178B /* ProfileViewController.swift */,
 				161148B3245CC6A3000AACB8 /* CardViewController.xib */,
 				161148AB245C9929000AACB8 /* CardViewController.swift */,
+				A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				1652C388245F2BBA00EB2442 /* Message.swift */,
 				A8019E3F246004B900C6B0FD /* Profile.swift */,
 				A8019E4124600B6E00C6B0FD /* Article.swift */,
+				A8260FC5246084160016CD29 /* DoctorSchedule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,6 +461,7 @@
 				16834428245FE5DC00385937 /* OTPViewController.swift in Sources */,
 				16834437245FEA7400385937 /* LoginResponse.swift in Sources */,
 				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
+				A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
 				16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */,
@@ -478,6 +485,7 @@
 				1683442C245FEA0A00385937 /* HTTPRequests.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
+				A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */,
 				1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */,
 				16834422245FE5AC00385937 /* UIViewExtension.swift in Sources */,
 				16834430245FEA2400385937 /* Doctor.swift in Sources */,

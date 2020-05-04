@@ -23,10 +23,14 @@ class CardViewController: UIViewController {
         return tv
     }()
     
-    let cardNames = ["Notification", "Settings", "Help", "Give us feedback", "Log out"]
-    let cardIcons = ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
+    var cardNames = ["Notification", "Settings", "Help", "Give us feedback", "Log out"]
+    var cardIcons = ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        if profile?.accountType == AccountType.Doctor{
+            cardNames.append("Create/Update Schedule")
+            cardIcons.append("")
+        }
         setupViews()
     }
     
@@ -54,6 +58,14 @@ class CardViewController: UIViewController {
         }
     }
     
+    func navigateToScheduleVC() {
+        DispatchQueue.main.async {
+            let loginViewController = self.parent?.storyboard?.instantiateViewController(identifier: "schedule") as! CreateScheduleViewController
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
@@ -65,6 +77,11 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
         if cardNames[indexPath.row] == "Log out"{
             self.logout()
         }
+        
+        if cardNames[indexPath.row] == "Create/Update Schedule"{
+            navigateToScheduleVC()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

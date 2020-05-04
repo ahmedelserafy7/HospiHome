@@ -20,6 +20,7 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case fetchDoctors = "fetchDoctors"
         case fetchArticles = "fetchArticles"
         case fetchSpecialaities = "fetchSpecialities"
+        case getOwnSchedule = "doctors/getSchedule"
         case updateSchedule = "doctors/updateSchedule"
         
     }

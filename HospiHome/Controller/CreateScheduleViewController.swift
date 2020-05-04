@@ -24,9 +24,24 @@ import UIKit
             dayPicker.dataSource = self
             dayPicker.delegate = self
         
-            for day in days{
-                schedule.append(Day(name: day, working: false, startTimeStamp: 1588320000, endTimeStamp: 1588338000))
+            API().httpGETRequest(endpoint: .getOwnSchedule) { (data, error) in
+          guard let data = data else{self.alertError(withTitle: "Error", withMessage: "Unknown Response from server, please try again later");return;}
+                
+            if let response = try? JSONDecoder().decode(GetScheduleResponse.self, from: data){
+                if response.success{
+                    self.schedule = response.schedule!
+                }
+                
+                else{
+                    for day in self.days{
+                        self.schedule.append(Day(name: day, working: false, startTimeStamp: 1588320000, endTimeStamp: 1588338000))
+                    }
+                }
+                }
+                
             }
+            
+           
           
             
         }

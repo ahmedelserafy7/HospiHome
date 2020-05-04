@@ -58,6 +58,7 @@
 		A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E45246032F200C6B0FD /* AvatarResponse.swift */; };
 		A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */; };
 		A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC5246084160016CD29 /* DoctorSchedule.swift */; };
+		A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC724608A130016CD29 /* GetScheduleResponse.swift */; };
 		A841EA8C246049FC00348B78 /* SepcialitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		A8019E45246032F200C6B0FD /* AvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarResponse.swift; sourceTree = "<group>"; };
 		A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		A8260FC5246084160016CD29 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
+		A8260FC724608A130016CD29 /* GetScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScheduleResponse.swift; sourceTree = "<group>"; };
 		A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepcialitiesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				16834432245FEA7300385937 /* FetchDoctorsResponse.swift */,
+				A8260FC724608A130016CD29 /* GetScheduleResponse.swift */,
 				16834433245FEA7300385937 /* APIResponse.swift */,
 				16834434245FEA7300385937 /* LoginResponse.swift */,
 				A8019E432460108C00C6B0FD /* ArticlesResponse.swift */,
@@ -476,6 +479,7 @@
 				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
 				16834425245FE5AC00385937 /* KWVerificationCodeView.swift in Sources */,
 				A8019E40246004B900C6B0FD /* Profile.swift in Sources */,
+				A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */,
 				16834423245FE5AC00385937 /* StringExtension.swift in Sources */,
 				161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */,
 				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,

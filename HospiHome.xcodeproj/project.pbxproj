@@ -54,9 +54,28 @@
 		A8019E4224600B6E00C6B0FD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E4124600B6E00C6B0FD /* Article.swift */; };
 		A8019E442460108C00C6B0FD /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E432460108C00C6B0FD /* ArticlesResponse.swift */; };
 		A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E45246032F200C6B0FD /* AvatarResponse.swift */; };
+		A8122C552460ABE4002F1186 /* AvailableTimeSlotsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C542460ABE4002F1186 /* AvailableTimeSlotsResponse.swift */; };
+		A8122C7E2460AE1B002F1186 /* CalendarView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C752460AE1B002F1186 /* CalendarView+DataSource.swift */; };
+		A8122C7F2460AE1B002F1186 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C762460AE1B002F1186 /* CalendarView.swift */; };
+		A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C772460AE1B002F1186 /* CalendarView+Delegate.swift */; };
+		A8122C812460AE1B002F1186 /* CalendarView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C782460AE1B002F1186 /* CalendarView+Extensions.swift */; };
+		A8122C832460AE1B002F1186 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7A2460AE1B002F1186 /* CalendarHeaderView.swift */; };
+		A8122C842460AE1B002F1186 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7B2460AE1B002F1186 /* CalendarDayCell.swift */; };
+		A8122C852460AE1B002F1186 /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */; };
+		A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */; };
 		A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */; };
 		A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC5246084160016CD29 /* DoctorSchedule.swift */; };
 		A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC724608A130016CD29 /* GetScheduleResponse.swift */; };
+		A8260FE32460AA890016CD29 /* TimeSlotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FE22460AA880016CD29 /* TimeSlotCollectionViewCell.swift */; };
+		A8260FE52460AA9C0016CD29 /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */; };
+		A8260FF52460AAC90016CD29 /* LBZSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FEA2460AAC90016CD29 /* LBZSpinner.swift */; };
+		A8260FF62460AAC90016CD29 /* MFCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FEB2460AAC90016CD29 /* MFCardView.swift */; };
+		A8260FF72460AAC90016CD29 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FED2460AAC90016CD29 /* Toast.swift */; };
+		A8260FF82460AAC90016CD29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8260FEE2460AAC90016CD29 /* Assets.xcassets */; };
+		A8260FF92460AAC90016CD29 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FF02460AAC90016CD29 /* CreditCardValidator.swift */; };
+		A8260FFA2460AAC90016CD29 /* CreditCardValidationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FF12460AAC90016CD29 /* CreditCardValidationType.swift */; };
+		A8260FFB2460AAC90016CD29 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FF22460AAC90016CD29 /* Card.swift */; };
+		A8260FFC2460AAC90016CD29 /* MFCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8260FF32460AAC90016CD29 /* MFCardView.xib */; };
 		A841EA8C246049FC00348B78 /* SepcialitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,9 +150,29 @@
 		A8019E4124600B6E00C6B0FD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A8019E432460108C00C6B0FD /* ArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
 		A8019E45246032F200C6B0FD /* AvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarResponse.swift; sourceTree = "<group>"; };
+		A8122C542460ABE4002F1186 /* AvailableTimeSlotsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableTimeSlotsResponse.swift; sourceTree = "<group>"; };
+		A8122C752460AE1B002F1186 /* CalendarView+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+DataSource.swift"; sourceTree = "<group>"; };
+		A8122C762460AE1B002F1186 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A8122C772460AE1B002F1186 /* CalendarView+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Delegate.swift"; sourceTree = "<group>"; };
+		A8122C782460AE1B002F1186 /* CalendarView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Extensions.swift"; sourceTree = "<group>"; };
+		A8122C7A2460AE1B002F1186 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		A8122C7B2460AE1B002F1186 /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Style.swift"; sourceTree = "<group>"; };
+		A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFlowLayout.swift; sourceTree = "<group>"; };
 		A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		A8260FC5246084160016CD29 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
 		A8260FC724608A130016CD29 /* GetScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScheduleResponse.swift; sourceTree = "<group>"; };
+		A8260FE22460AA880016CD29 /* TimeSlotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlotCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		A8260FE72460AAC90016CD29 /* MFCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCard.h; sourceTree = "<group>"; };
+		A8260FEA2460AAC90016CD29 /* LBZSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBZSpinner.swift; sourceTree = "<group>"; };
+		A8260FEB2460AAC90016CD29 /* MFCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFCardView.swift; sourceTree = "<group>"; };
+		A8260FED2460AAC90016CD29 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		A8260FEE2460AAC90016CD29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8260FF02460AAC90016CD29 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
+		A8260FF12460AAC90016CD29 /* CreditCardValidationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidationType.swift; sourceTree = "<group>"; };
+		A8260FF22460AAC90016CD29 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A8260FF32460AAC90016CD29 /* MFCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFCardView.xib; sourceTree = "<group>"; };
 		A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepcialitiesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +204,8 @@
 		1610C953245A2F11001B178B = {
 			isa = PBXGroup;
 			children = (
+				A8122C572460ADCC002F1186 /* CalendarView */,
+				A8260FE62460AAC90016CD29 /* MFCard */,
 				16834418245FE5AA00385937 /* KWVerificationCodeView */,
 				16834431245FEA7300385937 /* Responses */,
 				1610C95E245A2F11001B178B /* HospiHome */,
@@ -222,6 +263,7 @@
 		1610C997245A90D2001B178B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8260FE22460AA880016CD29 /* TimeSlotCollectionViewCell.swift */,
 				161148A3245BC8F7000AACB8 /* HomeCell.swift */,
 				1610C98F245A5BB7001B178B /* MessageCell.swift */,
 				1610C995245A9087001B178B /* ChatCell.swift */,
@@ -236,6 +278,7 @@
 		1610C998245A90F0001B178B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */,
 				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
@@ -273,6 +316,7 @@
 				1652C388245F2BBA00EB2442 /* Message.swift */,
 				A8019E3F246004B900C6B0FD /* Profile.swift */,
 				A8019E4124600B6E00C6B0FD /* Article.swift */,
+				A8122C542460ABE4002F1186 /* AvailableTimeSlotsResponse.swift */,
 				A8260FC5246084160016CD29 /* DoctorSchedule.swift */,
 			);
 			path = Model;
@@ -319,6 +363,69 @@
 				A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		A8122C572460ADCC002F1186 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				A8122C7B2460AE1B002F1186 /* CalendarDayCell.swift */,
+				A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */,
+				A8122C7A2460AE1B002F1186 /* CalendarHeaderView.swift */,
+				A8122C762460AE1B002F1186 /* CalendarView.swift */,
+				A8122C752460AE1B002F1186 /* CalendarView+DataSource.swift */,
+				A8122C772460AE1B002F1186 /* CalendarView+Delegate.swift */,
+				A8122C782460AE1B002F1186 /* CalendarView+Extensions.swift */,
+				A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		A8260FE62460AAC90016CD29 /* MFCard */ = {
+			isa = PBXGroup;
+			children = (
+				A8260FE72460AAC90016CD29 /* MFCard.h */,
+				A8260FE82460AAC90016CD29 /* Card  */,
+			);
+			path = MFCard;
+			sourceTree = "<group>";
+		};
+		A8260FE82460AAC90016CD29 /* Card  */ = {
+			isa = PBXGroup;
+			children = (
+				A8260FE92460AAC90016CD29 /* Helper Class */,
+				A8260FEB2460AAC90016CD29 /* MFCardView.swift */,
+				A8260FEC2460AAC90016CD29 /* Toast */,
+				A8260FEE2460AAC90016CD29 /* Assets.xcassets */,
+				A8260FEF2460AAC90016CD29 /* CreditCardValidator */,
+				A8260FF22460AAC90016CD29 /* Card.swift */,
+				A8260FF32460AAC90016CD29 /* MFCardView.xib */,
+			);
+			path = "Card ";
+			sourceTree = "<group>";
+		};
+		A8260FE92460AAC90016CD29 /* Helper Class */ = {
+			isa = PBXGroup;
+			children = (
+				A8260FEA2460AAC90016CD29 /* LBZSpinner.swift */,
+			);
+			path = "Helper Class";
+			sourceTree = "<group>";
+		};
+		A8260FEC2460AAC90016CD29 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A8260FED2460AAC90016CD29 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		A8260FEF2460AAC90016CD29 /* CreditCardValidator */ = {
+			isa = PBXGroup;
+			children = (
+				A8260FF02460AAC90016CD29 /* CreditCardValidator.swift */,
+				A8260FF12460AAC90016CD29 /* CreditCardValidationType.swift */,
+			);
+			path = CreditCardValidator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,8 +536,10 @@
 				16834424245FE5AC00385937 /* KWTextFieldView.xib in Resources */,
 				161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */,
 				1610C96C245A2F13001B178B /* LaunchScreen.storyboard in Resources */,
+				A8260FF82460AAC90016CD29 /* Assets.xcassets in Resources */,
 				1610C969245A2F13001B178B /* Assets.xcassets in Resources */,
 				1610C967245A2F11001B178B /* Main.storyboard in Resources */,
+				A8260FFC2460AAC90016CD29 /* MFCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,35 +567,50 @@
 				16834428245FE5DC00385937 /* OTPViewController.swift in Sources */,
 				16834437245FEA7400385937 /* LoginResponse.swift in Sources */,
 				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
+				A8260FF62460AAC90016CD29 /* MFCardView.swift in Sources */,
+				A8122C552460ABE4002F1186 /* AvailableTimeSlotsResponse.swift in Sources */,
 				A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
+				A8260FFB2460AAC90016CD29 /* Card.swift in Sources */,
+				A8260FF52460AAC90016CD29 /* LBZSpinner.swift in Sources */,
 				16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */,
 				161148AA245C11F6000AACB8 /* ArticlesCell.swift in Sources */,
 				161148AC245C9929000AACB8 /* CardViewController.swift in Sources */,
+				A8122C7F2460AE1B002F1186 /* CalendarView.swift in Sources */,
 				1683442E245FEA0A00385937 /* GlobalVariables.swift in Sources */,
 				1683442D245FEA0A00385937 /* Extensions+Dictionary.swift in Sources */,
+				A8122C832460AE1B002F1186 /* CalendarHeaderView.swift in Sources */,
 				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
+				A8260FE32460AA890016CD29 /* TimeSlotCollectionViewCell.swift in Sources */,
 				A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */,
 				A841EA8C246049FC00348B78 /* SepcialitiesResponse.swift in Sources */,
 				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
 				16834425245FE5AC00385937 /* KWVerificationCodeView.swift in Sources */,
 				A8019E40246004B900C6B0FD /* Profile.swift in Sources */,
 				A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */,
+				A8260FF72460AAC90016CD29 /* Toast.swift in Sources */,
 				16834423245FE5AC00385937 /* StringExtension.swift in Sources */,
 				161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */,
 				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,
+				A8122C852460AE1B002F1186 /* CalendarView+Style.swift in Sources */,
 				16834421245FE5AC00385937 /* KWTextFieldView.swift in Sources */,
 				16834436245FEA7400385937 /* APIResponse.swift in Sources */,
 				161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */,
 				1683442C245FEA0A00385937 /* HTTPRequests.swift in Sources */,
+				A8260FE52460AA9C0016CD29 /* ReservationViewController.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
+				A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
+				A8122C812460AE1B002F1186 /* CalendarView+Extensions.swift in Sources */,
+				A8122C842460AE1B002F1186 /* CalendarDayCell.swift in Sources */,
 				A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */,
 				1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */,
+				A8260FF92460AAC90016CD29 /* CreditCardValidator.swift in Sources */,
 				16834422245FE5AC00385937 /* UIViewExtension.swift in Sources */,
 				16834430245FEA2400385937 /* Doctor.swift in Sources */,
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
+				A8260FFA2460AAC90016CD29 /* CreditCardValidationType.swift in Sources */,
 				A8019E4224600B6E00C6B0FD /* Article.swift in Sources */,
 				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
@@ -494,8 +618,10 @@
 				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
 				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
+				A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */,
 				1652C389245F2BBA00EB2442 /* Message.swift in Sources */,
 				161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */,
+				A8122C7E2460AE1B002F1186 /* CalendarView+DataSource.swift in Sources */,
 				1610C9A1245AC8C2001B178B /* ArticlesViewController.swift in Sources */,
 				A8019E442460108C00C6B0FD /* ArticlesResponse.swift in Sources */,
 			);

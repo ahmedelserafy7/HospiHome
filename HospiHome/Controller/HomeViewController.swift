@@ -168,9 +168,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HomeCell
-        cell.bioLabel.text? = filteredArray[indexPath.section].info.bio
-               cell.nameLabel.text? = filteredArray[indexPath.section].info.name
-               cell.feesLabel.text? = filteredArray[indexPath.section].info.fees + " EGP"
+        cell.parent = self
+        cell.doctor = filteredArray[indexPath.section]
+        cell.bioLabel.text? = self.filteredArray[indexPath.section].info.bio
+                          cell.nameLabel.text? = self.filteredArray[indexPath.section].info.name
+                          cell.feesLabel.text? = self.filteredArray[indexPath.section].info.fees + " EGP"
+                           if let image = self.filteredArray[indexPath.row].info.image{cell.avatarView.image = UIImage(data: image)}
         return cell
     }
     

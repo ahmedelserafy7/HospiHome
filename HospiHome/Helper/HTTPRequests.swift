@@ -22,6 +22,7 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case fetchSpecialaities = "fetchSpecialities"
         case getOwnSchedule = "doctors/getSchedule"
         case updateSchedule = "doctors/updateSchedule"
+        case getFreeTimeSlots = "reservations/getAvailableSlots.php"
         
     }
     

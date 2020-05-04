@@ -36,7 +36,6 @@ class ProfileViewController: UIViewController {
         nameLabel.text = profile?.name
         emailLabel.text = profile?.email
         mobileNumberLabel.text = profile?.mobile
-        
         view.backgroundColor = UIColor(r: 244, g: 246, b: 245)
         navigationItem.title = "Profile"
         fetchUserAvatar()
@@ -62,6 +61,20 @@ class ProfileViewController: UIViewController {
 
         }
     }
+    
+    func logout(){
+        httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/logout.php") { (data, error) in  }
+        navigateToLoginVC()
+    }
+    
+    func navigateToLoginVC() {
+        DispatchQueue.main.async {
+            let loginViewController = self.storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
+    
     
     var visualEffectView = UIVisualEffectView()
     func setupCard() {

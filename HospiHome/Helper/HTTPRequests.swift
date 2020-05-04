@@ -19,6 +19,10 @@ func httpPOSTRequest(urlString: String, postData: [String: Any], completion: @es
     request.httpBody = postData.percentEncoded()
     request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
     
+    if let access_token = access_token{
+        request.addValue(access_token, forHTTPHeaderField: "Token")
+    }
+    
     let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
         if let error = error{
             print("HTTP Request Error: " + error.localizedDescription)
@@ -47,6 +51,10 @@ func httpGETRequest(urlString: String, completion: @escaping ( _ responseData: D
     
     var request = URLRequest(url: url!)
     request.httpMethod = "GET"
+    
+    if let access_token = access_token{
+        request.addValue(access_token, forHTTPHeaderField: "Token")
+    }
     
     let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
         if let error = error{

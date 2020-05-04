@@ -28,10 +28,12 @@ class ArticlesViewController: UITableViewController {
             guard var articles = try? JSONDecoder().decode(ArticlesResponse.self, from: data).articles else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
             
             for i in 0..<articles.count{
+                articles[i].shortDate = articles[i].shortDate.replacingOccurrences(of: " ", with: "\n")
                 articles[i].body = articles[i].body.replacingOccurrences(of: "\\n", with: "\n")
                 let base64String = articles[i].poster
                 if base64String.count>50{
-                articles[i].posterImage = Data(base64Encoded: base64String)
+                    print(base64String.replacingOccurrences(of: "\\/", with: "/"))
+                    articles[i].posterImage = Data(base64Encoded: base64String.replacingOccurrences(of: "\\/", with: "/"))
                     self.articlesArray.append(articles[i])
                 }
                 }

@@ -54,21 +54,24 @@ class LoginViewController: UIViewController {
     }
     
     func disableInput(){
-        phoneNumberTextField.isEnabled = !phoneNumberTextField.isEnabled
-        passwordTextField.isEnabled = !passwordTextField.isEnabled
-        loginButton.isEnabled = !loginButton.isEnabled
+         DispatchQueue.main.async {
+            self.phoneNumberTextField.isEnabled = !self.phoneNumberTextField.isEnabled
+            self.passwordTextField.isEnabled = !self.passwordTextField.isEnabled
+            self.loginButton.isEnabled = !self.loginButton.isEnabled
+        }
     }
     
     func login(){
         disableInput()
         let parameters = ["mobile": "+2"+phoneNumberTextField.text!, "password":passwordTextField.text!]
         httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/login", postData: parameters) { (data, error) in
-            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");self.disableInput();return;}
             let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data)
-     
+  
               if let response = loginResponse{
                   if response.success{
                     access_token = response.access_token!
+                    profile = response.profile!
                     DispatchQueue.main.async {self.navigateToHomeVC()}
                   }
                   else
@@ -77,9 +80,14 @@ class LoginViewController: UIViewController {
                       
                   }
               }
-            DispatchQueue.main.async {
-                 self.disableInput()
+              else{
+                self.alertError(withMessage: "Unknown Response from server, please try again later");
+                self.disableInput();
+                return;
             }
+           
+                 self.disableInput()
+            
            
         }
     }

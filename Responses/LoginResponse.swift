@@ -12,4 +12,5 @@ struct LoginResponse: Codable{
     var success: Bool
     var access_token: String?
     var msg: String?
+    var profile: Profile?
 }

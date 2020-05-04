@@ -1,0 +1,33 @@
+//
+//  Profile.swift
+//  HospiHome
+//
+//  Created by Seif Elmenabawy on 5/4/20.
+//  Copyright © 2020 Elser_10. All rights reserved.
+//
+
+import Foundation
+
+
+
+struct Profile: Codable{
+    var mobile: String
+    var name: String
+    var email: String
+    private var type: String
+    
+    var accountType: AccountType{
+        get{
+            if type=="Doctor"{
+                return AccountType.Doctor
+            }
+            else{
+                return AccountType.Patient
+            }
+        }
+    }
+}
+
+enum AccountType{
+    case Doctor,Patient
+}

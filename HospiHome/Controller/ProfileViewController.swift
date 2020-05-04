@@ -62,19 +62,7 @@ class ProfileViewController: UIViewController {
 
         }
     }
-    
-    func logout(){
-        API().httpGETRequest(endpoint: .logout) { (data, error) in  }
-        navigateToLoginVC()
-    }
-    
-    func navigateToLoginVC() {
-        DispatchQueue.main.async {
-            let loginViewController = self.storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
-        }
-    }
+
     
     
     var visualEffectView = UIVisualEffectView()

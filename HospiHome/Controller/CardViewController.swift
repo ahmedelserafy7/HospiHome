@@ -40,12 +40,33 @@ class CardViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    
+    func logout(){
+        API().httpGETRequest(endpoint: .logout) { (data, error) in  }
+        navigateToLoginVC()
+    }
+    
+    func navigateToLoginVC() {
+        DispatchQueue.main.async {
+            let loginViewController = self.parent?.storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cardNames.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cardNames[indexPath.row] == "Log out"{
+            self.logout()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ProfileCell

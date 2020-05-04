@@ -17,14 +17,14 @@ class DrProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if let doctor=doctor{
-//            feesLabel.text = doctor.info.fees + " EGP"
-//            bioLabel.text = doctor.info.bio
-//            nameLabel.text = doctor.info.name
-//            if let image = doctor.info.image{
-//                avatarImageView.image = UIImage(data: image)
-//            }
-//        }
+        if let doctor=doctor{
+            feesLabel.text = doctor.info.fees + " EGP"
+            bioLabel.text = doctor.info.bio
+            nameLabel.text = doctor.info.name
+            if let image = doctor.info.image{
+                avatarImageView.image = UIImage(data: image)
+            }
+        }
         setupNavBar()
         hideWhenSwipe()
     }

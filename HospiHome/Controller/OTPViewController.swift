@@ -67,6 +67,10 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
                   }
                   else
                   {
+                    DispatchQueue.main.async {
+                        self.verificationCodeView?.clear()
+                    }
+                      
                       self.alertError(withTitle: "Failed to create user", withMessage: response.msg)
                       
                   }
@@ -101,6 +105,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
     
     verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
     verificationCodeView?.delegate = self
+    
     containerView.addSubview(verificationCodeView!)
   }
 

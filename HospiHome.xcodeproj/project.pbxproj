@@ -63,6 +63,7 @@
 		A8122C842460AE1B002F1186 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7B2460AE1B002F1186 /* CalendarDayCell.swift */; };
 		A8122C852460AE1B002F1186 /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */; };
 		A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */; };
+		A8122E2D2460C317002F1186 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122E2C2460C317002F1186 /* RNCryptor.swift */; };
 		A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */; };
 		A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC5246084160016CD29 /* DoctorSchedule.swift */; };
 		A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC724608A130016CD29 /* GetScheduleResponse.swift */; };
@@ -159,6 +160,84 @@
 		A8122C7B2460AE1B002F1186 /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 		A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CalendarView+Style.swift"; sourceTree = "<group>"; };
 		A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFlowLayout.swift; sourceTree = "<group>"; };
+		A8122D252460C183002F1186 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = ../../Downloads/CryptoSwift.framework; sourceTree = "<group>"; };
+		A8122D2C2460C1C9002F1186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8122D2E2460C1C9002F1186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8122D302460C1C9002F1186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8122D322460C1C9002F1186 /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		A8122D332460C1C9002F1186 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		A8122D342460C1C9002F1186 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A8122D352460C1C9002F1186 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		A8122D362460C1C9002F1186 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		A8122D372460C1C9002F1186 /* DrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrProfileViewController.swift; sourceTree = "<group>"; };
+		A8122D382460C1C9002F1186 /* ChainedTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedTextViewController.swift; sourceTree = "<group>"; };
+		A8122D392460C1C9002F1186 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		A8122D3A2460C1C9002F1186 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		A8122D3B2460C1C9002F1186 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A8122D3C2460C1C9002F1186 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A8122D3D2460C1C9002F1186 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		A8122D3E2460C1C9002F1186 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		A8122D3F2460C1C9002F1186 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A8122D402460C1C9002F1186 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
+		A8122D412460C1C9002F1186 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A8122D432460C1C9002F1186 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
+		A8122D442460C1C9002F1186 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		A8122D452460C1C9002F1186 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A8122D462460C1C9002F1186 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A8122D472460C1C9002F1186 /* AvailableTimeSlotsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTimeSlotsResponse.swift; sourceTree = "<group>"; };
+		A8122D482460C1C9002F1186 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		A8122D4A2460C1C9002F1186 /* ArticlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCell.swift; sourceTree = "<group>"; };
+		A8122D4B2460C1C9002F1186 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		A8122D4C2460C1C9002F1186 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		A8122D4D2460C1C9002F1186 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		A8122D4E2460C1C9002F1186 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
+		A8122D4F2460C1C9002F1186 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		A8122D502460C1C9002F1186 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		A8122D512460C1C9002F1186 /* TimeSlotCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8122D522460C1C9002F1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8122D542460C1C9002F1186 /* Extensions+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIColor.swift"; sourceTree = "<group>"; };
+		A8122D552460C1C9002F1186 /* HTTPRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequests.swift; sourceTree = "<group>"; };
+		A8122D562460C1C9002F1186 /* Extensions+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Dictionary.swift"; sourceTree = "<group>"; };
+		A8122D572460C1C9002F1186 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		A8122D582460C1C9002F1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8122D592460C1C9002F1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A8122D5B2460C1C9002F1186 /* HospiHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospiHomeTests.swift; sourceTree = "<group>"; };
+		A8122D5C2460C1C9002F1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8122D5E2460C1C9002F1186 /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFlowLayout.swift; sourceTree = "<group>"; };
+		A8122D5F2460C1C9002F1186 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		A8122D602460C1C9002F1186 /* CalendarView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+Extensions.swift"; sourceTree = "<group>"; };
+		A8122D612460C1C9002F1186 /* CalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		A8122D622460C1C9002F1186 /* CalendarView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+Style.swift"; sourceTree = "<group>"; };
+		A8122D632460C1C9002F1186 /* CalendarView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+Delegate.swift"; sourceTree = "<group>"; };
+		A8122D642460C1C9002F1186 /* CalendarView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarView+DataSource.swift"; sourceTree = "<group>"; };
+		A8122D652460C1C9002F1186 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A8122D672460C1C9002F1186 /* ArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
+		A8122D682460C1C9002F1186 /* GetScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScheduleResponse.swift; sourceTree = "<group>"; };
+		A8122D692460C1C9002F1186 /* AvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarResponse.swift; sourceTree = "<group>"; };
+		A8122D6A2460C1C9002F1186 /* FetchDoctorsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDoctorsResponse.swift; sourceTree = "<group>"; };
+		A8122D6B2460C1C9002F1186 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		A8122D6C2460C1C9002F1186 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		A8122D6D2460C1C9002F1186 /* SepcialitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepcialitiesResponse.swift; sourceTree = "<group>"; };
+		A8122D6E2460C1C9002F1186 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		A8122D702460C1C9002F1186 /* MFCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFCard.h; sourceTree = "<group>"; };
+		A8122D732460C1C9002F1186 /* LBZSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBZSpinner.swift; sourceTree = "<group>"; };
+		A8122D742460C1C9002F1186 /* MFCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFCardView.swift; sourceTree = "<group>"; };
+		A8122D762460C1C9002F1186 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		A8122D772460C1C9002F1186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8122D792460C1C9002F1186 /* CreditCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
+		A8122D7A2460C1C9002F1186 /* CreditCardValidationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardValidationType.swift; sourceTree = "<group>"; };
+		A8122D7B2460C1C9002F1186 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A8122D7C2460C1C9002F1186 /* MFCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MFCardView.xib; sourceTree = "<group>"; };
+		A8122D7F2460C1C9002F1186 /* KWTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWTextFieldView.swift; sourceTree = "<group>"; };
+		A8122D812460C1C9002F1186 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A8122D822460C1C9002F1186 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A8122D832460C1C9002F1186 /* KWTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KWTextFieldView.xib; sourceTree = "<group>"; };
+		A8122D842460C1C9002F1186 /* KWVerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWVerificationCodeView.swift; sourceTree = "<group>"; };
+		A8122D852460C1C9002F1186 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
+		A8122D862460C1C9002F1186 /* HospiHome.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HospiHome.xcodeproj; sourceTree = "<group>"; };
+		A8122D8A2460C1C9002F1186 /* HospiHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospiHomeUITests.swift; sourceTree = "<group>"; };
+		A8122D8B2460C1C9002F1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8122E2C2460C317002F1186 /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		A8260FC5246084160016CD29 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
 		A8260FC724608A130016CD29 /* GetScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScheduleResponse.swift; sourceTree = "<group>"; };
@@ -212,6 +291,7 @@
 				1610C975245A2F14001B178B /* HospiHomeTests */,
 				1610C980245A2F14001B178B /* HospiHomeUITests */,
 				1610C95D245A2F11001B178B /* Products */,
+				A8122D242460C183002F1186 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,6 +381,7 @@
 		1610C99D245AAE22001B178B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A8122E2C2460C317002F1186 /* RNCryptor.swift */,
 				1683442B245FEA0A00385937 /* GlobalVariables.swift */,
 				16834429245FEA0900385937 /* HTTPRequests.swift */,
 				1683442A245FEA0900385937 /* Extensions+Dictionary.swift */,
@@ -378,6 +459,248 @@
 				A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */,
 			);
 			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		A8122D242460C183002F1186 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D292460C1C9002F1186 /* newhospi */,
+				A8122D252460C183002F1186 /* CryptoSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8122D292460C1C9002F1186 /* newhospi */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D2A2460C1C9002F1186 /* HospiHome */,
+			);
+			name = newhospi;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A8122D2A2460C1C9002F1186 /* HospiHome */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D2B2460C1C9002F1186 /* HospiHome */,
+				A8122D5A2460C1C9002F1186 /* HospiHomeTests */,
+				A8122D5D2460C1C9002F1186 /* CalendarView */,
+				A8122D662460C1C9002F1186 /* Responses */,
+				A8122D6E2460C1C9002F1186 /* CryptoSwift.framework */,
+				A8122D6F2460C1C9002F1186 /* MFCard */,
+				A8122D7D2460C1C9002F1186 /* KWVerificationCodeView */,
+				A8122D862460C1C9002F1186 /* HospiHome.xcodeproj */,
+				A8122D892460C1C9002F1186 /* HospiHomeUITests */,
+			);
+			path = HospiHome;
+			sourceTree = "<group>";
+		};
+		A8122D2B2460C1C9002F1186 /* HospiHome */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D2C2460C1C9002F1186 /* Assets.xcassets */,
+				A8122D2D2460C1C9002F1186 /* LaunchScreen.storyboard */,
+				A8122D2F2460C1C9002F1186 /* Main.storyboard */,
+				A8122D312460C1C9002F1186 /* Controller */,
+				A8122D422460C1C9002F1186 /* Model */,
+				A8122D492460C1C9002F1186 /* View */,
+				A8122D522460C1C9002F1186 /* AppDelegate.swift */,
+				A8122D532460C1C9002F1186 /* Helper */,
+				A8122D582460C1C9002F1186 /* Info.plist */,
+				A8122D592460C1C9002F1186 /* SceneDelegate.swift */,
+			);
+			path = HospiHome;
+			sourceTree = "<group>";
+		};
+		A8122D312460C1C9002F1186 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D322460C1C9002F1186 /* ReservationViewController.swift */,
+				A8122D332460C1C9002F1186 /* CardViewController.swift */,
+				A8122D342460C1C9002F1186 /* ChatViewController.swift */,
+				A8122D352460C1C9002F1186 /* CardViewController.xib */,
+				A8122D362460C1C9002F1186 /* OTPViewController.swift */,
+				A8122D372460C1C9002F1186 /* DrProfileViewController.swift */,
+				A8122D382460C1C9002F1186 /* ChainedTextViewController.swift */,
+				A8122D392460C1C9002F1186 /* ArticleDetailsViewController.swift */,
+				A8122D3A2460C1C9002F1186 /* ArticlesViewController.swift */,
+				A8122D3B2460C1C9002F1186 /* HomeViewController.swift */,
+				A8122D3C2460C1C9002F1186 /* LoginViewController.swift */,
+				A8122D3D2460C1C9002F1186 /* MessageViewController.swift */,
+				A8122D3E2460C1C9002F1186 /* CustomTabBarController.swift */,
+				A8122D3F2460C1C9002F1186 /* ProfileViewController.swift */,
+				A8122D402460C1C9002F1186 /* CreateScheduleViewController.swift */,
+				A8122D412460C1C9002F1186 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8122D422460C1C9002F1186 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D432460C1C9002F1186 /* DoctorSchedule.swift */,
+				A8122D442460C1C9002F1186 /* Doctor.swift */,
+				A8122D452460C1C9002F1186 /* Message.swift */,
+				A8122D462460C1C9002F1186 /* Profile.swift */,
+				A8122D472460C1C9002F1186 /* AvailableTimeSlotsResponse.swift */,
+				A8122D482460C1C9002F1186 /* Article.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8122D492460C1C9002F1186 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D4A2460C1C9002F1186 /* ArticlesCell.swift */,
+				A8122D4B2460C1C9002F1186 /* ProfileCell.swift */,
+				A8122D4C2460C1C9002F1186 /* HomeCell.swift */,
+				A8122D4D2460C1C9002F1186 /* ChatInputContainerView.swift */,
+				A8122D4E2460C1C9002F1186 /* MessageInputTextView.swift */,
+				A8122D4F2460C1C9002F1186 /* MessageCell.swift */,
+				A8122D502460C1C9002F1186 /* ChatCell.swift */,
+				A8122D512460C1C9002F1186 /* TimeSlotCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8122D532460C1C9002F1186 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D542460C1C9002F1186 /* Extensions+UIColor.swift */,
+				A8122D552460C1C9002F1186 /* HTTPRequests.swift */,
+				A8122D562460C1C9002F1186 /* Extensions+Dictionary.swift */,
+				A8122D572460C1C9002F1186 /* GlobalVariables.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A8122D5A2460C1C9002F1186 /* HospiHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D5B2460C1C9002F1186 /* HospiHomeTests.swift */,
+				A8122D5C2460C1C9002F1186 /* Info.plist */,
+			);
+			path = HospiHomeTests;
+			sourceTree = "<group>";
+		};
+		A8122D5D2460C1C9002F1186 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D5E2460C1C9002F1186 /* CalendarFlowLayout.swift */,
+				A8122D5F2460C1C9002F1186 /* CalendarHeaderView.swift */,
+				A8122D602460C1C9002F1186 /* CalendarView+Extensions.swift */,
+				A8122D612460C1C9002F1186 /* CalendarDayCell.swift */,
+				A8122D622460C1C9002F1186 /* CalendarView+Style.swift */,
+				A8122D632460C1C9002F1186 /* CalendarView+Delegate.swift */,
+				A8122D642460C1C9002F1186 /* CalendarView+DataSource.swift */,
+				A8122D652460C1C9002F1186 /* CalendarView.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		A8122D662460C1C9002F1186 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D672460C1C9002F1186 /* ArticlesResponse.swift */,
+				A8122D682460C1C9002F1186 /* GetScheduleResponse.swift */,
+				A8122D692460C1C9002F1186 /* AvatarResponse.swift */,
+				A8122D6A2460C1C9002F1186 /* FetchDoctorsResponse.swift */,
+				A8122D6B2460C1C9002F1186 /* APIResponse.swift */,
+				A8122D6C2460C1C9002F1186 /* LoginResponse.swift */,
+				A8122D6D2460C1C9002F1186 /* SepcialitiesResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A8122D6F2460C1C9002F1186 /* MFCard */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D702460C1C9002F1186 /* MFCard.h */,
+				A8122D712460C1C9002F1186 /* Card  */,
+			);
+			path = MFCard;
+			sourceTree = "<group>";
+		};
+		A8122D712460C1C9002F1186 /* Card  */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D722460C1C9002F1186 /* Helper Class */,
+				A8122D742460C1C9002F1186 /* MFCardView.swift */,
+				A8122D752460C1C9002F1186 /* Toast */,
+				A8122D772460C1C9002F1186 /* Assets.xcassets */,
+				A8122D782460C1C9002F1186 /* CreditCardValidator */,
+				A8122D7B2460C1C9002F1186 /* Card.swift */,
+				A8122D7C2460C1C9002F1186 /* MFCardView.xib */,
+			);
+			path = "Card ";
+			sourceTree = "<group>";
+		};
+		A8122D722460C1C9002F1186 /* Helper Class */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D732460C1C9002F1186 /* LBZSpinner.swift */,
+			);
+			path = "Helper Class";
+			sourceTree = "<group>";
+		};
+		A8122D752460C1C9002F1186 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D762460C1C9002F1186 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		A8122D782460C1C9002F1186 /* CreditCardValidator */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D792460C1C9002F1186 /* CreditCardValidator.swift */,
+				A8122D7A2460C1C9002F1186 /* CreditCardValidationType.swift */,
+			);
+			path = CreditCardValidator;
+			sourceTree = "<group>";
+		};
+		A8122D7D2460C1C9002F1186 /* KWVerificationCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D7E2460C1C9002F1186 /* Classes */,
+			);
+			path = KWVerificationCodeView;
+			sourceTree = "<group>";
+		};
+		A8122D7E2460C1C9002F1186 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D7F2460C1C9002F1186 /* KWTextFieldView.swift */,
+				A8122D802460C1C9002F1186 /* Extensions */,
+				A8122D832460C1C9002F1186 /* KWTextFieldView.xib */,
+				A8122D842460C1C9002F1186 /* KWVerificationCodeView.swift */,
+				A8122D852460C1C9002F1186 /* KWVerificationCodeView.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A8122D802460C1C9002F1186 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D812460C1C9002F1186 /* UIViewExtension.swift */,
+				A8122D822460C1C9002F1186 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8122D872460C1C9002F1186 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8122D892460C1C9002F1186 /* HospiHomeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A8122D8A2460C1C9002F1186 /* HospiHomeUITests.swift */,
+				A8122D8B2460C1C9002F1186 /* Info.plist */,
+			);
+			path = HospiHomeUITests;
 			sourceTree = "<group>";
 		};
 		A8260FE62460AAC90016CD29 /* MFCard */ = {
@@ -518,6 +841,12 @@
 			mainGroup = 1610C953245A2F11001B178B;
 			productRefGroup = 1610C95D245A2F11001B178B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A8122D872460C1C9002F1186 /* Products */;
+					ProjectRef = A8122D862460C1C9002F1186 /* HospiHome.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1610C95B245A2F11001B178B /* HospiHome */,
@@ -569,6 +898,7 @@
 				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
 				A8260FF62460AAC90016CD29 /* MFCardView.swift in Sources */,
 				A8122C552460ABE4002F1186 /* AvailableTimeSlotsResponse.swift in Sources */,
+				A8122E2D2460C317002F1186 /* RNCryptor.swift in Sources */,
 				A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
@@ -673,6 +1003,22 @@
 				1610C96B245A2F13001B178B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8122D2D2460C1C9002F1186 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8122D2E2460C1C9002F1186 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A8122D2F2460C1C9002F1186 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8122D302460C1C9002F1186 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -798,6 +1144,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8J7Z8V46T2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HospiHome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -816,6 +1166,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WY4TJYTZW4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HospiHome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

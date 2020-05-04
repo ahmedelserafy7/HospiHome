@@ -10,28 +10,58 @@ import UIKit
 
 class ReservationViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,MFCardDelegate{
     var doctor: Doctor?
+    var chosenTimeStamp: Int?
     
     func cardDoneButtonClicked(_ card: Card?, error: String?) {
-        print(card?.number)
-        print(card?.name)
-        print(card?.month)
-        print(card?.year)
-        print(card?.cvc)
-        
-        
+        if let cardCVC = card?.cvc,let cardMonth = card?.month, let cardYear = card?.year,let cardNumber = card?.number
+            ,let cardName = card?.name
+        {
+            var cardInfo = cardNumber + "@" + cardName + "@"
+            cardInfo = cardInfo + cardMonth.rawValue + "@" + cardYear + "@"
+             cardInfo = cardInfo + cardCVC + "@"
+            cardInfo = cardInfo + String(chosenTimeStamp!) + "@" + doctor!.info.id
+            
+            let cal = Calendar.current
+            let startOfHour = cal.dateInterval(of: .hour, for: Date())!.start.timeIntervalSince1970
+            
+            let password =   access_token! + String(Int(startOfHour))
+            let ciphertext = RNCryptor.encrypt(data: cardInfo.data(using: .utf8)!, withPassword: password)
+            
+            let parameters = ["paymentToken":ciphertext.base64EncodedString()]
+            API().httpPOSTRequest(endpoint: .reserve, postData: parameters) { (data, error) in
+                  guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+                
+                          let paymentResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
+                
+                    if let response = paymentResponse{
+                        if response.success{
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Success", message: response.msg, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.parent?.present(alert, animated: true, completion: {
+                            self.navigateToHomeVC()
+                        })
+                            }
+                        }
+                        else{
+                            self.alertError(withMessage: response.msg)
+                        }
+                }
+            }
+        }
+
     }
     
     
-//    func aesEncrypt(raw: String,key: String, iv: String) throws -> String{
-//        let data = raw.data(using: .utf8)
-//        let enc = try AES(key: key, iv: iv, blockMode:.CBC).encrypt(data!.arrayOfBytes(), padding: )
-//        
-//        let encData = NSData(bytes: enc, length: Int(enc.count))
-//        let base64String: String = encData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0));
-//        let result = String(base64String)
-//        return result
-//    }
-    
+
+    func navigateToHomeVC() {
+        DispatchQueue.main.async {
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: "tabBar") as! HomeViewController
+        homeViewController.modalPresentationStyle = .fullScreen
+        self.present(homeViewController, animated: true, completion: nil)
+        }
+    }
+
     
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
@@ -168,8 +198,8 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
         
         dateFormatter.dateFormat="dd/MM/yyyy HH:mm"
         date = dateFormatter.date(from: completeString)!
-        //let dateStamp:TimeInterval = date.timeIntervalSince1970
-        //let chosenTimeStamo:Int = Int(dateStamp)
+        let dateStamp:TimeInterval = date.timeIntervalSince1970
+        chosenTimeStamp = Int(dateStamp)
         
         chosenTimeLabel.text = completeString
         //print(chosenTimeLabel.text)
@@ -178,6 +208,9 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     
     
     override func viewDidLoad() {
+        
+
+
         super.viewDidLoad()
         self.calendarView.delegate = self
         self.calendarView.dataSource = self
@@ -210,6 +243,15 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
         calendarView.disabledDaysInt.removeAll { (x) -> Bool in
             x == index
         }
+    }
+    
+    func alertError(withMessage: String){
+        DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+
     }
     
 }

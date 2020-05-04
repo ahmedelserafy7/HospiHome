@@ -32,7 +32,6 @@ class ArticlesViewController: UITableViewController {
                 articles[i].body = articles[i].body.replacingOccurrences(of: "\\n", with: "\n")
                 let base64String = articles[i].poster
                 if base64String.count>50{
-                    print(base64String.replacingOccurrences(of: "\\/", with: "/"))
                     articles[i].posterImage = Data(base64Encoded: base64String.replacingOccurrences(of: "\\/", with: "/"))
                     self.articlesArray.append(articles[i])
                 }

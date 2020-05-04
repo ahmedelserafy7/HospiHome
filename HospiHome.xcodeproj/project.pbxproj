@@ -55,6 +55,7 @@
 		A8019E40246004B900C6B0FD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E3F246004B900C6B0FD /* Profile.swift */; };
 		A8019E4224600B6E00C6B0FD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E4124600B6E00C6B0FD /* Article.swift */; };
 		A8019E442460108C00C6B0FD /* ArticlesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E432460108C00C6B0FD /* ArticlesResponse.swift */; };
+		A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8019E45246032F200C6B0FD /* AvatarResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		A8019E3F246004B900C6B0FD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A8019E4124600B6E00C6B0FD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A8019E432460108C00C6B0FD /* ArticlesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponse.swift; sourceTree = "<group>"; };
+		A8019E45246032F200C6B0FD /* AvatarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				16834433245FEA7300385937 /* APIResponse.swift */,
 				16834434245FEA7300385937 /* LoginResponse.swift */,
 				A8019E432460108C00C6B0FD /* ArticlesResponse.swift */,
+				A8019E45246032F200C6B0FD /* AvatarResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */,
 				1683442D245FEA0A00385937 /* Extensions+Dictionary.swift in Sources */,
 				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
+				A8019E46246032F200C6B0FD /* AvatarResponse.swift in Sources */,
 				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
 				16834425245FE5AC00385937 /* KWVerificationCodeView.swift in Sources */,
 				A8019E40246004B900C6B0FD /* Profile.swift in Sources */,

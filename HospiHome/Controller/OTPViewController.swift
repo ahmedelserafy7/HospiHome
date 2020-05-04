@@ -53,7 +53,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
         let registerView = self.presentingViewController as! RegisterViewController
         let name = registerView.nameTextField.text!
         let password = registerView.passwordTextField.text!
-        let email = registerView.emailTextField.text!
+        let email = registerView.emailTextField.text!.trim()
     
         let parameters = ["name": name,"email": email,"password": password,"mobile": mobileNumber!,"otp": withOTP]
         

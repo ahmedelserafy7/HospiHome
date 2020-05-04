@@ -62,7 +62,7 @@ class RegisterViewController: UIViewController {
             alertError(withMessage: "Please enter a valid name")
             return
         }
-        if emailTextField.text!.count < 5 || emailTextField.text!.count > 50 || !emailTextField.text!.contains("@"){
+        if emailTextField.text!.trim().count < 5 || emailTextField.text!.trim().count > 50 || !emailTextField.text!.trim().contains("@"){
             alertError(withMessage: "Please enter a valid email")
             return
         }

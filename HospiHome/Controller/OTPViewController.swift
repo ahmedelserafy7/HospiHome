@@ -127,7 +127,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
         content.title = "HospiHome"
         content.subtitle = "Your OTP"
         content.body = body
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
         let request = UNNotificationRequest(identifier: "notification.id.01", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }

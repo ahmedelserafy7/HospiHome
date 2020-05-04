@@ -13,9 +13,14 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
     
     enum EndPoints: String{
         case login = "login"
+        case logout = "logout"
         case otp = "otp"
         case signup = "signup"
         case avatar = "fetchAvatar"
+        case fetchDoctors = "fetchDoctors"
+        case fetchArticles = "fetchArticles"
+        case fetchSpecialaities = "fetchSpecialities"
+        
     }
     
     func httpPOSTRequest(endpoint: EndPoints, postData: [String: Any], completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
@@ -50,8 +55,8 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
     
 }
 
-func httpGETRequest(urlString: String, completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
-    let url = URL(string: urlString)
+func httpGETRequest(endpoint: EndPoints, completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
+    let url = URL(string: baseURL+endpoint.rawValue)
     
     var request = URLRequest(url: url!)
     request.httpMethod = "GET"

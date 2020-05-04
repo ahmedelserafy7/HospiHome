@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController {
     }
     
     func logout(){
-        API().httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/logout.php") { (data, error) in  }
+        API().httpGETRequest(endpoint: .logout) { (data, error) in  }
         navigateToLoginVC()
     }
     

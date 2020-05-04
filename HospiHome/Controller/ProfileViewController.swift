@@ -9,6 +9,12 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var mobileNumberLabel: UILabel!
+    @IBOutlet var avatarImageView: UIImageView!
+    
     enum CardState {
         case collapsed
         case expanded
@@ -27,11 +33,20 @@ class ProfileViewController: UIViewController {
     var animationProgress: CGFloat = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = profile?.name
+        emailLabel.text = profile?.email
+        mobileNumberLabel.text = profile?.mobile
         
         view.backgroundColor = UIColor(r: 244, g: 246, b: 245)
         navigationItem.title = "Profile"
         
+        
         setupCard()
+    }
+    
+    
+    func fetchUserAvatar(){
+        
     }
     
     var visualEffectView = UIVisualEffectView()

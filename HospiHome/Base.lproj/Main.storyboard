@@ -776,6 +776,12 @@ Happy Pinning (and reading)!
                         <viewLayoutGuide key="safeArea" id="l8s-s2-ZeL"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zqt-ct-K7C"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="CTn-Cf-727" id="4Qa-NB-yjF"/>
+                        <outlet property="emailLabel" destination="AnB-cO-EDv" id="5eM-Xu-8Xr"/>
+                        <outlet property="mobileNumberLabel" destination="l63-jI-WmK" id="K1Z-Sl-QeA"/>
+                        <outlet property="nameLabel" destination="4EU-k0-VdN" id="Sbg-CW-fw6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUJ-eQ-0Fr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

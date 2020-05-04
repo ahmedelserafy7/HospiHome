@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     func login(){
         disableInput()
         let parameters = ["mobile": "+2"+phoneNumberTextField.text!, "password":passwordTextField.text!]
-        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/login", postData: parameters) { (data, error) in
+        API().httpPOSTRequest(endpoint: .login, postData: parameters) { (data, error) in
             guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");self.disableInput();return;}
             let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data)
   

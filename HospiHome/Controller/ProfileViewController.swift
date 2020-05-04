@@ -46,7 +46,8 @@ class ProfileViewController: UIViewController {
     
     func fetchUserAvatar(){
         let parameters = ["userid": profile!.id]
-        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchAvatar.php", postData: parameters) { (data, error) in
+        
+        API().httpPOSTRequest(endpoint: .avatar, postData: parameters) { (data, error) in
             guard let data = data else{return;}
             
             if let avatarResponse = try? JSONDecoder().decode(AvatarResponse.self, from: data){
@@ -63,7 +64,7 @@ class ProfileViewController: UIViewController {
     }
     
     func logout(){
-        httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/logout.php") { (data, error) in  }
+        API().httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/logout.php") { (data, error) in  }
         navigateToLoginVC()
     }
     

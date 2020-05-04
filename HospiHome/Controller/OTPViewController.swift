@@ -29,7 +29,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
     
     func requestOTP(){
         let parameters = ["mobile": mobileNumber!]
-        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/otp", postData: parameters as [String : Any]) { (data, error) in
+        API().httpPOSTRequest(endpoint: .otp, postData: parameters as [String : Any]) { (data, error) in
             guard let data = data else{self.alertError(withTitle: "Failed to send OTP", withMessage: "Unknown Response from server, please try again later");return;}
             
             let OTPResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
@@ -57,7 +57,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
     
         let parameters = ["name": name,"email": email,"password": password,"mobile": mobileNumber!,"otp": withOTP]
         
-        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/signup", postData: parameters) { (data, error) in
+        API().httpPOSTRequest(endpoint: .signup, postData: parameters) { (data, error) in
              guard let data = data else{self.alertError(withTitle: "Failed to create user", withMessage: "Unknown Response from server, please try again later");return;}
             
               let signupResponse = try? JSONDecoder().decode(APIResponse.self, from: data)

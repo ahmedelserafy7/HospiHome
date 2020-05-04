@@ -63,7 +63,7 @@ class HomeViewController: UIViewController {
     }
     
     func fetchDoctorsList(){
-        httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchDoctors.php") { (data, error) in
+        API().httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchDoctors.php") { (data, error) in
             guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
             
             if let doctorsResponse = try? JSONDecoder().decode(FetchDoctorsResponse.self, from: data){

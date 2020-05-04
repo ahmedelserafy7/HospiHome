@@ -21,7 +21,7 @@ class ArticlesViewController: UITableViewController {
     }
    
     func fetchArticles(){
-        httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchArticles.php") { (data, error) in
+        API().httpGETRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchArticles.php") { (data, error) in
             
             guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
             

@@ -8,11 +8,18 @@
 
 import Foundation
 
-func httpPOSTRequest(urlString: String, postData: [String: Any], completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
-    //let urlStringWithKey = appendKeysToURL(urlString: urlString)
+class API{
+var baseURL = "http://142.93.138.37/~hospihome/api/"
     
-    //let url = URL(string: urlStringWithKey)
-    let url = URL(string: urlString)
+    enum EndPoints: String{
+        case login = "login"
+        case otp = "otp"
+        case signup = "signup"
+        case avatar = "fetchAvatar"
+    }
+    
+    func httpPOSTRequest(endpoint: EndPoints, postData: [String: Any], completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
+        let url = URL(string: baseURL+endpoint.rawValue)
     
     var request = URLRequest(url: url!)
     request.httpMethod = "POST"
@@ -44,9 +51,6 @@ func httpPOSTRequest(urlString: String, postData: [String: Any], completion: @es
 }
 
 func httpGETRequest(urlString: String, completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
-    //let urlStringWithKey = appendKeysToURL(urlString: urlString)
-    
-    //let url = URL(string: urlStringWithKey)
     let url = URL(string: urlString)
     
     var request = URLRequest(url: url!)
@@ -74,4 +78,5 @@ func httpGETRequest(urlString: String, completion: @escaping ( _ responseData: D
     
     task.resume()
     
+}
 }

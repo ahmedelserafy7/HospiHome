@@ -255,9 +255,9 @@
 		1610C99D245AAE22001B178B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				1683442A245FEA0900385937 /* Extensions+Dictionary.swift */,
 				1683442B245FEA0A00385937 /* GlobalVariables.swift */,
 				16834429245FEA0900385937 /* HTTPRequests.swift */,
+				1683442A245FEA0900385937 /* Extensions+Dictionary.swift */,
 				1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */,
 			);
 			path = Helper;

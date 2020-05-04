@@ -15,6 +15,7 @@ public struct Profile: Codable{
     var mobile: String
     var name: String
     var email: String
+    var avatar: Data?
     private var type: String
     
     var accountType: AccountType{

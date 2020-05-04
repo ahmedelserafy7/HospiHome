@@ -39,14 +39,28 @@ class ProfileViewController: UIViewController {
         
         view.backgroundColor = UIColor(r: 244, g: 246, b: 245)
         navigationItem.title = "Profile"
-        
+        fetchUserAvatar()
         
         setupCard()
     }
     
     
     func fetchUserAvatar(){
-        
+        let parameters = ["userid": profile!.id]
+        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/fetchAvatar.php", postData: parameters) { (data, error) in
+            guard let data = data else{return;}
+            
+            if let avatarResponse = try? JSONDecoder().decode(AvatarResponse.self, from: data){
+                if avatarResponse.avatarBase64.count>50{
+                    profile?.avatar = Data(base64Encoded: avatarResponse.avatarBase64.replacingOccurrences(of: "\\/", with: "/"))
+                    if let av = profile?.avatar{  
+                        DispatchQueue.main.async{self.avatarImageView.image = UIImage(data: av)}
+                    }
+                }
+                
+            }
+
+        }
     }
     
     var visualEffectView = UIVisualEffectView()

@@ -11,11 +11,19 @@ import UIKit
 class LoginViewController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestNotificationsPermissions()
         setupTextField()
+    }
+    
+    func requestNotificationsPermissions(){
+     UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
+          (granted, error) in
+      }
     }
     
     func setupTextField() {
@@ -30,7 +38,50 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapLogin(_ sender: Any) {
-        navigateToHomeVC()
+        validateInputFieldsAndLogin()
+    }
+    
+    func validateInputFieldsAndLogin(){
+        if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15{
+            alertError(withMessage: "Please enter a valid mobile number")
+            return
+        }
+        if passwordTextField.text!.count < 6 || passwordTextField.text!.count > 24{
+            alertError(withMessage: "Please enter a valid password between 6-24 characters")
+            return
+        }
+        login()
+    }
+    
+    func disableInput(){
+        phoneNumberTextField.isEnabled = !phoneNumberTextField.isEnabled
+        passwordTextField.isEnabled = !passwordTextField.isEnabled
+        loginButton.isEnabled = !loginButton.isEnabled
+    }
+    
+    func login(){
+        disableInput()
+        let parameters = ["mobile": "+2"+phoneNumberTextField.text!, "password":passwordTextField.text!]
+        httpPOSTRequest(urlString: "http://142.93.138.37/~hospihome/api/login", postData: parameters) { (data, error) in
+            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+            let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data)
+     
+              if let response = loginResponse{
+                  if response.success{
+                    access_token = response.access_token!
+                    DispatchQueue.main.async {self.navigateToHomeVC()}
+                  }
+                  else
+                  {
+                      self.alertError(withMessage: response.msg!)
+                      
+                  }
+              }
+            DispatchQueue.main.async {
+                 self.disableInput()
+            }
+           
+        }
     }
     
     func navigateToHomeVC() {
@@ -41,8 +92,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapSignUp(_ sender: Any) {
-        let registerViewController = storyboard?.instantiateViewController(identifier: "register") as! RegisterViewController
-        registerViewController.modalPresentationStyle = .fullScreen
-        self.present(registerViewController, animated: false, completion: nil)
+         if phoneNumberTextField.text!.count<10{
+                  alertError(withMessage: "Please enter your mobile number to register")
+                  return
+              }
+              
+              let registerViewController = storyboard?.instantiateViewController(identifier: "register") as! RegisterViewController
+              registerViewController.passedMobileNumber = "+2"+phoneNumberTextField.text!
+              registerViewController.modalPresentationStyle = .fullScreen
+              self.present(registerViewController, animated: false, completion: nil)
+    }
+    
+    func alertError(withMessage: String){
+        DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+
     }
 }

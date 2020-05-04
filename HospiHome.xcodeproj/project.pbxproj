@@ -33,8 +33,25 @@
 		161148AC245C9929000AACB8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148AB245C9929000AACB8 /* CardViewController.swift */; };
 		161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161148B3245CC6A3000AACB8 /* CardViewController.xib */; };
 		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
+		1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C386245E81ED00EB2442 /* MessageInputTextView.swift */; };
+		1652C389245F2BBA00EB2442 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C388245F2BBA00EB2442 /* Message.swift */; };
 		1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */; };
 		1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD24245E1A7F0075178B /* DrProfileViewController.swift */; };
+		16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834416245FD89D00385937 /* ChainedTextViewController.swift */; };
+		16834421245FE5AC00385937 /* KWTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441A245FE5AA00385937 /* KWTextFieldView.swift */; };
+		16834422245FE5AC00385937 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441C245FE5AA00385937 /* UIViewExtension.swift */; };
+		16834423245FE5AC00385937 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441D245FE5AA00385937 /* StringExtension.swift */; };
+		16834424245FE5AC00385937 /* KWTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1683441E245FE5AA00385937 /* KWTextFieldView.xib */; };
+		16834425245FE5AC00385937 /* KWVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441F245FE5AA00385937 /* KWVerificationCodeView.swift */; };
+		16834426245FE5AC00385937 /* KWVerificationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16834420245FE5AA00385937 /* KWVerificationCodeView.xib */; };
+		16834428245FE5DC00385937 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834427245FE5DC00385937 /* OTPViewController.swift */; };
+		1683442C245FEA0A00385937 /* HTTPRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834429245FEA0900385937 /* HTTPRequests.swift */; };
+		1683442D245FEA0A00385937 /* Extensions+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683442A245FEA0900385937 /* Extensions+Dictionary.swift */; };
+		1683442E245FEA0A00385937 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683442B245FEA0A00385937 /* GlobalVariables.swift */; };
+		16834430245FEA2400385937 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683442F245FEA2400385937 /* Doctor.swift */; };
+		16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834432245FEA7300385937 /* FetchDoctorsResponse.swift */; };
+		16834436245FEA7400385937 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834433245FEA7300385937 /* APIResponse.swift */; };
+		16834437245FEA7400385937 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834434245FEA7300385937 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +104,25 @@
 		161148AB245C9929000AACB8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		161148B3245CC6A3000AACB8 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		1652C386245E81ED00EB2442 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
+		1652C388245F2BBA00EB2442 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		1676DD24245E1A7F0075178B /* DrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrProfileViewController.swift; sourceTree = "<group>"; };
+		16834416245FD89D00385937 /* ChainedTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedTextViewController.swift; sourceTree = "<group>"; };
+		1683441A245FE5AA00385937 /* KWTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWTextFieldView.swift; sourceTree = "<group>"; };
+		1683441C245FE5AA00385937 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		1683441D245FE5AA00385937 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		1683441E245FE5AA00385937 /* KWTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWTextFieldView.xib; sourceTree = "<group>"; };
+		1683441F245FE5AA00385937 /* KWVerificationCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWVerificationCodeView.swift; sourceTree = "<group>"; };
+		16834420245FE5AA00385937 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
+		16834427245FE5DC00385937 /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		16834429245FEA0900385937 /* HTTPRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequests.swift; sourceTree = "<group>"; };
+		1683442A245FEA0900385937 /* Extensions+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+Dictionary.swift"; sourceTree = "<group>"; };
+		1683442B245FEA0A00385937 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		1683442F245FEA2400385937 /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		16834432245FEA7300385937 /* FetchDoctorsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDoctorsResponse.swift; sourceTree = "<group>"; };
+		16834433245FEA7300385937 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		16834434245FEA7300385937 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +153,8 @@
 		1610C953245A2F11001B178B = {
 			isa = PBXGroup;
 			children = (
+				16834418245FE5AA00385937 /* KWVerificationCodeView */,
+				16834431245FEA7300385937 /* Responses */,
 				1610C95E245A2F11001B178B /* HospiHome */,
 				1610C975245A2F14001B178B /* HospiHomeTests */,
 				1610C980245A2F14001B178B /* HospiHomeUITests */,
@@ -142,6 +178,7 @@
 				1610C95F245A2F11001B178B /* AppDelegate.swift */,
 				1610C961245A2F11001B178B /* SceneDelegate.swift */,
 				1610C99D245AAE22001B178B /* Helper */,
+				1652C38A245F2BC700EB2442 /* Model */,
 				1610C998245A90F0001B178B /* Controller */,
 				1610C997245A90D2001B178B /* View */,
 				1610C965245A2F11001B178B /* Main.storyboard */,
@@ -175,10 +212,11 @@
 			children = (
 				161148A5245BCA9B000AACB8 /* MenuBar.swift */,
 				161148A7245BCBE1000AACB8 /* MenuBarCell.swift */,
-				1610C993245A8D67001B178B /* ChatInputContainerView.swift */,
 				161148A3245BC8F7000AACB8 /* HomeCell.swift */,
 				1610C98F245A5BB7001B178B /* MessageCell.swift */,
 				1610C995245A9087001B178B /* ChatCell.swift */,
+				1610C993245A8D67001B178B /* ChatInputContainerView.swift */,
+				1652C386245E81ED00EB2442 /* MessageInputTextView.swift */,
 				161148A9245C11F6000AACB8 /* ArticlesCell.swift */,
 				161148B5245CD86C000AACB8 /* ProfileCell.swift */,
 			);
@@ -188,8 +226,10 @@
 		1610C998245A90F0001B178B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
+				16834427245FE5DC00385937 /* OTPViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
 				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
 				1676DD24245E1A7F0075178B /* DrProfileViewController.swift */,
@@ -207,9 +247,60 @@
 		1610C99D245AAE22001B178B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1683442A245FEA0900385937 /* Extensions+Dictionary.swift */,
+				1683442B245FEA0A00385937 /* GlobalVariables.swift */,
+				16834429245FEA0900385937 /* HTTPRequests.swift */,
 				1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		1652C38A245F2BC700EB2442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1683442F245FEA2400385937 /* Doctor.swift */,
+				1652C388245F2BBA00EB2442 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16834418245FE5AA00385937 /* KWVerificationCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				16834419245FE5AA00385937 /* Classes */,
+			);
+			path = KWVerificationCodeView;
+			sourceTree = "<group>";
+		};
+		16834419245FE5AA00385937 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1683441A245FE5AA00385937 /* KWTextFieldView.swift */,
+				1683441B245FE5AA00385937 /* Extensions */,
+				1683441E245FE5AA00385937 /* KWTextFieldView.xib */,
+				1683441F245FE5AA00385937 /* KWVerificationCodeView.swift */,
+				16834420245FE5AA00385937 /* KWVerificationCodeView.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1683441B245FE5AA00385937 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1683441C245FE5AA00385937 /* UIViewExtension.swift */,
+				1683441D245FE5AA00385937 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16834431245FEA7300385937 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				16834432245FEA7300385937 /* FetchDoctorsResponse.swift */,
+				16834433245FEA7300385937 /* APIResponse.swift */,
+				16834434245FEA7300385937 /* LoginResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +407,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16834426245FE5AC00385937 /* KWVerificationCodeView.xib in Resources */,
+				16834424245FE5AC00385937 /* KWTextFieldView.xib in Resources */,
 				161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */,
 				1610C96C245A2F13001B178B /* LaunchScreen.storyboard in Resources */,
 				1610C969245A2F13001B178B /* Assets.xcassets in Resources */,
@@ -344,19 +437,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16834428245FE5DC00385937 /* OTPViewController.swift in Sources */,
+				16834437245FEA7400385937 /* LoginResponse.swift in Sources */,
 				1610C964245A2F11001B178B /* MessageViewController.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
+				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
+				16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */,
 				161148AA245C11F6000AACB8 /* ArticlesCell.swift in Sources */,
 				161148AC245C9929000AACB8 /* CardViewController.swift in Sources */,
+				1683442E245FEA0A00385937 /* GlobalVariables.swift in Sources */,
 				161148A6245BCA9B000AACB8 /* MenuBar.swift in Sources */,
+				1683442D245FEA0A00385937 /* Extensions+Dictionary.swift in Sources */,
 				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
 				1611489E245B95B2000AACB8 /* RegisterViewController.swift in Sources */,
+				16834425245FE5AC00385937 /* KWVerificationCodeView.swift in Sources */,
+				16834423245FE5AC00385937 /* StringExtension.swift in Sources */,
 				161148A4245BC8F7000AACB8 /* HomeCell.swift in Sources */,
 				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,
+				16834421245FE5AC00385937 /* KWTextFieldView.swift in Sources */,
+				16834436245FEA7400385937 /* APIResponse.swift in Sources */,
 				161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */,
+				1683442C245FEA0A00385937 /* HTTPRequests.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
 				1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */,
+				16834422245FE5AC00385937 /* UIViewExtension.swift in Sources */,
+				16834430245FEA2400385937 /* Doctor.swift in Sources */,
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
 				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
@@ -364,6 +470,8 @@
 				1610C996245A9087001B178B /* ChatCell.swift in Sources */,
 				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
+				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
+				1652C389245F2BBA00EB2442 /* Message.swift in Sources */,
 				161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */,
 				1610C9A1245AC8C2001B178B /* ArticlesViewController.swift in Sources */,
 			);

@@ -42,7 +42,7 @@ extension MenuBar: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         selectDefaultItem()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (frame.width / 3) - 20, height: frame.height)
     }
 }

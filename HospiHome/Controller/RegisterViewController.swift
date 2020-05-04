@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var passedMobileNumber: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
@@ -51,14 +52,58 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
-        navigateToHomeVC()
+         validateInputFields()
+        //won't run as another UIAlert is intact
+        askForPhoneNumber()
     }
     
-    func navigateToHomeVC() {
+    func validateInputFields(){
+        if nameTextField.text!.count < 6 || nameTextField.text!.count > 50{
+            alertError(withMessage: "Please enter a valid name")
+            return
+        }
+        if emailTextField.text!.count < 5 || emailTextField.text!.count > 50 || !emailTextField.text!.contains("@"){
+            alertError(withMessage: "Please enter a valid email")
+            return
+        }
+        if passwordTextField.text!.count < 6 || emailTextField.text!.count > 24{
+            alertError(withMessage: "Password must be 6-24 characters")
+            return
+        }
+        if passwordTextField.text! != confirmPasswordTextField.text!{
+            alertError(withMessage: "Both passwords should be the same")
+            return
+        }
+    }
+    
+    func askForPhoneNumber(){
+           let alert = UIAlertController(title: "SMS Verification", message: "Please conifrm your mobile number", preferredStyle: .alert)
+
+           alert.addTextField { (textField) in
+               textField.text = self.passedMobileNumber
+           }
+
+           alert.addAction(UIAlertAction(title: "That's Correct", style: .default, handler: { [weak alert] (_) in
+               let textField = alert?.textFields![0]
+               self.showOTPView(withPhoneNumber: textField!.text!)
+           }))
+           self.present(alert, animated: true, completion: nil)
+       }
+       
+    func showOTPView(withPhoneNumber: String) {
+        let OTPView = self.storyboard?.instantiateViewController(identifier: "otp") as! OTPViewController
+        OTPView.modalPresentationStyle = .fullScreen
+        self.present(OTPView, animated: true, completion: nil)
+        OTPView.titleLabel.text = "SMS sent to " + withPhoneNumber
+        OTPView.mobileNumber = withPhoneNumber
+        OTPView.requestOTP()
         
-        let tabBarController = storyboard?.instantiateViewController(identifier: "tabBar") as! UITabBarController
-        let window = UIApplication.shared.connectedScenes.filter{$0.activationState == .foregroundActive}.map{$0 as? UIWindowScene}.compactMap{$0}.first?.windows.filter{$0.isKeyWindow}.first
-        window?.rootViewController = tabBarController
+    }
+    
+    func alertError(withMessage: String){
+        let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapLogin(_ sender: Any) {

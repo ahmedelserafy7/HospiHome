@@ -14,42 +14,19 @@ class MessageViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavTitleView()
+        
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
-        
-        handleNavigationTitle()
     }
     
-    func handleNavigationTitle() {
-       let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        titleView.backgroundColor = .red
-        
-        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "elon"))
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.layer.cornerRadius = 20
-        profileImageView.layer.masksToBounds = true
-        
-        titleView.addSubview(profileImageView)
-        
-        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        let nameLabel = UILabel()
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Ahmed Samir Elserafy"
-        
-        titleView.addSubview(nameLabel)
-        
-        nameLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: titleView.rightAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        navigationItem.titleView = titleView
+    func setupNavTitleView() {
+        let navTitleView = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 30, height: view.frame.height))
+        navTitleView.text = "Chats"
+        navTitleView.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        navigationItem.titleView = navTitleView
     }
+
 }
 
 extension MessageViewController {
@@ -64,8 +41,9 @@ extension MessageViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chatController = storyboard?.instantiateViewController(identifier: "chat") as! ChatViewController
-        navigationController?.pushViewController(chatController, animated: true)
+//        let chatController = storyboard?.instantiateViewController(identifier: "chat") as! ChatViewController
+        let chatViewController = ChatViewController()
+        navigationController?.pushViewController(chatViewController, animated: true)
         
     }
     

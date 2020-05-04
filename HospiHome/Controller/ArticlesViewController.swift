@@ -15,6 +15,7 @@ class ArticlesViewController: UITableViewController {
         super.viewDidLoad()
        
         navigationItem.title = "Articles"
+        navigationController?.navigationBar.isTranslucent = false
     }
    
 }

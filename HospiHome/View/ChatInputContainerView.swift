@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatInputContainerView: UIView, UITextFieldDelegate {
+class ChatInputContainerView: UIView, UITextViewDelegate {
     
     var chatController: ChatViewController? {
         didSet {
@@ -16,12 +16,20 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
         }
     }
     
-    lazy var inputTextField : UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Type a message..."
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.delegate = self
-        return textField
+    lazy var inputTextView: MessageInputTextView = {
+        let tv = MessageInputTextView()
+        tv.placeHolderLabel.text = "Type a message..."
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.layer.borderWidth = 0.5
+        tv.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        tv.layer.cornerRadius = 16
+        tv.layer.masksToBounds = true
+        tv.isScrollEnabled = false
+        tv.backgroundColor = .clear
+        tv.contentInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.delegate = self
+        return tv
     }()
     
     lazy var uploadImageView: UIImageView = {
@@ -32,8 +40,24 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
         return uploadImageView
     }()
     
+    lazy var sendButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.isEnabled = false
+        button.setImage(UIImage(named: "send")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.imageView?.tintColor = .gray
+        button.addTarget(chatController, action: #selector(handleSendButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    @objc func handleSendButton() {
+        chatController?.handleSend()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        autoresizingMask = .flexibleHeight
         
         backgroundColor = .white
         
@@ -45,26 +69,20 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
         uploadImageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
         uploadImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
-        // send Button
-        let sendButton = UIButton(type: .system)
-        sendButton.setTitle("Send", for: .normal)
-        sendButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        sendButton.addTarget(chatController, action: #selector(chatController?.handleSend), for: .touchUpInside)
-        sendButton.translatesAutoresizingMaskIntoConstraints = false
-        
         addSubview(sendButton)
+        
         sendButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -4).isActive = true
         sendButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         sendButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         sendButton.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
-        // input text field
-        addSubview(self.inputTextField)
+        // input text view
+        addSubview(inputTextView)
         
-        self.inputTextField.leftAnchor.constraint(equalTo: uploadImageView.rightAnchor, constant: 8).isActive = true
-        self.inputTextField.centerYAnchor.constraint(equalTo:centerYAnchor).isActive = true
-        self.inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
-        self.inputTextField.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        inputTextView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        inputTextView.leftAnchor.constraint(equalTo: uploadImageView.rightAnchor, constant: 8).isActive = true
+        inputTextView.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
+        inputTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         
         // seperator line
         let seperatorLine = UIView()
@@ -78,8 +96,18 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
         seperatorLine.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+    override var intrinsicContentSize: CGSize {
+        return .zero
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty || textView.text.trimmingCharacters(in: .whitespaces).isEmpty {
+            sendButton.imageView?.tintColor = .gray
+            sendButton.isEnabled = false
+        } else {
+            sendButton.imageView?.tintColor = UIColor(r: 61, g: 154, b: 255)
+            sendButton.isEnabled = true
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

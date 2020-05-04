@@ -20,6 +20,8 @@ class HomeCell: UITableViewCell {
         
     }
     
+    
+    
     @IBAction func bookButtonTapped(_ sender: Any) {
         
     }

@@ -18,6 +18,8 @@ struct DoctorInfo: Codable{
     var speciality: String
     var bio: String
     var fees: String
+    var imageBase64: String?
+    var image: Data?
 }
 
 

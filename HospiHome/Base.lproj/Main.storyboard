@@ -917,6 +917,12 @@ Happy Pinning (and reading)!
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7xl-qs-B2z"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="rfQ-nv-8hW" id="G2Z-Bg-TSd"/>
+                        <outlet property="bioLabel" destination="lK9-i3-QiV" id="ykb-fE-Vy2"/>
+                        <outlet property="feesLabel" destination="3e3-Mz-P02" id="530-pK-UWj"/>
+                        <outlet property="nameLabel" destination="nmb-mz-End" id="a4N-e1-k89"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8e0-z4-sms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

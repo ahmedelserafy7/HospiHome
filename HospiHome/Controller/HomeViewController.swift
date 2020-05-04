@@ -30,8 +30,6 @@ class HomeViewController: UIViewController {
     fileprivate var filterButtons = [UIButton]()
     fileprivate var allButton: UIButton?
     fileprivate var lastSelectedFilterButton: UIButton?
-    
-    //@IBOutlet weak var menuBar: MenuBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
@@ -56,28 +54,6 @@ class HomeViewController: UIViewController {
     func setupNavBar() {
         navigationItem.title = "Home"
     }
-    
-//    func searchBarSetup() {
-//
-//        //searchController.searchBar.delegate = self
-//
-//        searchController.searchBar.placeholder = "Search Doctors"
-//
-//        searchController.obscuresBackgroundDuringPresentation = false
-//
-//        definesPresentationContext = true
-//
-//
-//        searchController.searchBar.barTintColor = .white
-//        searchController.searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
-//
-//        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(r: 240, g: 240, b: 240)
-//
-//
-//        tableView.tableHeaderView = searchController.searchBar
-//    }
-    
-    
     
     func filterContentForSepciality(_ specialityString: String) {
   
@@ -157,10 +133,6 @@ class HomeViewController: UIViewController {
     }
 }
 
-
-
-
-
 // MARK: UISearchBar
 extension HomeViewController: UITextFieldDelegate {
 
@@ -205,6 +177,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
         let drProfileViewController = storyboard?.instantiateViewController(identifier: "dr") as! DrProfileViewController
+        drProfileViewController.doctor = filteredArray[indexPath.row]
         navigationController?.pushViewController(drProfileViewController, animated: true)
     }
     
@@ -224,7 +197,7 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 }
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuBarCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
     
     let installedButtons = cell.contentView.subviews.filter{$0 is UIButton}
          if installedButtons.count>0, let installedButton = installedButtons[0] as? UIButton{

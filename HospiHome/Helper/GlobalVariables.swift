@@ -9,4 +9,4 @@
 import Foundation
 
     public var access_token: String?
-    var profile: Profile?
+    public var profile: Profile?

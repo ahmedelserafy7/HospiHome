@@ -10,7 +10,8 @@ import Foundation
 
 
 
-struct Profile: Codable{
+public struct Profile: Codable{
+    var id: String
     var mobile: String
     var name: String
     var email: String

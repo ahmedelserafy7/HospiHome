@@ -35,19 +35,26 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
-       
 
+
+            dateHasChanged()
             if(self.calendarView.selectedDates[0] != date){
             self.calendarView.deselectDate(self.calendarView.selectedDates[0])
             }
         
-        timeSlotsCollectionView.isUserInteractionEnabled = true
-        availableTimes = []
-        timeSlotsCollectionView.reloadData()
+
         fetchTimeSlotsForDate()
         //print(date)
     }
     
+    func dateHasChanged(){
+        if let lastSelectedCell = lastSelectedCell{
+            lastSelectedCell.backgroundColor = .lightGray
+        }
+        timeSlotsCollectionView.isUserInteractionEnabled = true
+        availableTimes = []
+        timeSlotsCollectionView.reloadData()
+    }
     
 
     func fetchTimeSlotsForDate(){
@@ -91,6 +98,7 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     
     var availableTimes = [String]()
     var timeSlots = [Int]()
+    var lastSelectedCell: UICollectionViewCell?
     
     @IBOutlet var calendarView: CalendarView!
     @IBOutlet var timeSlotsCollectionView: UICollectionView!
@@ -109,10 +117,12 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     }
     
     @IBAction func nextMonthTapped(_ sender: Any) {
+         dateHasChanged()
          self.calendarView.goToNextMonth()
     }
     
     @IBAction func previousMonthTapped(_ sender: Any) {
+         dateHasChanged()
         self.calendarView.goToPreviousMonth()
     }
     
@@ -132,7 +142,12 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
        let location = sender.location(in: timeSlotsCollectionView)
        let indexPath = timeSlotsCollectionView.indexPathForItem(at: location)
         
-        timeSlotsCollectionView.cellForItem(at: indexPath!)?.backgroundColor = .yellow
+        if let lastSelectedCell = lastSelectedCell{
+            lastSelectedCell.backgroundColor = .lightGray
+        }
+        
+        lastSelectedCell = timeSlotsCollectionView.cellForItem(at: indexPath!)
+        lastSelectedCell!.backgroundColor = .yellow
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current //Set timezone that you want
@@ -153,7 +168,7 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
         
         dateFormatter.dateFormat="dd/MM/yyyy HH:mm"
         date = dateFormatter.date(from: completeString)!
-        let dateStamp:TimeInterval = date.timeIntervalSince1970
+        //let dateStamp:TimeInterval = date.timeIntervalSince1970
         //let chosenTimeStamo:Int = Int(dateStamp)
         
         chosenTimeLabel.text = completeString

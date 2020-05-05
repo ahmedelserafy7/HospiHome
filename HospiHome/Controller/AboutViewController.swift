@@ -58,5 +58,4 @@ class AboutViewController: UIViewController {
            myCounter += 1
        }
     }
-    
 }

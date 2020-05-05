@@ -31,7 +31,7 @@ class CardViewController: UIViewController {
         if profile?.accountType == AccountType.Doctor{
             cardNames.append("Create/Update Schedule")
             
-            cardIcons.append(UIImage(systemName: "calender") ?? UIImage())
+            cardIcons.append(UIImage(systemName: "calendar")!)
         }
         
         setupViews()

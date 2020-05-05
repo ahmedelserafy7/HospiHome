@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 public struct Profile: Codable{
     var id: String
     var mobile: String
@@ -19,11 +17,10 @@ public struct Profile: Codable{
     private var type: String
     
     var accountType: AccountType{
-        get{
-            if type=="Doctor"{
+        get {
+            if type == "Doctor"{
                 return AccountType.Doctor
-            }
-            else{
+            } else {
                 return AccountType.Patient
             }
         }

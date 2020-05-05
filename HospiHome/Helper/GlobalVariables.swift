@@ -8,5 +8,5 @@
 
 import Foundation
 
-    public var access_token: String?
-    public var profile: Profile?
+public var access_token: String?
+public var profile: Profile?

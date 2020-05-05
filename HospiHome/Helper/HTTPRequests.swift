@@ -9,7 +9,7 @@
 import Foundation
 
 class API{
-var baseURL = "http://142.93.138.37/~hospihome/api/"
+    var baseURL = "http://142.93.138.37/~hospihome/api/"
     
     enum EndPoints: String{
         case login = "login"
@@ -33,70 +33,54 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case getOwnSchedule = "doctors/getSchedule"
         case updateSchedule = "doctors/updateSchedule"
         case balance = "doctors/balance"
-        
-        
-        
     }
     
-    func httpPOSTRequest(endpoint: EndPoints, postData: [String: Any], completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
+    func httpPOSTRequest(endpoint: EndPoints, postData: [String: Any], completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void) {
         let url = URL(string: baseURL+endpoint.rawValue)
-    
-    var request = URLRequest(url: url!)
-    request.httpMethod = "POST"
-    request.httpBody = postData.percentEncoded()
-    request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    
-    if let access_token = access_token{
-        request.addValue(access_token, forHTTPHeaderField: "Token")
-    }
-    
-    let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
-        if let error = error{
-            print("HTTP Request Error: " + error.localizedDescription)
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.httpBody = postData.percentEncoded()
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        if let access_token = access_token{
+            request.addValue(access_token, forHTTPHeaderField: "Token")
         }
         
-        if let _ = data{
+        let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
+            if let error = error {
+                print("HTTP Request Error: " + error.localizedDescription)
+            }
             
+            guard let data = data else { print("Returned data is nil"); return }
             
-        } else{
-            print("Returned data is nil")
+            completion(data,error)
         }
         
-        completion(data,error)
+        task.resume()
+    }
+    
+    func httpGETRequest(endpoint: EndPoints, completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void) {
+        let url = URL(string: baseURL+endpoint.rawValue)
         
-    }
-    
-    task.resume()
-    
-}
-
-func httpGETRequest(endpoint: EndPoints, completion: @escaping ( _ responseData: Data?, _ error: Error?) -> Void){
-    let url = URL(string: baseURL+endpoint.rawValue)
-    
-    var request = URLRequest(url: url!)
-    request.httpMethod = "GET"
-    
-    if let access_token = access_token{
-        request.addValue(access_token, forHTTPHeaderField: "Token")
-    }
-    
-    let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
-        if let error = error{
-            print("HTTP Request Error: " + error.localizedDescription)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        if let access_token = access_token{
+            request.addValue(access_token, forHTTPHeaderField: "Token")
         }
         
-        if let _ = data{
+        let task = URLSession.shared.dataTask(with: request) {data, httpresponse, error in
+            if let error = error {
+                print("HTTP Request Error: " + error.localizedDescription)
+            }
             
+            guard let data = data else { print("Returned data is nil"); return }
             
-        } else{
-            print("Returned data is nil")
+            completion(data,error)
         }
         
-        completion(data,error)
+        task.resume()
         
     }
-    
-    task.resume()
-    
-}
 }

@@ -15,15 +15,49 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         setupAuthorizing()
+        
+        setupSpinner()
         requestNotificationsPermissions()
         setupTextField()
     }
     
+    let blackView: UIView = {
+        let bv = UIView()
+        bv.backgroundColor = .black
+        bv.layer.cornerRadius = 16
+        bv.layer.masksToBounds = true
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: .white)
+        aI.hidesWhenStopped = true
+        aI.translatesAutoresizingMaskIntoConstraints = false
+        return aI
+    }()
+    
+    func setupSpinner() {
+        
+        view.addSubview(blackView)
+        blackView.addSubview(activityIndicator)
+        blackView.alpha = 0
+        
+        blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
     func requestNotificationsPermissions(){
-     UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
-          (granted, error) in
-      }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) {
+            (granted, error) in
+        }
     }
     
     func setupTextField() {
@@ -44,84 +78,53 @@ class LoginViewController: UIViewController {
     func toggleSpinner(){
         DispatchQueue.main.async {
             if self.blackView.alpha == 0 {
-                 self.blackView.alpha = 1
-                  self.activityIndicator.startAnimating()
-             }
-             else{
-                  self.blackView.alpha = 0
-                  self.activityIndicator.stopAnimating()
-             }
+                self.blackView.alpha = 1
+                self.activityIndicator.startAnimating()
+            } else {
+                self.blackView.alpha = 0
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
-
+    
     func validateInputFieldsAndLogin(){
         
-//        setupAuthorizing()
-//        self.blackView.alpha = 1
-//        self.activityIndicator.startAnimating()
+        //        setupAuthorizing()
+        //        self.blackView.alpha = 1
+        //        self.activityIndicator.startAnimating()
         
-        if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15{
+        if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15 {
             alertError(withMessage: "Please enter a valid mobile number")
             return
-        }
-        if passwordTextField.text!.count < 6 || passwordTextField.text!.count > 24{
+        } else if passwordTextField.text!.count < 6 || passwordTextField.text!.count > 24 {
             alertError(withMessage: "Please enter a valid password between 6-24 characters")
             return
+        } else {
+            alertError(withMessage: "Please fill the missing fields")
         }
+        
         login()
     }
     
-    let blackView: UIView = {
-        let bv = UIView()
-        bv.backgroundColor = .black
-        bv.layer.cornerRadius = 16
-        bv.layer.masksToBounds = true
-        bv.translatesAutoresizingMaskIntoConstraints = false
-        return bv
-    }()
-    
-    let activityIndicator: UIActivityIndicatorView = {
-        let aI = UIActivityIndicatorView(style: .white)
-        aI.hidesWhenStopped = true
-        aI.translatesAutoresizingMaskIntoConstraints = false
-        return aI
-    }()
-    
-    func setupAuthorizing() {
-        
-        view.addSubview(blackView)
-        blackView.addSubview(activityIndicator)
-        blackView.alpha = 0
-        
-        blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        
-        activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
-        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
-    }
-    
-    func disableInput(){
+    func disableInput() {
         toggleSpinner()
-         DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.phoneNumberTextField.isEnabled = !self.phoneNumberTextField.isEnabled
             self.passwordTextField.isEnabled = !self.passwordTextField.isEnabled
             self.loginButton.isEnabled = !self.loginButton.isEnabled
         }
     }
     
-    func login(){
+    func login() {
         disableInput()
+        
         let parameters = ["mobile": "+2"+phoneNumberTextField.text!, "password":passwordTextField.text!]
         API().httpPOSTRequest(endpoint: .login, postData: parameters) { (data, error) in
-            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");self.disableInput();return;}
+            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later"); self.disableInput(); return }
             let loginResponse = try? JSONDecoder().decode(LoginResponse.self, from: data)
-  
-              if let response = loginResponse{
-                  if response.success{
+            
+            if let response = loginResponse {
+                if response.success {
                     access_token = response.access_token!
                     profile = response.profile!
                     DispatchQueue.main.async {
@@ -129,25 +132,17 @@ class LoginViewController: UIViewController {
                         self.activityIndicator.stopAnimating()
                         
                         self.navigateToHomeVC()
-                        
-                        
                     }
-                  }
-                  else
-                  {
-                      self.alertError(withMessage: response.msg!)
-                      
-                  }
-              }
-              else{
-                self.alertError(withMessage: "Unknown Response from server, please try again later");
-                self.disableInput();
-                return;
+                } else {
+                    self.alertError(withMessage: response.msg!)
+                }
+            } else {
+                self.alertError(withMessage: "Unknown Response from server, please try again later")
+                self.disableInput()
+                return
             }
-           
-                 self.disableInput()
             
-           
+            self.disableInput()
         }
     }
     
@@ -160,9 +155,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func didTapForgot(_ sender: Any) {
         if phoneNumberTextField.text!.count < 10 {
-                 alertError(withMessage: "Please enter your mobile number to change password")
-                 return
-             }
+            alertError(withMessage: "Please enter your mobile number to change password")
+            return
+        }
         
         let forgotViewController = storyboard?.instantiateViewController(identifier: "forgot") as! ForgotPasswordViewController
         forgotViewController.passedMobileNumber = "+2"+phoneNumberTextField.text!
@@ -171,25 +166,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapSignUp(_ sender: Any) {
-         if phoneNumberTextField.text!.count < 10 {
-                  alertError(withMessage: "Please enter your mobile number to register")
-                  return
-              }
-              
-              let registerViewController = storyboard?.instantiateViewController(identifier: "register") as! RegisterViewController
-              registerViewController.passedMobileNumber = "+2"+phoneNumberTextField.text!
-              registerViewController.modalPresentationStyle = .fullScreen
-              self.present(registerViewController, animated: false, completion: nil)
+        if phoneNumberTextField.text!.count < 10 {
+            alertError(withMessage: "Please enter your mobile number to register")
+            return
+        }
+        
+        let registerViewController = storyboard?.instantiateViewController(identifier: "register") as! RegisterViewController
+        registerViewController.passedMobileNumber = "+2"+phoneNumberTextField.text!
+        registerViewController.modalPresentationStyle = .fullScreen
+        self.present(registerViewController, animated: false, completion: nil)
     }
     
-    func alertError(withMessage: String){
+    func alertError(withMessage: String) {
         
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true) {
-            }
+            self.present(alert, animated: true, completion: nil)
         }
-
     }
 }

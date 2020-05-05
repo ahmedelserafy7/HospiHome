@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
+class OTPViewController: UIViewController, KWVerificationCodeViewDelegate {
     // MARK: - IBOutlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -22,104 +22,95 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
             
             if(otp.trim().count==6){
                 registerAccount(withOTP: otp.trim())
-        }
+            }
         }
     }
     
     let blackView: UIView = {
-         let bv = UIView()
-         bv.backgroundColor = .black
-         bv.layer.cornerRadius = 16
-         bv.layer.masksToBounds = true
-         bv.translatesAutoresizingMaskIntoConstraints = false
-         return bv
-     }()
-     
-     let activityIndicator: UIActivityIndicatorView = {
+        let bv = UIView()
+        bv.backgroundColor = .black
+        bv.layer.cornerRadius = 16
+        bv.layer.masksToBounds = true
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
         let aI = UIActivityIndicatorView(style: .white)
-         aI.hidesWhenStopped = true
-         aI.translatesAutoresizingMaskIntoConstraints = false
-         return aI
-     }()
-     
-     func setupSpinner() {
-         view.addSubview(blackView)
-         blackView.addSubview(activityIndicator)
-            blackView.alpha = 0
-         
-         blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-         blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-         blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-         blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-         
-         activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
-         activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
-         activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
-         activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        aI.hidesWhenStopped = true
+        aI.translatesAutoresizingMaskIntoConstraints = false
+        return aI
+    }()
+    
+    func setupSpinner() {
+        view.addSubview(blackView)
+        blackView.addSubview(activityIndicator)
+        blackView.alpha = 0
         
-     }
+        blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    }
     
-    
-    func requestOTP(){
+    func requestOTP() {
         let parameters = ["mobile": mobileNumber!]
         API().httpPOSTRequest(endpoint: .otp, postData: parameters as [String : Any]) { (data, error) in
-            guard let data = data else{self.alertError(withTitle: "Failed to send OTP", withMessage: "Unknown Response from server, please try again later");return;}
+            guard let data = data else{self.alertError(withTitle: "Failed to send OTP", withMessage: "Unknown Response from server, please try again later"); return}
             
             let OTPResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
-   
+            
             if let response = OTPResponse{
                 if response.success{
                     self.sendNotification(body: response.msg)
-                }
-                else
-                {
+                } else {
                     self.alertError(withTitle: "Failed to send OTP", withMessage: response.msg)
-                    
                 }
             }
         }
     }
     
-
     func registerAccount(withOTP: String){
         disableInput()
         let registerView = self.presentingViewController as! RegisterViewController
         let name = registerView.nameTextField.text!
         let password = registerView.passwordTextField.text!
         let email = registerView.emailTextField.text!.trim()
-    
+        
         let parameters = ["name": name,"email": email,"password": password,"mobile": mobileNumber!,"otp": withOTP]
         
         API().httpPOSTRequest(endpoint: .signup, postData: parameters) { (data, error) in
-             guard let data = data else{self.alertError(withTitle: "Failed to create user", withMessage: "Unknown Response from server, please try again later");return;}
+            guard let data = data else{self.alertError(withTitle: "Failed to create user", withMessage: "Unknown Response from server, please try again later");return}
             
-              let signupResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
-                if let response = signupResponse{
-                  if response.success{
+            let signupResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
+            if let response = signupResponse {
+                if response.success {
                     self.navigateToLoginVC()
-                  }
-                  else
-                  {
+                } else {
                     DispatchQueue.main.async {
                         self.verificationCodeView?.clear()
                     }
-                      
-                      self.alertError(withTitle: "Failed to create user", withMessage: response.msg)
-                      
-                  }
-              }
+                    
+                    self.alertError(withTitle: "Failed to create user", withMessage: response.msg)
+                }
+            }
+            
             DispatchQueue.main.async {
-                 self.disableInput()
+                self.disableInput()
             }
         }
     }
     
-    func disableInput(){
+    func disableInput() {
         if blackView.alpha == 0 {
             blackView.alpha = 1
             activityIndicator.startAnimating()
-        }
-        else{
+        } else{
             blackView.alpha = 0
             activityIndicator.stopAnimating()
         }
@@ -127,41 +118,40 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
         verificationCodeView?.isUserInteractionEnabled = !verificationCodeView!.isUserInteractionEnabled
         dismissButton.isEnabled = !dismissButton.isEnabled
     }
-
+    
     func navigateToLoginVC() {
         DispatchQueue.main.async {
             let loginViewController = self.storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
         }
     }
-
-  // MARK: - Variables
-  var verificationCodeView: KWVerificationCodeView?
     
+    // MARK: - Variables
+    var verificationCodeView: KWVerificationCodeView?
     
     // MARK: - Lifecycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupSpinner()
-    verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
-    verificationCodeView?.delegate = self
-    
-    containerView.addSubview(verificationCodeView!)
-  }
-
-  @IBAction func submitButtonTapped(_ sender: Any) {
-    if verificationCodeView!.hasValidCode() {
-      let alertController = UIAlertController(title: "Success", message: "Code is \(verificationCodeView!.getVerificationCode())", preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-      alertController.addAction(okAction)
-      present(alertController, animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupSpinner()
+        verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
+        verificationCodeView?.delegate = self
+        
+        containerView.addSubview(verificationCodeView!)
     }
-  }
-
-  @IBAction func dismissButtonTapped(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
-  }
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        if verificationCodeView!.hasValidCode() {
+            let alertController = UIAlertController(title: "Success", message: "Code is \(verificationCodeView!.getVerificationCode())", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func sendNotification(body: String) {
         let content = UNMutableNotificationContent()
@@ -173,11 +163,11 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-    func alertError(withTitle: String,withMessage: String){
+    func alertError(withTitle: String,withMessage: String) {
         DispatchQueue.main.async {
-        let alert = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

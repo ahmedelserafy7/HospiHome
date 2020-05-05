@@ -10,8 +10,7 @@ import UIKit
 
 class ArticleDetailsViewController: UIViewController {
     var article: Article?
-    
-    
+
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
@@ -21,8 +20,11 @@ class ArticleDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         hideWhenSwipe()
-        
-        if let article = article{
+        fetchArticlesDetails()
+    }
+    
+    func fetchArticlesDetails() {
+        if let article = article {
             dateLabel.text = article.fullDate
             bodyLabel.text = article.body
             titleLabel.text = article.title

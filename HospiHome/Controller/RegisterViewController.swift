@@ -9,6 +9,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +18,7 @@ class RegisterViewController: UIViewController {
     var passedMobileNumber: String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTextField()
         handleKeyboard()
     }
@@ -103,18 +105,17 @@ class RegisterViewController: UIViewController {
         if nameTextField.text!.count < 6 || nameTextField.text!.count > 50{
             alertError(withMessage: "Please enter a valid name")
             return
-        }
-        if emailTextField.text!.trim().count < 5 || emailTextField.text!.trim().count > 50 || !emailTextField.text!.trim().contains("@"){
+        } else if emailTextField.text!.trim().count < 5 || emailTextField.text!.trim().count > 50 || !emailTextField.text!.trim().contains("@"){
             alertError(withMessage: "Please enter a valid email")
             return
-        }
-        if passwordTextField.text!.count < 6 || emailTextField.text!.count > 24{
+        } else if passwordTextField.text!.count < 6 || emailTextField.text!.count > 24{
             alertError(withMessage: "Password must be 6-24 characters")
             return
-        }
-        if passwordTextField.text! != confirmPasswordTextField.text!{
+        } else if passwordTextField.text! != confirmPasswordTextField.text!{
             alertError(withMessage: "Both passwords should be the same")
             return
+        } else {
+            alertError(withMessage: "All Fields are required to fill in")
         }
     }
     

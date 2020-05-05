@@ -27,13 +27,13 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
+    
     fileprivate var filterButtons = [UIButton]()
     fileprivate var allButton: UIButton?
     fileprivate var lastSelectedFilterButton: UIButton?
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var searchBar: UISearchBar!
-    
     fileprivate let cellId = "cellId"
     let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class HomeViewController: UIViewController {
     }
     
     func filterContentForSepciality(_ specialityString: String) {
-  
+        
         tableView.reloadData()
     }
     
@@ -126,7 +126,7 @@ class HomeViewController: UIViewController {
     
     func fetchDoctorsList(){
         API().httpGETRequest(endpoint: .fetchDoctors ){ (data, error) in
-            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+            guard let data = data else{ self.alertError(withMessage: "Unknown Response from server, please try again later");return}
             
             if let doctorsResponse = try? JSONDecoder().decode(FetchDoctorsResponse.self, from: data){
                 self.doctorsArray = doctorsResponse.doctors
@@ -140,14 +140,13 @@ class HomeViewController: UIViewController {
     
     func fetchSpecialities(){
         API().httpGETRequest(endpoint: .fetchSpecialaities) { (data, error) in
-            guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+            guard let data = data else{ self.alertError(withMessage: "Unknown Response from server, please try again later");return}
             
             if let specialitiesResponse = try? JSONDecoder().decode(SepcialitiesResponse.self, from: data){
                 self.specialitiesArray = [Speciality(name: "All")] + specialitiesResponse.specialities
-            }
-            else {
+            } else {
                 self.alertError(withMessage: "An error occured while fetching specialities list, please try again later");
-                return;
+                return
             }
         }
     }
@@ -212,7 +211,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
+        
         let drProfileViewController = storyboard?.instantiateViewController(identifier: "dr") as! DrProfileViewController
         drProfileViewController.doctor = filteredArray[indexPath.section]
         navigationController?.pushViewController(drProfileViewController, animated: true)
@@ -220,7 +219,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func alertError(withMessage: String){
         DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         }
@@ -236,7 +235,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         
         let installedButtons = cell.contentView.subviews.filter{$0 is UIButton}
-        if installedButtons.count>0, let installedButton = installedButtons[0] as? UIButton{
+        if installedButtons.count>0, let installedButton = installedButtons[0] as? UIButton {
             installedButton.removeFromSuperview()
             filterButtons.removeAll { (button: UIButton) -> Bool in
                 return button == installedButton

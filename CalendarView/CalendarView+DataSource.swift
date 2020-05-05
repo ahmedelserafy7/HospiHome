@@ -91,7 +91,7 @@ extension CalendarView: UICollectionViewDataSource {
         }
         
         guard self.startDateCache <= self.endDateCache else { fatalError("Start date cannot be later than end date.") }
-
+        
         let startDateComponents = self.calendar.dateComponents([.era, .year, .month, .day], from: startDateCache)
         let endDateComponents = self.calendar.dateComponents([.era, .year, .month, .day], from: endDateCache)
         
@@ -165,16 +165,16 @@ extension CalendarView: UICollectionViewDataSource {
             
             var isOutOfRange = false
             
-             if self.disabledDaysInt.contains(indexPath.item % 7){
-            isOutOfRange = true
+            if self.disabledDaysInt.contains(indexPath.item % 7){
+                isOutOfRange = true
             }
-             else{
-            if self.startIndexPath.section == indexPath.section { // is 0
-                isOutOfRange = self.startIndexPath.item + firstDayIndex > indexPath.item
-            }
-            if self.endIndexPath.section == indexPath.section && !isOutOfRange {
-                isOutOfRange = self.endIndexPath.item + firstDayIndex < indexPath.item
-            }
+            else{
+                if self.startIndexPath.section == indexPath.section { // is 0
+                    isOutOfRange = self.startIndexPath.item + firstDayIndex > indexPath.item
+                }
+                if self.endIndexPath.section == indexPath.section && !isOutOfRange {
+                    isOutOfRange = self.endIndexPath.item + firstDayIndex < indexPath.item
+                }
             }
             
             
@@ -188,7 +188,7 @@ extension CalendarView: UICollectionViewDataSource {
         let isAdjacent = !isInRange && style.showAdjacentDays && (
             indexPath.item < firstDayIndex || indexPath.item >= lastDayIndex
         )
-    
+        
         // the index of this cell is within the range of first and the last day of the month
         if isInRange || isAdjacent {
             dayCell.isHidden = false
@@ -234,11 +234,11 @@ extension CalendarView: UICollectionViewDataSource {
         
         dayCell.isSelected = selectedIndexPaths.contains(indexPath)
         
-       
+        
         if self.marksWeekends {
             //let we = indexPath.item % 7
-//            let weekDayOption = style.firstWeekday == .sunday ? 0 : 5
-//            dayCell.isWeekend = we == weekDayOption || we == 6
+            //            let weekDayOption = style.firstWeekday == .sunday ? 0 : 5
+            //            dayCell.isWeekend = we == weekDayOption || we == 6
             if self.disabledDaysInt.contains(indexPath.item % 7){
                 dayCell.isWeekend = true
             }

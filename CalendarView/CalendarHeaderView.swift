@@ -79,7 +79,7 @@ open class CalendarHeaderView: UIView {
             
             i = i + 1
         }
-
+        
         self.backgroundColor = style.weekdaysBackgroundColor
     }
     

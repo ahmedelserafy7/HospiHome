@@ -108,7 +108,7 @@ public class CalendarView: UIView {
     
     public internal(set) var selectedIndexPaths = [IndexPath]()
     public internal(set) var selectedDates = [Date]()
-
+    
     internal var _startDateCache: Date?
     internal var _endDateCache: Date?
     internal var _firstDayCache: Date?
@@ -117,7 +117,7 @@ public class CalendarView: UIView {
     internal var todayIndexPath : IndexPath?
     internal var startIndexPath : IndexPath!
     internal var endIndexPath   : IndexPath!
-
+    
     internal var _cachedMonthInfoForSection = [Int:(firstDay: Int, daysTotal: Int)]()
     internal var eventsByIndexPath = [IndexPath: [CalendarEvent]]()
     
@@ -239,7 +239,7 @@ public class CalendarView: UIView {
         guard
             let indexPath = collectionView.indexPathForItem(at: point),
             let date = self.dateFromIndexPath(indexPath) else {
-            return
+                return
         }
         
         guard
@@ -282,7 +282,7 @@ public class CalendarView: UIView {
                     width: self.bounds.width / 7.0,
                     height: self.bounds.width / 7.0
                 )
-            }
+        }
         
         return CGSize(
             width:   collectionView.bounds.width / 7.0,                                    // number of days in week
@@ -355,7 +355,7 @@ public class CalendarView: UIView {
 // MARK: Convertion
 
 extension CalendarView {
-
+    
     func indexPathForDate(_ date : Date) -> IndexPath? {
         
         let distanceFromStartDate = self.calendar.dateComponents([.month, .day], from: self.firstDayCache, to: date)
@@ -383,14 +383,14 @@ extension CalendarView {
 }
 
 extension CalendarView {
-
+    
     func goToMonthWithOffet(_ offset: Int) {
         
         guard let displayDate = self.displayDate else { return }
         
         var dateComponents = DateComponents()
         dateComponents.month = offset
-    
+        
         guard let newDate = self.calendar.date(byAdding: dateComponents, to: displayDate) else { return }
         self.setDisplayDate(newDate, animated: true)
     }
@@ -415,19 +415,19 @@ extension CalendarView {
      function: - scroll calendar at date (month/year) passed as parameter.
      */
     public func setDisplayDate(_ date : Date, animated: Bool = false) {
-		if #available(iOS 10.0, *) {
-			guard
-				let startDate = calendar.dateInterval(of: .month, for: startDateCache)?.start,
-				let endDate = calendar.dateInterval(of: .month, for: endDateCache)?.end,
-				(startDate..<endDate).contains(date)
-			else {
-				return
-			}
-		}
-		else {
-			guard (startDateCache..<endDateCache).contains(date) else { return }
-		}
-		
+        if #available(iOS 10.0, *) {
+            guard
+                let startDate = calendar.dateInterval(of: .month, for: startDateCache)?.start,
+                let endDate = calendar.dateInterval(of: .month, for: endDateCache)?.end,
+                (startDate..<endDate).contains(date)
+                else {
+                    return
+            }
+        }
+        else {
+            guard (startDateCache..<endDateCache).contains(date) else { return }
+        }
+        
         self.collectionView?.reloadData()
         self.collectionView?.setContentOffset(self.scrollViewOffset(for: date), animated: animated)
         self.displayDateOnHeader(date)
@@ -445,7 +445,7 @@ extension CalendarView {
         #if swift(>=4.2)
         self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition())
         #else
-            self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition())
+        self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition())
         #endif
         self.collectionView(collectionView, didSelectItemAt: indexPath)
     }
@@ -477,7 +477,7 @@ extension CalendarView {
     public func goToPreviousMonth() {
         goToMonthWithOffet(-1)
     }
-
+    
     #if KDCALENDAR_EVENT_MANAGER_ENABLED
     
     public func loadEvents(onComplete: ((Error?) -> Void)? = nil) {
@@ -516,6 +516,6 @@ extension CalendarView {
         return true
         
     }
-
+    
     #endif
 }

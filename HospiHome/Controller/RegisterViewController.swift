@@ -21,6 +21,11 @@ class RegisterViewController: UIViewController {
         handleKeyboard()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        blackView.isHidden = true
+        super.viewWillAppear(animated)
+    }
+    
     func setupTextField() {
         nameTextField.autocapitalizationType = .sentences
         

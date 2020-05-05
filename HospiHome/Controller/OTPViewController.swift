@@ -26,6 +26,39 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
         }
     }
     
+    let blackView: UIView = {
+         let bv = UIView()
+         bv.backgroundColor = .black
+         bv.layer.cornerRadius = 16
+         bv.layer.masksToBounds = true
+         bv.translatesAutoresizingMaskIntoConstraints = false
+         return bv
+     }()
+     
+     let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: .white)
+         aI.hidesWhenStopped = true
+         aI.translatesAutoresizingMaskIntoConstraints = false
+         return aI
+     }()
+     
+     func setupSpinner() {
+         view.addSubview(blackView)
+         blackView.addSubview(activityIndicator)
+            blackView.alpha = 0
+         
+         blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+         blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+         blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+         blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+         
+         activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+         activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+         activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        
+     }
+    
     
     func requestOTP(){
         let parameters = ["mobile": mobileNumber!]
@@ -82,7 +115,15 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
     }
     
     func disableInput(){
-        // spinner
+        if blackView.alpha == 0 {
+            blackView.alpha = 1
+            activityIndicator.startAnimating()
+        }
+        else{
+            blackView.alpha = 0
+            activityIndicator.stopAnimating()
+        }
+        
         verificationCodeView?.isUserInteractionEnabled = !verificationCodeView!.isUserInteractionEnabled
         dismissButton.isEnabled = !dismissButton.isEnabled
     }
@@ -102,7 +143,7 @@ class OTPViewController: UIViewController,KWVerificationCodeViewDelegate {
     // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setupSpinner()
     verificationCodeView = KWVerificationCodeView(frame: CGRect(x: 0, y: 0, width: 240, height: 60))
     verificationCodeView?.delegate = self
     

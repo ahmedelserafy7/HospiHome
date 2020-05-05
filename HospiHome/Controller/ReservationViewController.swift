@@ -13,38 +13,50 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     var chosenTimeStamp: Int?
     
     let blackView: UIView = {
-          let bv = UIView()
-          bv.backgroundColor = .black
-          bv.layer.cornerRadius = 16
-          bv.layer.masksToBounds = true
-          bv.translatesAutoresizingMaskIntoConstraints = false
-          return bv
-      }()
-      
-      let activityIndicator: UIActivityIndicatorView = {
-        let aI = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
-          aI.hidesWhenStopped = true
-          aI.translatesAutoresizingMaskIntoConstraints = false
-          return aI
-      }()
-      
-      func setupSpinner() {
-        blackView.isHidden = true
-          view.addSubview(blackView)
-          blackView.addSubview(activityIndicator)
+         let bv = UIView()
+         bv.backgroundColor = .black
+         bv.layer.cornerRadius = 16
+         bv.layer.masksToBounds = true
+         bv.translatesAutoresizingMaskIntoConstraints = false
+         return bv
+     }()
+     
+     let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: .white)
+         aI.hidesWhenStopped = true
+         aI.translatesAutoresizingMaskIntoConstraints = false
+         return aI
+     }()
+     
+     func setupSpinner() {
+         view.addSubview(blackView)
+         blackView.addSubview(activityIndicator)
+            blackView.alpha = 0
+         
+         blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+         blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+         blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+         blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+         
+         activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+         activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+         activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
-          
-          blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-          blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-          blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-          blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-          
-          activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
-          activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
-          activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
-          activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
-      }
+     }
     
+    func toggleSpinner(){
+        DispatchQueue.main.async {
+            if self.blackView.alpha == 0 {
+                 self.blackView.alpha = 1
+                  self.activityIndicator.startAnimating()
+             }
+             else{
+                  self.blackView.alpha = 0
+                  self.activityIndicator.stopAnimating()
+             }
+        }
+    }
     func cardDoneButtonClicked(_ card: Card?, error: String?) {
         if let cardCVC = card?.cvc,let cardMonth = card?.month, let cardYear = card?.year,let cardNumber = card?.number
             ,let cardName = card?.name
@@ -61,9 +73,9 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
             let ciphertext = RNCryptor.encrypt(data: cardInfo.data(using: .utf8)!, withPassword: password)
             
             let parameters = ["paymentToken":ciphertext.base64EncodedString()]
-            blackView.isHidden = false
+              toggleSpinner()
             API().httpPOSTRequest(endpoint: .reserve, postData: parameters) { (data, error) in
-                DispatchQueue.main.async {self.blackView.isHidden = true}
+                self.toggleSpinner()
                 guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
                
                           let paymentResponse = try? JSONDecoder().decode(APIResponse.self, from: data)

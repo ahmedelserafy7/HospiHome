@@ -41,6 +41,19 @@ class LoginViewController: UIViewController {
         validateInputFieldsAndLogin()
     }
     
+    func toggleSpinner(){
+        DispatchQueue.main.async {
+            if self.blackView.alpha == 0 {
+                 self.blackView.alpha = 1
+                  self.activityIndicator.startAnimating()
+             }
+             else{
+                  self.blackView.alpha = 0
+                  self.activityIndicator.stopAnimating()
+             }
+        }
+    }
+    
     func validateInputFieldsAndLogin(){
         
         setupAuthorizing()

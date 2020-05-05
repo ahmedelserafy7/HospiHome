@@ -32,19 +32,17 @@ field that can open new opportunities in the **medical field** and may also brea
 2.	Doctor Online Appointment Scheduling 
 3.	Video Conference 
 4.	Text Chat
-5.	Rate a doctor
-6.	Buy Drugs from online stores
 
 ## Used Skills
 
- 1. Twilio Video Call API
- 2. KWVerificationCodeView (OTP)
- 3. AES Encryption for credit card payment
- 4. Time Pickers
- 5. Time Stamps and Date Conversion
-6. Table Views
-7. Collection Views
-8. Core Animation 
+ * Twilio Video Call API
+ * KWVerificationCodeView (OTP)
+ * AES Encryption for credit card payment
+ * Time Pickers
+ * Time Stamps and Date Conversion
+ * Table Views
+ * Collection Views
+ * Core Animation 
 
 
 ### Note

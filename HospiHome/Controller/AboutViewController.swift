@@ -14,6 +14,7 @@ class AboutViewController: UIViewController {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 18)
+        label.minimumScaleFactor = 0.2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

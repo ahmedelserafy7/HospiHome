@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zbI-Bq-TGG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zbI-Bq-TGG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="53t-Qh-rsd">
-                                <rect key="frame" x="142" y="68" width="130.00000000000011" height="130.00000000000011"/>
+                                <rect key="frame" x="142" y="68" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="OHD-fA-ECB"/>
                                     <constraint firstAttribute="width" constant="130" id="wrY-qd-sF9"/>
@@ -206,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wpw-jy-aGB">
-                                <rect key="frame" x="142" y="83" width="130.00000000000011" height="130.00000000000011"/>
+                                <rect key="frame" x="142" y="83" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="FwW-mf-Ave"/>
                                     <constraint firstAttribute="height" constant="130" id="WyC-CA-iCD"/>
@@ -1613,7 +1613,7 @@ Happy Pinning (and reading)!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cjo-oB-gwT">
-                                <rect key="frame" x="142" y="83" width="130.00000000000011" height="130.00000000000011"/>
+                                <rect key="frame" x="142" y="83" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="GiL-CZ-him"/>
                                     <constraint firstAttribute="height" constant="130" id="fjy-DO-VU6"/>
@@ -1819,7 +1819,7 @@ Happy Pinning (and reading)!
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="110" estimatedRowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-Lj-z5g">
                                 <rect key="frame" x="0.0" y="110" width="414" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="separatorColor" red="1" green="0.0" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reservationcell" rowHeight="110" id="hK4-bm-zNK" customClass="ReservationCell" customModule="HospiHome" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="110"/>
@@ -1870,7 +1870,7 @@ Happy Pinning (and reading)!
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="57D-8S-9D9" secondAttribute="trailing" constant="12" id="0Hg-48-SAO"/>
                                                         <constraint firstAttribute="trailing" secondItem="ekX-RP-WzA" secondAttribute="trailing" constant="12" id="3S8-nh-eJU"/>
@@ -1941,7 +1941,7 @@ Happy Pinning (and reading)!
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
         <image name="ahmed" width="429" height="429"/>
-        <image name="bubble.right.fill" catalog="system" width="64" height="54"/>
+        <image name="bubble.right.fill" catalog="system" width="64" height="56"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
         <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>

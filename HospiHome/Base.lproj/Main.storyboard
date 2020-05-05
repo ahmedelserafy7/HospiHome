@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -423,7 +423,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8j-HX-wel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8348" y="-26"/>
+            <point key="canvasLocation" x="5006" y="2255"/>
         </scene>
         <!--Articles View Controller-->
         <scene sceneID="Pot-KS-7hi">
@@ -1265,7 +1265,7 @@ Happy Pinning (and reading)!
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akb-Fh-NiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7555" y="-26"/>
+            <point key="canvasLocation" x="4212" y="2255"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2K5-bg-WNr">
@@ -1284,7 +1284,7 @@ Happy Pinning (and reading)!
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7h-z7-NYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6658" y="-26"/>
+            <point key="canvasLocation" x="3319" y="2255"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EIZ-Uv-xVt">
@@ -1309,7 +1309,7 @@ Happy Pinning (and reading)!
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-R3-6v3" userLabel="containerView">
                                 <rect key="frame" x="87" y="417" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="XET-TD-NeT"/>
                                     <constraint firstAttribute="height" constant="62" id="ij3-Lt-LeA"/>
@@ -1459,7 +1459,7 @@ Happy Pinning (and reading)!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI4-NT-XQf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-564"/>
+            <point key="canvasLocation" x="6004" y="1424"/>
         </scene>
         <!--Reservation View Controller-->
         <scene sceneID="1zO-cJ-dqY">
@@ -1581,7 +1581,7 @@ Happy Pinning (and reading)!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezS-lY-Deh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2532" y="-565"/>
+            <point key="canvasLocation" x="6003" y="-92"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="X0x-sc-0bo">
@@ -1684,6 +1684,125 @@ Happy Pinning (and reading)!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iht-Ak-AC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="229"/>
+        </scene>
+        <!--Video Chat View Controller-->
+        <scene sceneID="JJx-Mn-w2z">
+            <objects>
+                <viewController storyboardIdentifier="videochat" id="1Ip-N8-ifg" customClass="VideoChatViewController" customModule="SlotsUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LEc-9u-dol"/>
+                        <viewControllerLayoutGuide type="bottom" id="X31-vh-foK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ldA-Ex-Qe2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlN-OY-bK6">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uOE-WM-fpM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectWithSender:" destination="1Ip-N8-ifg" eventType="touchUpInside" id="8vT-hR-dhU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wy-hj-yoS" userLabel="Room Line">
+                                <rect key="frame" x="20" y="418.5" width="374" height="2"/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="zAc-XL-qoC"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for the other participant to join" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lm-if-FS7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6oe-sQ-y9a" customClass="TVIVideoView">
+                                <rect key="frame" x="279" y="692" width="120" height="160"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="FhD-cp-aJH"/>
+                                    <constraint firstAttribute="width" constant="120" id="h5Y-FI-03W"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRW-za-fgG" userLabel="Mic Button">
+                                <rect key="frame" x="105" y="808" width="80" height="44"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="hlL-KR-Snb"/>
+                                    <constraint firstAttribute="height" constant="44" id="oBT-zx-ErV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Mute">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleMicWithSender:" destination="1Ip-N8-ifg" eventType="touchUpInside" id="zJj-hT-KQD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-XV-6ZM">
+                                <rect key="frame" x="15" y="808" width="80" height="44"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9Jf-be-Uuy"/>
+                                    <constraint firstAttribute="width" constant="80" id="fO8-sZ-o3b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Disconnect">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectWithSender:" destination="1Ip-N8-ifg" eventType="touchUpInside" id="Dsl-sT-hcO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xZL-XV-6ZM" firstAttribute="leading" secondItem="ldA-Ex-Qe2" secondAttribute="leadingMargin" constant="-5" id="0wx-0F-4Db"/>
+                            <constraint firstItem="X31-vh-foK" firstAttribute="top" secondItem="6oe-sQ-y9a" secondAttribute="bottom" constant="10" id="9H2-0U-fSy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6oe-sQ-y9a" secondAttribute="trailing" constant="-5" id="Aly-05-qcM"/>
+                            <constraint firstItem="X31-vh-foK" firstAttribute="top" secondItem="xZL-XV-6ZM" secondAttribute="bottom" constant="10" id="GGy-sZ-71I"/>
+                            <constraint firstItem="vRW-za-fgG" firstAttribute="baseline" secondItem="xZL-XV-6ZM" secondAttribute="baseline" id="GsF-ZU-Tvu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="NlN-OY-bK6" secondAttribute="leading" id="Jjb-H2-ydp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2wy-hj-yoS" secondAttribute="trailing" id="Nh3-Vc-YaE"/>
+                            <constraint firstItem="3Lm-if-FS7" firstAttribute="top" secondItem="LEc-9u-dol" secondAttribute="bottom" id="TdF-jf-L8u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NlN-OY-bK6" secondAttribute="trailing" id="XPf-oO-PWN"/>
+                            <constraint firstItem="NlN-OY-bK6" firstAttribute="centerX" secondItem="ldA-Ex-Qe2" secondAttribute="centerX" id="YDW-Dg-6fs"/>
+                            <constraint firstItem="NlN-OY-bK6" firstAttribute="centerY" secondItem="ldA-Ex-Qe2" secondAttribute="centerY" id="baY-Zu-ri8"/>
+                            <constraint firstAttribute="trailing" secondItem="3Lm-if-FS7" secondAttribute="trailing" id="jV6-ej-mef"/>
+                            <constraint firstItem="vRW-za-fgG" firstAttribute="leading" secondItem="xZL-XV-6ZM" secondAttribute="trailing" constant="10" id="np1-CT-d7O"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2wy-hj-yoS" secondAttribute="leading" id="pOf-bl-RZd"/>
+                            <constraint firstItem="3Lm-if-FS7" firstAttribute="leading" secondItem="ldA-Ex-Qe2" secondAttribute="leading" id="zRL-27-xq3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qjw-lR-Yh4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="okQ-uH-gDW">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="WtX-h2-CrD">
+                            <connections>
+                                <action selector="connectOptionsButtonTapped:" destination="1Ip-N8-ifg" id="80a-m5-JCi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="connectButton" destination="NlN-OY-bK6" id="Jrm-kh-hOS"/>
+                        <outlet property="disconnectButton" destination="xZL-XV-6ZM" id="hpJ-Wd-zi3"/>
+                        <outlet property="messageLabel" destination="3Lm-if-FS7" id="sbt-j1-lBF"/>
+                        <outlet property="micButton" destination="vRW-za-fgG" id="m38-1B-aBL"/>
+                        <outlet property="previewView" destination="6oe-sQ-y9a" id="wP7-vc-wvm"/>
+                        <outlet property="roomLine" destination="2wy-hj-yoS" id="Xb7-KI-ryO"/>
+                        <outlet property="waitingLabel" destination="3Lm-if-FS7" id="b5X-EE-kjr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ci8-18-pcG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6801" y="-92"/>
         </scene>
     </scenes>
     <resources>

@@ -80,6 +80,10 @@
 		A8260FFB2460AAC90016CD29 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FF22460AAC90016CD29 /* Card.swift */; };
 		A8260FFC2460AAC90016CD29 /* MFCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8260FF32460AAC90016CD29 /* MFCardView.xib */; };
 		A841EA8C246049FC00348B78 /* SepcialitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */; };
+		A8AFD29824616E65002B8563 /* VideoChatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD29724616E65002B8563 /* VideoChatUtils.swift */; };
+		A8AFD29A24616E81002B8563 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD29924616E81002B8563 /* VideoChatViewController.swift */; };
+		A8AFD29C24616EDB002B8563 /* TwilioVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */; };
+		A8AFD29D24616EDB002B8563 /* TwilioVideo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,20 @@
 			remoteInfo = HospiHome;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A8AFD29E24616EDB002B8563 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A8AFD29D24616EDB002B8563 /* TwilioVideo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1610C95C245A2F11001B178B /* HospiHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospiHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +275,9 @@
 		A8260FF22460AAC90016CD29 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A8260FF32460AAC90016CD29 /* MFCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MFCardView.xib; sourceTree = "<group>"; };
 		A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepcialitiesResponse.swift; sourceTree = "<group>"; };
+		A8AFD29724616E65002B8563 /* VideoChatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatUtils.swift; sourceTree = "<group>"; };
+		A8AFD29924616E81002B8563 /* VideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
+		A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwilioVideo.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AFD29C24616EDB002B8563 /* TwilioVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +402,7 @@
 				161148AB245C9929000AACB8 /* CardViewController.swift */,
 				A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */,
 				161B9EFF24610E4500CA6C61 /* AboutViewController.swift */,
+				A8AFD29924616E81002B8563 /* VideoChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,6 +415,7 @@
 				16834429245FEA0900385937 /* HTTPRequests.swift */,
 				1683442A245FEA0900385937 /* Extensions+Dictionary.swift */,
 				1610C99B245AAE1A001B178B /* Extensions+UIColor.swift */,
+				A8AFD29724616E65002B8563 /* VideoChatUtils.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -470,6 +494,7 @@
 		A8122D242460C183002F1186 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */,
 				A8122D292460C1C9002F1186 /* newhospi */,
 				A8122D252460C183002F1186 /* CryptoSwift.framework */,
 			);
@@ -767,6 +792,7 @@
 				1610C958245A2F11001B178B /* Sources */,
 				1610C959245A2F11001B178B /* Frameworks */,
 				1610C95A245A2F11001B178B /* Resources */,
+				A8AFD29E24616EDB002B8563 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -909,6 +935,7 @@
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
 				161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
+				A8AFD29A24616E81002B8563 /* VideoChatViewController.swift in Sources */,
 				A8260FFB2460AAC90016CD29 /* Card.swift in Sources */,
 				A8260FF52460AAC90016CD29 /* LBZSpinner.swift in Sources */,
 				16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */,
@@ -954,6 +981,7 @@
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
 				1610C996245A9087001B178B /* ChatCell.swift in Sources */,
 				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
+				A8AFD29824616E65002B8563 /* VideoChatUtils.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
 				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
 				A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */,

@@ -1,6 +1,6 @@
 # HospiHome
 
-![](https://i.imgur.com/jPHOeEZ.png)
+![](https://i.imgur.com/wpWbRcS.png)
 
 
 ## Description

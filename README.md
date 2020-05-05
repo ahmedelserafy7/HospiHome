@@ -35,6 +35,25 @@ field that can open new opportunities in the **medical field** and may also brea
 5.	Rate a doctor
 6.	Buy Drugs from online stores
 
+## Used Skills
+
+ 1. Twilio Video Call API
+
+ 2. KWVerificationCodeView (OTP)
+
+ 3. AES Encryption for credit card payment
+ 
+ 4. Time Pickers
+ 
+ 5. Time Stamps and Date Conversion
+
+6. Table Views
+
+7. Collection Views
+
+8. Core Animation 
+
+
 ### Note
 
 Credit Card Test Information:

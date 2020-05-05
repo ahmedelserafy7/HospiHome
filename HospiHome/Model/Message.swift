@@ -8,10 +8,9 @@
 
 import UIKit
 
-class Message: NSObject {
-    var text: String?
-    
-    init(text: String) {
-        self.text = text
-    }
+struct Message: Codable{
+    var body: String
+    var from_id: String
+    var to_id: String
+   // var time: String
 }

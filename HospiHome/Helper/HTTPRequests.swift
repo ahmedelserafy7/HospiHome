@@ -34,6 +34,10 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case updateSchedule = "doctors/updateSchedule"
         case balance = "doctors/balance"
         
+        case getContactsList = "chats/getAllowedContacts"
+        case sendMessage = "chats/sendMessage"
+        case fetchMessages = "chats/fetchMessages"
+        
         
         
     }

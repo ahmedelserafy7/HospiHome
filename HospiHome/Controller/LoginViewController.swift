@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
     }
     
     func validateInputFieldsAndLogin(){
+        
+        setupAuthorizing()
+        self.blackView.alpha = 1
+        self.activityIndicator.startAnimating()
+        
         if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15{
             alertError(withMessage: "Please enter a valid mobile number")
             return
@@ -139,7 +144,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapSignUp(_ sender: Any) {
-         if phoneNumberTextField.text!.count<10{
+         if phoneNumberTextField.text!.count < 10 {
                   alertError(withMessage: "Please enter your mobile number to register")
                   return
               }
@@ -151,14 +156,15 @@ class LoginViewController: UIViewController {
     }
     
     func alertError(withMessage: String){
+        
         DispatchQueue.main.async {
-            
-            self.blackView.alpha = 0
-            self.activityIndicator.stopAnimating()
-            
-                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true) {
+                self.blackView.alpha = 0
+                self.activityIndicator.stopAnimating()
+            }
+//            self.present(alert, animated: true, completion: nil)
         }
 
     }

@@ -51,7 +51,12 @@ class VideoChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.waitingLabel.isHidden = true
-        self.waitingLabel.text = reservation!.time
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat="dd/MM/yyyy HH:mm"
+        let timeString = dateFormatter.string(from:  Date(timeIntervalSince1970: TimeInterval(exactly: Double(reservation!.time)!)!))
+        
+        self.waitingLabel.text = timeString
         
         //self.title = "QuickStart"
         self.messageLabel.adjustsFontSizeToFitWidth = true;

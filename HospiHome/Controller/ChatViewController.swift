@@ -10,6 +10,10 @@ import UIKit
 
 class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     fileprivate let cellId = "cellId"
+    var timer = Timer()
+    var messages = [Message]()
+    var recipientContact: Contact?
+    var index: Int?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -23,12 +27,43 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return cv
     }()
     
-    var messages = [Message(text: "Hey mr toumbrine man, play a song for me, and there is no place i'm going to"), Message(text: "Hey mr toumbrine man, play a song for me")]
+    @objc func fetchMessages(){
+        let parameters = ["recipient": recipientContact!.id]
+        API().httpPOSTRequest(endpoint: .fetchMessages, postData: parameters) { (data, error) in
+            if let data = data{
+            if let response = try? JSONDecoder().decode(FetchMessagesResponse.self, from: data){
+                self.messages = response.messages
+                DispatchQueue.main.async{
+                self.collectionView.reloadData()
+                }
+            }
+            }
+           
+        }
+    }
+    
+    
+    func scheduledTimerWithTimeInterval(){
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.fetchMessages), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
+        super.viewDidDisappear(true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scheduledTimerWithTimeInterval()
+        super.viewDidAppear(animated)
+    }
+        
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchMessages()
         setupNavBar()
-        
+          
         collectionView.register(ChatCell.self, forCellWithReuseIdentifier: cellId)
         setupViews()
         
@@ -62,10 +97,10 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func setupNavBar() {
         
         // right bar button
-        let videoImage = UIImage(systemName: "video.fill")
-        let rightButtonItem = UIBarButtonItem(image: videoImage, style: .plain, target: self, action: #selector(handleVideo))
-        rightButtonItem.tintColor = .red
-        navigationItem.rightBarButtonItem = rightButtonItem
+//        let videoImage = UIImage(systemName: "video.fill")
+//        let rightButtonItem = UIBarButtonItem(image: videoImage, style: .plain, target: self, action: #selector(handleVideo))
+//        rightButtonItem.tintColor = .red
+//        navigationItem.rightBarButtonItem = rightButtonItem
         
         handleNavigationTitle()
     }
@@ -74,27 +109,27 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         titleView.backgroundColor = .red
         
-        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "elon"))
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.layer.cornerRadius = 20
-        profileImageView.layer.masksToBounds = true
+//        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "elon"))
+//        profileImageView.contentMode = .scaleAspectFill
+//        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+//        profileImageView.layer.cornerRadius = 20
+//        profileImageView.layer.masksToBounds = true
+//
+//        titleView.addSubview(profileImageView)
         
-        titleView.addSubview(profileImageView)
-        
-        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
+//        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+//        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
+//        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+//        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Ahmed Samir Elserafy"
+        nameLabel.text = recipientContact!.name
         
         titleView.addSubview(nameLabel)
         
         nameLabel.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
+        //nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: titleView.rightAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
@@ -151,9 +186,23 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @objc func handleSend() {
-        print("you send \(messageContainerView.inputTextView.text)")
-        let message = Message(text: messageContainerView.inputTextView.text)
+        //print("you send \(messageContainerView.inputTextView.text)")
+       
+        let message = Message(body: messageContainerView.inputTextView.text, from_id: profile!.id, to_id: recipientContact!.id)
         messages.append(message)
+        chatContacts[index!].lastmessage = message.body
+        let parameters = ["recipient":recipientContact!.id, "body":message.body] as! [String:String]
+        API().httpPOSTRequest(endpoint: .sendMessage, postData: parameters) { (data, error) in
+            if let data = data{
+            if let response = try? JSONDecoder().decode(FetchMessagesResponse.self, from: data){
+                self.messages = response.messages
+                DispatchQueue.main.async{
+                self.collectionView.reloadData()
+                }
+            }
+            }
+           
+        }
         self.collectionView.reloadData()
         clearText()
     }
@@ -178,7 +227,7 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatCell
         
         let message = messages[indexPath.item]
-        guard let messageText = message.text else { return ChatCell()}
+        let messageText = message.body
         
         cell.textView.text = messageText
         
@@ -191,7 +240,8 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCell(_ message: Message, _ cell: ChatCell) {
         // outgoing messages
         
-//        cell.bubbleView.backgroundColor = UIColor(r: 0, g: 137, b: 249)
+        if (message.from_id==profile!.id){
+        
         let blueBubbleImageView = UIImage(named: "bubble_blue")?.resizableImage(withCapInsets: UIEdgeInsets(top: 22,left: 26,bottom: 22,right: 26)).withRenderingMode(.alwaysTemplate)
         
         cell.bubbleImageView.image = blueBubbleImageView
@@ -201,12 +251,14 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell.bubbleViewLeftAnchor?.isActive = false
         cell.bubbleViewRightAnchor?.isActive = true
+        }
+        else{
         
         // incoming gray messages
         
-//        cell.bubbleView.backgroundColor = UIColor(r: 240, g: 240, b: 240)
+        cell.bubbleView.backgroundColor = UIColor(r: 240, g: 240, b: 240)
         
-       /* let grayBubbleImageView = UIImage(named: "bubble_gray")?.resizableImage(withCapInsets: UIEdgeInsets(top: 22,left: 26,bottom: 22,right: 26)).withRenderingMode(.alwaysTemplate)
+       let grayBubbleImageView = UIImage(named: "bubble_gray")?.resizableImage(withCapInsets: UIEdgeInsets(top: 22,left: 26,bottom: 22,right: 26)).withRenderingMode(.alwaysTemplate)
         
         cell.bubbleImageView.image = grayBubbleImageView
         cell.bubbleImageView.tintColor = UIColor(r: 240, g: 240, b: 240)
@@ -214,16 +266,16 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.textView.textColor = .black
 
         cell.bubbleViewLeftAnchor?.isActive = true
-        cell.bubbleViewRightAnchor?.isActive = false*/
+        cell.bubbleViewRightAnchor?.isActive = false
     }
-
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var height: CGFloat?
         let message = messages[indexPath.item]
-        if let text = message.text {
+        let text = message.body
             height = estimatedSizeOfTextFrame(text).height + 20
-        }
+        
         
         let width = UIScreen.main.bounds.width
         return CGSize(width: width, height: height!)

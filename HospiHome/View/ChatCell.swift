@@ -63,11 +63,10 @@ class ChatCell: UICollectionViewCell {
         bubbleImageView.bottomAnchor.constraint(equalTo: bubbleView.bottomAnchor)
         ])
         
-        
         // text view constraints
         bubbleImageView.addSubview(textView)
-        textView.leftAnchor.constraint(equalTo: bubbleImageView.leftAnchor,constant: 8).isActive = true
-        textView.rightAnchor.constraint(equalTo: bubbleImageView.rightAnchor, constant: -8).isActive = true
+        textView.leftAnchor.constraint(equalTo: bubbleImageView.leftAnchor,constant: 4).isActive = true
+        textView.rightAnchor.constraint(equalTo: bubbleImageView.rightAnchor, constant: -4).isActive = true
         textView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         textView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
     }

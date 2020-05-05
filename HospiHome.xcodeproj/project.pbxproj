@@ -66,6 +66,9 @@
 		A8122C852460AE1B002F1186 /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7C2460AE1B002F1186 /* CalendarView+Style.swift */; };
 		A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122C7D2460AE1B002F1186 /* CalendarFlowLayout.swift */; };
 		A8122E2D2460C317002F1186 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8122E2C2460C317002F1186 /* RNCryptor.swift */; };
+		A82158962461E247003AB8CD /* FetchMessagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82158952461E247003AB8CD /* FetchMessagesResponse.swift */; };
+		A82158982461E7D8003AB8CD /* GetContactsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82158972461E7D8003AB8CD /* GetContactsResponse.swift */; };
+		A821589A2461E7F6003AB8CD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82158992461E7F6003AB8CD /* Contact.swift */; };
 		A8260FC4246083C50016CD29 /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */; };
 		A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC5246084160016CD29 /* DoctorSchedule.swift */; };
 		A8260FC824608A130016CD29 /* GetScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8260FC724608A130016CD29 /* GetScheduleResponse.swift */; };
@@ -266,6 +269,9 @@
 		A8122D8A2460C1C9002F1186 /* HospiHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospiHomeUITests.swift; sourceTree = "<group>"; };
 		A8122D8B2460C1C9002F1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8122E2C2460C317002F1186 /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
+		A82158952461E247003AB8CD /* FetchMessagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesResponse.swift; sourceTree = "<group>"; };
+		A82158972461E7D8003AB8CD /* GetContactsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactsResponse.swift; sourceTree = "<group>"; };
+		A82158992461E7F6003AB8CD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		A8260FC5246084160016CD29 /* DoctorSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSchedule.swift; sourceTree = "<group>"; };
 		A8260FC724608A130016CD29 /* GetScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScheduleResponse.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 		1610C953245A2F11001B178B = {
 			isa = PBXGroup;
 			children = (
+				A82158992461E7F6003AB8CD /* Contact.swift */,
 				A8122C572460ADCC002F1186 /* CalendarView */,
 				A8260FE62460AAC90016CD29 /* MFCard */,
 				16834418245FE5AA00385937 /* KWVerificationCodeView */,
@@ -349,9 +356,9 @@
 				1610C95F245A2F11001B178B /* AppDelegate.swift */,
 				1610C961245A2F11001B178B /* SceneDelegate.swift */,
 				1610C99D245AAE22001B178B /* Helper */,
+				1610C997245A90D2001B178B /* View */,
 				1652C38A245F2BC700EB2442 /* Model */,
 				1610C998245A90F0001B178B /* Controller */,
-				1610C997245A90D2001B178B /* View */,
 				1610C965245A2F11001B178B /* Main.storyboard */,
 				1610C968245A2F13001B178B /* Assets.xcassets */,
 				1610C96A245A2F13001B178B /* LaunchScreen.storyboard */,
@@ -481,9 +488,11 @@
 			isa = PBXGroup;
 			children = (
 				16834432245FEA7300385937 /* FetchDoctorsResponse.swift */,
+				A82158952461E247003AB8CD /* FetchMessagesResponse.swift */,
 				A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */,
 				A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */,
 				A8260FC724608A130016CD29 /* GetScheduleResponse.swift */,
+				A82158972461E7D8003AB8CD /* GetContactsResponse.swift */,
 				16834433245FEA7300385937 /* APIResponse.swift */,
 				16834434245FEA7300385937 /* LoginResponse.swift */,
 				A8019E432460108C00C6B0FD /* ArticlesResponse.swift */,
@@ -987,6 +996,7 @@
 				A8260FE52460AA9C0016CD29 /* ReservationViewController.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */,
+				A82158982461E7D8003AB8CD /* GetContactsResponse.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
 				A8122C812460AE1B002F1186 /* CalendarView+Extensions.swift in Sources */,
 				A8122C842460AE1B002F1186 /* CalendarDayCell.swift in Sources */,
@@ -998,9 +1008,11 @@
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
 				A8260FFA2460AAC90016CD29 /* CreditCardValidationType.swift in Sources */,
 				A8019E4224600B6E00C6B0FD /* Article.swift in Sources */,
+				A82158962461E247003AB8CD /* FetchMessagesResponse.swift in Sources */,
 				161B9F11246166BF00CA6C61 /* ForgotPasswordViewController.swift in Sources */,
 				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
+				A821589A2461E7F6003AB8CD /* Contact.swift in Sources */,
 				1610C996245A9087001B178B /* ChatCell.swift in Sources */,
 				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
 				A8AFD29824616E65002B8563 /* VideoChatUtils.swift in Sources */,

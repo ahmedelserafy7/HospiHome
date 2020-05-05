@@ -26,6 +26,8 @@ class VideoChatViewController: UIViewController {
     var remoteParticipant: RemoteParticipant?
     var remoteView: VideoView?
     var reservation: Reservation?
+    var cameraAllowed = true
+    var microphoneAllowed = true
     
     // MARK:- UI Element Outlets and handles
     
@@ -55,6 +57,7 @@ class VideoChatViewController: UIViewController {
                 if granted {
                     //access allowed
                 } else {
+                    self.cameraAllowed = false
                                         self.alertError(withMessage: "The app cannot access your camera, you can allow it in your device settings")
                 }
             })
@@ -69,6 +72,7 @@ class VideoChatViewController: UIViewController {
                 if granted {
                     //access allowed
                 } else {
+                    self.microphoneAllowed = false
                     self.alertError(withMessage: "The app cannot access your microphone, you can allow it in your device settings")
                 }
             })
@@ -80,6 +84,10 @@ class VideoChatViewController: UIViewController {
         super.viewDidLoad()
         checkForMicPermissions()
         checkForCameraPermissions()
+        
+        if !cameraAllowed && !microphoneAllowed{
+            connectButton.isEnabled = false
+        }
         //self.waitingLabel.isHidden = true
         
         let dateFormatter = DateFormatter()

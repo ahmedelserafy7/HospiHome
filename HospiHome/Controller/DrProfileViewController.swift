@@ -50,7 +50,7 @@ class DrProfileViewController: UIViewController {
             let reservationResponse = try? JSONDecoder().decode(SoonestReservationResponse.self, from: data)
             
             DispatchQueue.main.async {
-                if let response = reservationResponse{
+                if let response = reservationResponse {
                     if response.success{
                         self.bookButton.isHidden = true
                         let reservation = response.reservation!

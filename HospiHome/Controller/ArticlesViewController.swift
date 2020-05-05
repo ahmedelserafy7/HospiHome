@@ -32,7 +32,7 @@ class ArticlesViewController: UITableViewController {
                 articles[i].body = articles[i].body.replacingOccurrences(of: "\\n", with: "\n")
                 articles[i].body = articles[i].body.replacingOccurrences(of: "\\n", with: "\n")
                 
-                if base64String.count > 50{
+                if base64String.count > 50 {
                     articles[i].posterImage = Data(base64Encoded: base64String.replacingOccurrences(of: "\\/", with: "/"))
                     self.articlesArray.append(articles[i])
                 }
@@ -81,7 +81,6 @@ extension ArticlesViewController{
         let articleDetailsViewController = storyboard?.instantiateViewController(identifier: "details") as! ArticleDetailsViewController
         articleDetailsViewController.article = articlesArray[indexPath.row]
         navigationController?.pushViewController(articleDetailsViewController, animated: true)
-        
     }
     
 }

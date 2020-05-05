@@ -67,7 +67,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         if let delegate = self.delegate {
             return delegate.calendar(self, canSelectDate: dateBeingSelected)
         }
-   
+        
         return true // default
     }
     
@@ -75,7 +75,6 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.updateAndNotifyScrolling()
-        
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -88,9 +87,8 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         
         self.displayDateOnHeader(date)
         self.delegate?.calendar(self, didScrollToMonth: date)
-        
     }
-
+    
     @discardableResult
     func dateFromScrollViewPosition() -> Date? {
         var page: Int = 0
@@ -126,7 +124,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
         let monthName = formatter.monthSymbols[(month-1) % 12].capitalized // 0 indexed array
         
         let year = self.calendar.component(.year, from: date)
-
+        
         self.headerView.monthLabel.text = dataSource?.headerString(date) ?? monthName + " " + String(year)
         
         self.displayDate = date

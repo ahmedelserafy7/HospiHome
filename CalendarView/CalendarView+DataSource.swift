@@ -129,9 +129,9 @@ extension CalendarView: UICollectionViewDataSource {
         
         let date = self.calendar.date(byAdding: monthOffsetComponents, to: firstDayCache)
         
-        var firstWeekdayOfMonthIndex    = date == nil ? 0 : self.calendar.component(.weekday, from: date!)
-        firstWeekdayOfMonthIndex       -= style.firstWeekday == .monday ? 1 : 0
-        firstWeekdayOfMonthIndex        = (firstWeekdayOfMonthIndex + 6) % 7 // push it modularly to map it in the range 0 to 6
+        var firstWeekdayOfMonthIndex = date == nil ? 0 : self.calendar.component(.weekday, from: date!)
+        firstWeekdayOfMonthIndex -= style.firstWeekday == .monday ? 1 : 0
+        firstWeekdayOfMonthIndex = (firstWeekdayOfMonthIndex + 6) % 7 // push it modularly to map it in the range 0 to 6
         
         guard let rangeOfDaysInMonth = date == nil ? nil : self.calendar.range(of: .day, in: .month, for: date!)
             else { return nil }
@@ -177,9 +177,6 @@ extension CalendarView: UICollectionViewDataSource {
                 }
             }
             
-            
-            
-            
             return isOutOfRange
             
         }
@@ -197,12 +194,10 @@ extension CalendarView: UICollectionViewDataSource {
                 if indexPath.item < firstDayIndex {
                     if let prevInfo = self.getCachedSectionInfo(indexPath.section - 1) {
                         dayCell.day = prevInfo.daysTotal - firstDayIndex + indexPath.item
-                    }
-                    else {
+                    } else {
                         dayCell.isHidden = true
                     }
-                }
-                else {
+                } else {
                     dayCell.day = indexPath.item - lastDayIndex + 1
                 }
             }
@@ -241,8 +236,7 @@ extension CalendarView: UICollectionViewDataSource {
             //            dayCell.isWeekend = we == weekDayOption || we == 6
             if self.disabledDaysInt.contains(indexPath.item % 7){
                 dayCell.isWeekend = true
-            }
-            else{
+            } else {
                 dayCell.isWeekend = false
             }
         }

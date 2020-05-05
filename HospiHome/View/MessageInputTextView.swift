@@ -9,6 +9,7 @@
 import UIKit
 
 class MessageInputTextView: UITextView {
+    
     let placeHolderLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)

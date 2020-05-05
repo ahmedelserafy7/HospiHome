@@ -152,7 +152,7 @@ open class CalendarDayCell: UICollectionViewCell {
         
         self.addSubview(self.dotsView)
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

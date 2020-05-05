@@ -9,6 +9,5 @@
 import UIKit
 
 class TimeSlotCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet var label: UILabel!
 }

@@ -10,18 +10,16 @@ import UIKit
 public var chatContacts = [Contact]()
 
 class MessageViewController: UITableViewController {
-
+    
     fileprivate let cellId = "cellId"
- 
+    
     @IBOutlet var noContactslabel: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavTitleView()
-      getContacts()
- 
+        getContacts()
+        
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -32,7 +30,7 @@ class MessageViewController: UITableViewController {
             if(chatContacts.count == 0){
                 self.noContactslabel.isHidden = false
                 //self.tableView.isHidden=true
-             }
+            }
         }
         super.viewWillAppear(true)
     }
@@ -56,7 +54,6 @@ class MessageViewController: UITableViewController {
         navTitleView.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         navigationItem.titleView = navTitleView
     }
-
 }
 
 
@@ -76,13 +73,11 @@ extension MessageViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let chatController = storyboard?.instantiateViewController(identifier: "chat") as! ChatViewController
+        //        let chatController = storyboard?.instantiateViewController(identifier: "chat") as! ChatViewController
         let chatViewController = ChatViewController()
         chatViewController.recipientContact = chatContacts[indexPath.row]
         chatViewController.index = indexPath.row
         navigationController?.pushViewController(chatViewController, animated: true)
-        
     }
-    
 }
 

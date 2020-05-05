@@ -12,8 +12,6 @@ class CardViewController: UIViewController {
     
     @IBOutlet weak var moveAreaView: UIView!
     
-    fileprivate let cellId = "cellId"
-    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = .white
@@ -25,10 +23,11 @@ class CardViewController: UIViewController {
     
     var cardNames = ["Notification", "Settings", "Help", "Give us feedback", "About", "Log out"]
     var cardIcons: [UIImage] = [UIImage(systemName: "bell.fill")!, UIImage(systemName: "gear")!, UIImage(systemName: "questionmark.circle.fill")!, UIImage(systemName:"bubble.left.fill")!, UIImage(systemName: "info")!, UIImage(systemName: "arrow.left")!]
-//        ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
+    fileprivate let cellId = "cellId"
     override func viewDidLoad() {
         super.viewDidLoad()
-        if profile?.accountType == AccountType.Doctor{
+        
+        if profile?.accountType == AccountType.Doctor {
             cardNames.append("Create/Update Schedule")
             cardIcons.append(UIImage(systemName: "calendar")!)
             
@@ -45,10 +44,10 @@ class CardViewController: UIViewController {
                 let response = try? JSONDecoder().decode(APIResponse.self, from: data)
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Result", message: response?.msg, preferredStyle: .alert)
-                           alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
                     self.parent?.present(alert, animated: true) {
-                           }
-                       }
+                    }
+                }
             }
         }
     }
@@ -80,8 +79,8 @@ class CardViewController: UIViewController {
     func navigateToScheduleVC() {
         DispatchQueue.main.async {
             let scheduleViewController = self.parent?.storyboard?.instantiateViewController(identifier: "schedule") as! CreateScheduleViewController
-        scheduleViewController.modalPresentationStyle = .fullScreen
-        self.present(scheduleViewController, animated: true, completion: nil)
+            scheduleViewController.modalPresentationStyle = .fullScreen
+            self.present(scheduleViewController, animated: true, completion: nil)
         }
     }
     
@@ -91,7 +90,6 @@ class CardViewController: UIViewController {
             self.navigationController?.pushViewController(aboutViewController, animated: true)
         }
     }
-    
 }
 
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
@@ -106,8 +104,7 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
             navigateToScheduleVC()
         } else if cardNames[indexPath.item] == "About" {
             navigateAboutVC()
-        }
-        else if cardNames[indexPath.item] == "Check My Balance"{
+        } else if cardNames[indexPath.item] == "Check My Balance"{
             fetchBalance()
         }
     }

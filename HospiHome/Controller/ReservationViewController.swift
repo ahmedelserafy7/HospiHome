@@ -12,6 +12,39 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
     var doctor: Doctor?
     var chosenTimeStamp: Int?
     
+    let blackView: UIView = {
+          let bv = UIView()
+          bv.backgroundColor = .black
+          bv.layer.cornerRadius = 16
+          bv.layer.masksToBounds = true
+          bv.translatesAutoresizingMaskIntoConstraints = false
+          return bv
+      }()
+      
+      let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+          aI.hidesWhenStopped = true
+          aI.translatesAutoresizingMaskIntoConstraints = false
+          return aI
+      }()
+      
+      func setupSpinner() {
+        blackView.isHidden = true
+          view.addSubview(blackView)
+          blackView.addSubview(activityIndicator)
+        
+          
+          blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+          blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+          blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+          blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+          
+          activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+          activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+          activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+          activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+      }
+    
     func cardDoneButtonClicked(_ card: Card?, error: String?) {
         if let cardCVC = card?.cvc,let cardMonth = card?.month, let cardYear = card?.year,let cardNumber = card?.number
             ,let cardName = card?.name
@@ -28,40 +61,45 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
             let ciphertext = RNCryptor.encrypt(data: cardInfo.data(using: .utf8)!, withPassword: password)
             
             let parameters = ["paymentToken":ciphertext.base64EncodedString()]
+            blackView.isHidden = false
             API().httpPOSTRequest(endpoint: .reserve, postData: parameters) { (data, error) in
-                  guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
-                
+                DispatchQueue.main.async {self.blackView.isHidden = true}
+                guard let data = data else{self.alertError(withMessage: "Unknown Response from server, please try again later");return;}
+               
                           let paymentResponse = try? JSONDecoder().decode(APIResponse.self, from: data)
                 
-                    if let response = paymentResponse{
-                        if response.success{
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Success", message: response.msg, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.parent?.present(alert, animated: true, completion: {
-                            self.navigateToHomeVC()
-                        })
-                            }
-                        }
-                        else{
-                            self.alertError(withMessage: response.msg)
-                        }
+                DispatchQueue.main.async {
+                       if let response = paymentResponse{
+                            if response.success{
+                       let okAction = UIAlertAction(title: "OK", style: .default) {
+                           UIAlertAction in
+                           self.navigateToHomeVC()
+                       }
+                    let alert = UIAlertController(title: "Success", message: response.msg, preferredStyle: .alert)
+                    alert.addAction(okAction)
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    else{
+                    self.alertError(withMessage: response.msg)
+                    }
+    }
                 }
             }
         }
-
     }
+ 
+        
     
-    
-
     func navigateToHomeVC() {
-        DispatchQueue.main.async {
-            let tabBarController = self.storyboard?.instantiateViewController(identifier: "tabBar") as! CustomTabBarController
+         DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        let tabBarController = self.storyboard?.instantiateViewController(identifier: "tabBar") as! CustomTabBarController
         tabBarController.modalPresentationStyle = .fullScreen
         self.present(tabBarController, animated: true, completion: nil)
         }
+        
     }
-
+    
     
     
     func calendar(_ calendar: CalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) {
@@ -212,6 +250,7 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
 
 
         super.viewDidLoad()
+        setupSpinner()
         self.calendarView.delegate = self
         self.calendarView.dataSource = self
         timeSlotsCollectionView.delegate = self

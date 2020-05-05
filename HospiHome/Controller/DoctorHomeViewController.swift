@@ -11,6 +11,8 @@ import UIKit
 class DoctorHomeViewController: UIViewController {
     
     
+
+    
     var reservationsArray = [Reservation]()
     
     var filteredArray = [Reservation](){
@@ -29,11 +31,36 @@ class DoctorHomeViewController: UIViewController {
         super.viewDidLoad()
         setupNavBar()
         searchBarSetup()
+        fetchMyReservations()
         tableView.estimatedRowHeight = 110
-        tableView.separatorColor = UIColor.clear
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    func fetchMyReservations(){
+        API().httpGETRequest(endpoint: .getMyReservations) { (data, error) in
+            guard let data = data else{self.alertError(withTitle: "Unable to check for reservations", withMessage: "Unknown Response from server, please try again later");return;}
+            
+             
+            
+            let reservationResponse = try? JSONDecoder().decode(DoctorReservationsResponse.self, from: data)
+            
+            DispatchQueue.main.async {
+                if let response = reservationResponse{
+                    if response.success{
+                        self.reservationsArray = response.reservations!
+                        self.filteredArray = self.reservationsArray
+                    }
+                    }
+                }
+            
+        }
+    }
+    
+    
+    
     
     func setupNavBar() {
            navigationItem.title = "My Reservations"
@@ -47,15 +74,7 @@ class DoctorHomeViewController: UIViewController {
            
            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(r: 240, g: 240, b: 240)
        }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -68,11 +87,24 @@ extension DoctorHomeViewController: UITextFieldDelegate {
 }
 extension DoctorHomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //filterResults()
+        if searchText == ""{
+             filteredArray = reservationsArray
+            return
+        }
+        let searchText = searchBar.searchTextField.text!
+               if !searchText.isEmpty {
+                   filteredArray = reservationsArray.filter { (reservation) -> Bool in
+                    let dateFormatter = DateFormatter()
+                       dateFormatter.dateFormat="EEEE dd/MM/yyyy HH:mm"
+                    let timeString = dateFormatter.string(from:  Date(timeIntervalSince1970: TimeInterval(exactly: Double(reservation.time)!)!))
+                    return reservation.patientName!.contains(searchText) || timeString.contains(searchText)
+                   }
+               }
+               self.tableView.reloadData()
+           }
     }
     
 
-}
 
 // MARK: TableViewDelegate, and DataSource
 extension DoctorHomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -84,28 +116,31 @@ extension DoctorHomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reservationcell", for: indexPath) as! HomeCell
-//        cell.parent = self
-//        cell.doctor = filteredArray[indexPath.section]
-//        cell.bioLabel.text? = self.filteredArray[indexPath.section].info.bio
-//        cell.nameLabel.text? = self.filteredArray[indexPath.section].info.name
-//        cell.feesLabel.text? = self.filteredArray[indexPath.section].info.fees + " EGP"
-//        if let image = self.filteredArray[indexPath.row].info.image{cell.avatarView.image = UIImage(data: image)}
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reservationcell", for: indexPath) as! ReservationCell
+        cell.nameLabel.text = filteredArray[indexPath.section].patientName
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat="EEEE dd/MM/yyyy HH:mm"
+        let timeString = dateFormatter.string(from:  Date(timeIntervalSince1970: TimeInterval(exactly: Double(filteredArray[indexPath.section].time)!)!))
+        cell.timeLabel.text = timeString
+        cell.reservationNumberLabel.text = "Reservation #" + filteredArray[indexPath.section].id
+         if (Int(NSDate().timeIntervalSince1970) > Int(filteredArray[indexPath.section].time)!-3600){
+        cell.connectButton.isHidden = false
+        }
+         else{
+             cell.connectButton.isHidden = true
+        }
+        cell.reservation = filteredArray[indexPath.section]
+        cell.parentController = self
        return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-//        let drProfileViewController = storyboard?.instantiateViewController(identifier: "dr") as! DrProfileViewController
-//        drProfileViewController.doctor = filteredArray[indexPath.section]
-//        navigationController?.pushViewController(drProfileViewController, animated: true)
-    }
     
-    func alertError(withMessage: String){
+    func alertError(withTitle: String,withMessage: String){
         DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
         }
     }
+    
 }

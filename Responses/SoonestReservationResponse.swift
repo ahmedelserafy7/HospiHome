@@ -15,5 +15,6 @@ struct SoonestReservationResponse: Codable{
 
 struct Reservation: Codable{
     var time: String
+    var patientName: String?
     var id: String
 }

@@ -26,6 +26,7 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case reserve = "reservations/reserve.php"
         case soonestReservation = "reservations/soonestReservation.php"
         case videoToken = "reservations/createVideoToken.php"
+        case getMyReservations = "doctors/getReservations.php"
         
         
         

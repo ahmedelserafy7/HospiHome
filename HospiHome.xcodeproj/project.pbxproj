@@ -89,6 +89,7 @@
 		A8AFD2A424619868002B8563 /* DoctorReservationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */; };
 		A8AFD2A624619932002B8563 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */; };
 		A8AFD2A824619B6F002B8563 /* DoctorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */; };
+		A8AFD2AA2461A02A002B8563 /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A92461A02A002B8563 /* ReservationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,6 +289,7 @@
 		A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorReservationsResponse.swift; sourceTree = "<group>"; };
 		A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
 		A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeViewController.swift; sourceTree = "<group>"; };
+		A8AFD2A92461A02A002B8563 /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +381,7 @@
 		1610C997245A90D2001B178B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8AFD2A92461A02A002B8563 /* ReservationCell.swift */,
 				A8260FE22460AA880016CD29 /* TimeSlotCollectionViewCell.swift */,
 				161148A3245BC8F7000AACB8 /* HomeCell.swift */,
 				1610C98F245A5BB7001B178B /* MessageCell.swift */,
@@ -977,6 +980,7 @@
 				1610C99C245AAE1A001B178B /* Extensions+UIColor.swift in Sources */,
 				A8122C852460AE1B002F1186 /* CalendarView+Style.swift in Sources */,
 				16834421245FE5AC00385937 /* KWTextFieldView.swift in Sources */,
+				A8AFD2AA2461A02A002B8563 /* ReservationCell.swift in Sources */,
 				16834436245FEA7400385937 /* APIResponse.swift in Sources */,
 				161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */,
 				1683442C245FEA0A00385937 /* HTTPRequests.swift in Sources */,

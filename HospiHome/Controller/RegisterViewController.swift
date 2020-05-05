@@ -51,13 +51,50 @@ class RegisterViewController: UIViewController {
         view.endEditing(true)
     }
     
+    let blackView: UIView = {
+        let bv = UIView()
+        bv.backgroundColor = .black
+        bv.layer.cornerRadius = 16
+        bv.layer.masksToBounds = true
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: .white)
+        aI.hidesWhenStopped = true
+        aI.translatesAutoresizingMaskIntoConstraints = false
+        return aI
+    }()
+    
     @IBAction func didTapRegister(_ sender: Any) {
          validateInputFields()
         //won't run as another UIAlert is intact
         askForPhoneNumber()
     }
     
+    func setupAuthorizing() {
+        
+        view.addSubview(blackView)
+        blackView.addSubview(activityIndicator)
+        
+        blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
     func validateInputFields(){
+        
+        setupAuthorizing()
+        self.blackView.alpha = 1
+        self.activityIndicator.startAnimating()
+        
         if nameTextField.text!.count < 6 || nameTextField.text!.count > 50{
             alertError(withMessage: "Please enter a valid name")
             return
@@ -103,7 +140,11 @@ class RegisterViewController: UIViewController {
     func alertError(withMessage: String){
         let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true) {
+            self.blackView.alpha = 0
+            self.activityIndicator.stopAnimating()
+        }
+//        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapLogin(_ sender: Any) {

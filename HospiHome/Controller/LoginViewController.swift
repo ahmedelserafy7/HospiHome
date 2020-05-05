@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         setupAuthorizing()
         requestNotificationsPermissions()
         setupTextField()
     }
@@ -53,12 +53,12 @@ class LoginViewController: UIViewController {
              }
         }
     }
-    
+
     func validateInputFieldsAndLogin(){
         
-        setupAuthorizing()
-        self.blackView.alpha = 1
-        self.activityIndicator.startAnimating()
+//        setupAuthorizing()
+//        self.blackView.alpha = 1
+//        self.activityIndicator.startAnimating()
         
         if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15{
             alertError(withMessage: "Please enter a valid mobile number")
@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
     }()
     
     let activityIndicator: UIActivityIndicatorView = {
-        let aI = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        let aI = UIActivityIndicatorView(style: .white)
         aI.hidesWhenStopped = true
         aI.translatesAutoresizingMaskIntoConstraints = false
         return aI
@@ -91,6 +91,7 @@ class LoginViewController: UIViewController {
         
         view.addSubview(blackView)
         blackView.addSubview(activityIndicator)
+        blackView.alpha = 0
         
         blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -104,6 +105,7 @@ class LoginViewController: UIViewController {
     }
     
     func disableInput(){
+        toggleSpinner()
          DispatchQueue.main.async {
             self.phoneNumberTextField.isEnabled = !self.phoneNumberTextField.isEnabled
             self.passwordTextField.isEnabled = !self.passwordTextField.isEnabled
@@ -180,8 +182,8 @@ class LoginViewController: UIViewController {
             let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true) {
-                self.blackView.alpha = 0
-                self.activityIndicator.stopAnimating()
+//                self.blackView.alpha = 0
+//                self.activityIndicator.stopAnimating()
             }
 //            self.present(alert, animated: true, completion: nil)
         }

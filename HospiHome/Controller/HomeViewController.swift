@@ -225,7 +225,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

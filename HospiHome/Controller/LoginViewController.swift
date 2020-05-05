@@ -143,6 +143,12 @@ class LoginViewController: UIViewController {
         window?.rootViewController = tabBarController
     }
     
+    @IBAction func didTapForgot(_ sender: Any) {
+        let forgotViewController = storyboard?.instantiateViewController(identifier: "forgot") as! ForgotPasswordViewController
+        forgotViewController.modalPresentationStyle = .fullScreen
+        self.present(forgotViewController, animated: false, completion: nil)
+    }
+    
     @IBAction func didTapSignUp(_ sender: Any) {
          if phoneNumberTextField.text!.count < 10 {
                   alertError(withMessage: "Please enter your mobile number to register")

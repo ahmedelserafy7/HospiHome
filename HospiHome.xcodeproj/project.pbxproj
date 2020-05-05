@@ -32,6 +32,7 @@
 		161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161148B3245CC6A3000AACB8 /* CardViewController.xib */; };
 		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
 		161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9EFF24610E4500CA6C61 /* AboutViewController.swift */; };
+		161B9F11246166BF00CA6C61 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */; };
 		1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C386245E81ED00EB2442 /* MessageInputTextView.swift */; };
 		1652C389245F2BBA00EB2442 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C388245F2BBA00EB2442 /* Message.swift */; };
 		1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */; };
@@ -130,6 +131,7 @@
 		161148B3245CC6A3000AACB8 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		161B9EFF24610E4500CA6C61 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		1652C386245E81ED00EB2442 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		1652C388245F2BBA00EB2442 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */,
 				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
+				161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */,
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
 				16834427245FE5DC00385937 /* OTPViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
@@ -946,6 +949,7 @@
 				1610C992245A8C7A001B178B /* ChatViewController.swift in Sources */,
 				A8260FFA2460AAC90016CD29 /* CreditCardValidationType.swift in Sources */,
 				A8019E4224600B6E00C6B0FD /* Article.swift in Sources */,
+				161B9F11246166BF00CA6C61 /* ForgotPasswordViewController.swift in Sources */,
 				1610C9A3245ACB52001B178B /* ProfileViewController.swift in Sources */,
 				1610C962245A2F11001B178B /* SceneDelegate.swift in Sources */,
 				1610C996245A9087001B178B /* ChatCell.swift in Sources */,

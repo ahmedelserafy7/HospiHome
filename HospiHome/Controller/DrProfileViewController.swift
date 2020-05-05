@@ -16,8 +16,16 @@ class DrProfileViewController: UIViewController {
     var doctor: Doctor?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        if let doctor=doctor{
+        setupNavBar()
+        hideWhenSwipe()
+        
+        fetchDrProfileDetails()
+    }
+    
+    func fetchDrProfileDetails() {
+        if let doctor = doctor {
             feesLabel.text = doctor.info.fees + " EGP"
             bioLabel.text = doctor.info.bio
             nameLabel.text = doctor.info.name
@@ -25,12 +33,8 @@ class DrProfileViewController: UIViewController {
                 avatarImageView.image = UIImage(data: image)
             }
         }
-        setupNavBar()
-        hideWhenSwipe()
     }
-    
-
-    
+        
     func setupNavBar() {
         navigationController?.navigationBar.isTranslucent = false
     }

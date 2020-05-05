@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mw0-gv-ZAL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -217,7 +217,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01100001138" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-23-HRG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-23-HRG">
                                 <rect key="frame" x="37" y="329.5" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CdX-rr-rbP"/>
@@ -231,7 +231,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-tK-acM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-tK-acM">
                                 <rect key="frame" x="37" y="429" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="O1h-Wp-1aA"/>
@@ -345,7 +345,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-Ex-EEL">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-Ex-EEL">
                                             <rect key="frame" x="28" y="15" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="DIK-y0-6bz"/>
@@ -692,7 +692,7 @@ Happy Pinning (and reading)!
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-Cf-727">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-Cf-727">
                                 <rect key="frame" x="147" y="124" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="WNC-sI-3zH"/>
@@ -787,6 +787,55 @@ Happy Pinning (and reading)!
             </objects>
             <point key="canvasLocation" x="4167" y="1430"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="UEc-hf-scY">
+            <objects>
+                <viewController storyboardIdentifier="about" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iiP-iv-rUH" customClass="AboutViewController" customModule="HospiHome" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JEn-KC-5P7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seif" translatesAutoresizingMaskIntoConstraints="NO" id="tKM-X9-RSH">
+                                <rect key="frame" x="217" y="278" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="5nW-sw-rP0"/>
+                                    <constraint firstAttribute="width" constant="160" id="uX8-IP-gl1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ahmed" translatesAutoresizingMaskIntoConstraints="NO" id="B86-OY-h2r">
+                                <rect key="frame" x="37" y="278" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Ifa-nV-9Ka"/>
+                                    <constraint firstAttribute="height" constant="160" id="qj5-Xc-X0z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B86-OY-h2r" firstAttribute="centerX" secondItem="JEn-KC-5P7" secondAttribute="centerX" constant="-90" id="JYE-jy-iqI"/>
+                            <constraint firstItem="tKM-X9-RSH" firstAttribute="top" secondItem="B86-OY-h2r" secondAttribute="top" id="lVY-z6-Gv7"/>
+                            <constraint firstItem="tKM-X9-RSH" firstAttribute="centerX" secondItem="JEn-KC-5P7" secondAttribute="centerX" constant="90" id="sHU-KV-Nz5"/>
+                            <constraint firstItem="B86-OY-h2r" firstAttribute="centerY" secondItem="JEn-KC-5P7" secondAttribute="centerY" constant="-90" id="sw3-Jp-Eit"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hVF-3e-efA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6m-2g-ZUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080" y="1424"/>
+        </scene>
         <!--Dr Profile View Controller-->
         <scene sceneID="BmG-gt-NSt">
             <objects>
@@ -808,7 +857,7 @@ Happy Pinning (and reading)!
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-nv-8hW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-nv-8hW">
                                                 <rect key="frame" x="147" y="60" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="Zmx-OR-r3o"/>
@@ -1014,7 +1063,7 @@ Happy Pinning (and reading)!
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ind-Va-ySn">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="Qc2-fS-YTU">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="Qc2-fS-YTU">
                                                             <rect key="frame" x="12" y="24" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="AMs-yl-nrn"/>
@@ -1247,7 +1296,7 @@ Happy Pinning (and reading)!
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-R3-6v3" userLabel="containerView">
                                 <rect key="frame" x="87" y="417" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="XET-TD-NeT"/>
                                     <constraint firstAttribute="height" constant="62" id="ij3-Lt-LeA"/>
@@ -1461,15 +1510,27 @@ Happy Pinning (and reading)!
                                     <action selector="previousMonthTapped:" destination="QK4-ly-PL3" eventType="touchUpInside" id="Y9W-HD-jge"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tde-vt-RUL">
-                                <rect key="frame" x="186" y="776" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tde-vt-RUL">
+                                <rect key="frame" x="207" y="797" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTE-AT-660">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTE-AT-660">
                                 <rect key="frame" x="135.5" y="822" width="143" height="30"/>
-                                <state key="normal" title="Continue to payment"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="SOA-OH-nyj"/>
+                                    <constraint firstAttribute="height" constant="30" id="bxS-Jg-MrN"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Continue to payment">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <action selector="paymentTapped:" destination="QK4-ly-PL3" eventType="touchUpInside" id="rma-kA-EVs"/>
                                 </connections>
@@ -1482,6 +1543,7 @@ Happy Pinning (and reading)!
                             <constraint firstItem="yLc-Ej-6k2" firstAttribute="top" secondItem="BeU-xu-QC0" secondAttribute="top" id="37a-5f-Ysn"/>
                             <constraint firstItem="kAH-VT-GUe" firstAttribute="bottom" secondItem="sTE-AT-660" secondAttribute="bottom" constant="10" id="4CN-Ao-5i7"/>
                             <constraint firstItem="4YO-gg-Jec" firstAttribute="height" secondItem="KRQ-G1-SP7" secondAttribute="height" multiplier="0.409598" id="8x7-NG-RaN"/>
+                            <constraint firstItem="BeU-xu-QC0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yLc-Ej-6k2" secondAttribute="trailing" constant="8" symbolic="YES" id="EeD-hn-kG4"/>
                             <constraint firstItem="4YO-gg-Jec" firstAttribute="top" secondItem="BeU-xu-QC0" secondAttribute="bottom" constant="10" id="Eq0-ca-yZd"/>
                             <constraint firstItem="eDA-Vy-PHC" firstAttribute="leading" secondItem="4YO-gg-Jec" secondAttribute="leading" id="PzX-uc-9uc"/>
                             <constraint firstItem="yLc-Ej-6k2" firstAttribute="bottom" secondItem="BeU-xu-QC0" secondAttribute="bottom" id="RRe-Tn-hUM"/>
@@ -1512,11 +1574,14 @@ Happy Pinning (and reading)!
     <resources>
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
+        <image name="ahmed" width="429" height="429"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
-        <image name="elon" width="1400" height="950"/>
+        <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="location1" width="92" height="132"/>
         <image name="logo" width="60" height="60"/>
+        <image name="profile_img" width="76" height="76"/>
+        <image name="seif" width="960" height="960"/>
         <image name="user" width="24" height="24"/>
     </resources>
 </document>

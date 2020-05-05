@@ -42,6 +42,11 @@ class LoginViewController: UIViewController {
     }
     
     func validateInputFieldsAndLogin(){
+        
+        setupAuthorizing()
+        self.blackView.alpha = 1
+        self.activityIndicator.startAnimating()
+        
         if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15{
             alertError(withMessage: "Please enter a valid mobile number")
             return
@@ -51,6 +56,38 @@ class LoginViewController: UIViewController {
             return
         }
         login()
+    }
+    
+    let blackView: UIView = {
+        let bv = UIView()
+        bv.backgroundColor = .black
+        bv.layer.cornerRadius = 16
+        bv.layer.masksToBounds = true
+        bv.translatesAutoresizingMaskIntoConstraints = false
+        return bv
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView(style: .white)
+        aI.hidesWhenStopped = true
+        aI.translatesAutoresizingMaskIntoConstraints = false
+        return aI
+    }()
+    
+    func setupAuthorizing() {
+        
+        view.addSubview(blackView)
+        blackView.addSubview(activityIndicator)
+        
+        blackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        blackView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        activityIndicator.centerXAnchor.constraint(equalTo: blackView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: blackView.centerYAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     func disableInput(){
@@ -72,7 +109,14 @@ class LoginViewController: UIViewController {
                   if response.success{
                     access_token = response.access_token!
                     profile = response.profile!
-                    DispatchQueue.main.async {self.navigateToHomeVC()}
+                    DispatchQueue.main.async {
+                        self.blackView.alpha = 0
+                        self.activityIndicator.stopAnimating()
+                        
+                        self.navigateToHomeVC()
+                        
+                        
+                    }
                   }
                   else
                   {
@@ -100,7 +144,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapSignUp(_ sender: Any) {
-         if phoneNumberTextField.text!.count<10{
+         if phoneNumberTextField.text!.count < 10 {
                   alertError(withMessage: "Please enter your mobile number to register")
                   return
               }
@@ -112,10 +156,15 @@ class LoginViewController: UIViewController {
     }
     
     func alertError(withMessage: String){
+        
         DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true) {
+                self.blackView.alpha = 0
+                self.activityIndicator.stopAnimating()
+            }
+//            self.present(alert, animated: true, completion: nil)
         }
 
     }

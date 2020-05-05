@@ -345,7 +345,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-Ex-EEL">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="4dv-Ex-EEL">
                                             <rect key="frame" x="28" y="15" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="DIK-y0-6bz"/>
@@ -692,7 +692,7 @@ Happy Pinning (and reading)!
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-Cf-727">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-Cf-727">
                                 <rect key="frame" x="147" y="124" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="WNC-sI-3zH"/>
@@ -808,7 +808,7 @@ Happy Pinning (and reading)!
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-nv-8hW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="rfQ-nv-8hW">
                                                 <rect key="frame" x="147" y="60" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="Zmx-OR-r3o"/>
@@ -1014,7 +1014,7 @@ Happy Pinning (and reading)!
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ind-Va-ySn">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elon" translatesAutoresizingMaskIntoConstraints="NO" id="Qc2-fS-YTU">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="Qc2-fS-YTU">
                                                             <rect key="frame" x="12" y="24" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="AMs-yl-nrn"/>
@@ -1526,10 +1526,11 @@ Happy Pinning (and reading)!
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
-        <image name="elon" width="1400" height="950"/>
+        <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="location1" width="92" height="132"/>
         <image name="logo" width="60" height="60"/>
+        <image name="profile_img" width="76" height="76"/>
         <image name="user" width="24" height="24"/>
     </resources>
 </document>

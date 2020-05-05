@@ -24,7 +24,7 @@ class CardViewController: UIViewController {
     }()
     
     var cardNames = ["Notification", "Settings", "Help", "Give us feedback", "About", "Log out"]
-    var cardIcons: [UIImage] = [UIImage(systemName: "bell.fill")!, UIImage(systemName: "") ?? UIImage(), UIImage(systemName: "questionmark.circle.fill")!, UIImage(systemName:"bubble.left.fill")!, UIImage(systemName: "info")!, UIImage(systemName: "arrow.left")!]
+    var cardIcons: [UIImage] = [UIImage(systemName: "bell.fill")!, UIImage(systemName: "gear")!, UIImage(systemName: "questionmark.circle.fill")!, UIImage(systemName:"bubble.left.fill")!, UIImage(systemName: "info")!, UIImage(systemName: "arrow.left")!]
 //        ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
     override func viewDidLoad() {
         super.viewDidLoad()

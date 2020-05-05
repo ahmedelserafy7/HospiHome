@@ -56,9 +56,9 @@ class ReservationViewController: UIViewController,UICollectionViewDelegate,UICol
 
     func navigateToHomeVC() {
         DispatchQueue.main.async {
-            let homeViewController = self.storyboard?.instantiateViewController(identifier: "tabBar") as! HomeViewController
-        homeViewController.modalPresentationStyle = .fullScreen
-        self.present(homeViewController, animated: true, completion: nil)
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: "tabBar")
+        homeViewController!.modalPresentationStyle = .fullScreen
+        self.present(homeViewController!, animated: true, completion: nil)
         }
     }
 

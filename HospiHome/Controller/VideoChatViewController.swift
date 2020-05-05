@@ -25,6 +25,7 @@ class VideoChatViewController: UIViewController {
     var localAudioTrack: LocalAudioTrack?
     var remoteParticipant: RemoteParticipant?
     var remoteView: VideoView?
+    var reservation: Reservation?
     
     // MARK:- UI Element Outlets and handles
     
@@ -49,8 +50,10 @@ class VideoChatViewController: UIViewController {
     // MARK:- UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.waitingLabel.isHidden = true
-        self.title = "QuickStart"
+        //self.waitingLabel.isHidden = true
+        self.waitingLabel.text = reservation!.time
+        
+        //self.title = "QuickStart"
         self.messageLabel.adjustsFontSizeToFitWidth = true;
         self.messageLabel.minimumScaleFactor = 0.75;
 
@@ -118,46 +121,51 @@ class VideoChatViewController: UIViewController {
         self.view.addConstraint(height)
     }
 
+
+    
     // MARK:- IBActions
-    @IBAction func connect(sender: AnyObject) {
-        //self.waitingLabel.isHidden = true
-        // Configure access token either from server or manually.
-        // If the default wasn't changed, try fetching from server.
-        if (accessToken == "TWILIO_ACCESS_TOKEN") {
-            do {
-                accessToken = try TokenUtils.fetchToken(url: tokenUrl)
-            } catch {
-                let message = "Failed to fetch access token"
-               print(message)
-                return
+    @IBAction func connectButtonTapped(sender: AnyObject) {
+        var waitingFor = "doctor"
+        if profile?.accountType == AccountType.Doctor{
+            waitingFor = "patient"
+        }
+        
+        self.waitingLabel.text = "waiting for the " + waitingFor + " to join"
+
+            let parameters = ["reservationid": reservation!.id]
+            API().httpPOSTRequest(endpoint: .videoToken, postData: parameters) { (data, error) in
+                guard let data = data else{ self.navigationController?.popViewController(animated: true);return;}
+                let tokenResponse = try? JSONDecoder().decode(VideoTokenResponse.self, from: data)
+                DispatchQueue.main.async{
+                if let response = tokenResponse{
+                    if response.success{
+                        self.accessToken = response.videotoken!
+                        self.connectToRoom()
+                    }
+                    else{
+                        self.navigationController?.popViewController(animated: true);
+                    }
+                    }
             }
-        }
         
-        // Prepare local media which we will share with Room Participants.
-        self.prepareLocalMedia()
+            }
         
-        // Preparing the connect options with the access token that we fetched (or hardcoded).
-        let connectOptions = ConnectOptions(token: accessToken) { (builder) in
-            
-            // Use the local media that we prepared earlier.
-            builder.audioTracks = self.localAudioTrack != nil ? [self.localAudioTrack!] : [LocalAudioTrack]()
-            builder.videoTracks = self.localVideoTrack != nil ? [self.localVideoTrack!] : [LocalVideoTrack]()
-            
-            
-            // The name of the Room where the Client will attempt to connect to. Please note that if you pass an empty
-            // Room `name`, the Client will create one for you. You can get the name or sid from any connected Room.
-            builder.roomName = "room-name"
-        }
-        
-        // Connect to the Room using the options we provided.
-        room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
-        
-       print("Attempting to connect to room")
-        
-        self.showRoomUI(inRoom: true)
-        //self.dismissKeyboard()
+ 
     }
     
+    func connectToRoom(){
+         self.prepareLocalMedia()
+         let connectOptions = ConnectOptions(token: accessToken) { (builder) in
+             builder.audioTracks = self.localAudioTrack != nil ? [self.localAudioTrack!] : [LocalAudioTrack]()
+             builder.videoTracks = self.localVideoTrack != nil ? [self.localVideoTrack!] : [LocalVideoTrack]()
+            builder.roomName = "reservation"+self.reservation!.id
+         }
+             room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
+         
+        print("Attempting to connect to room")
+         
+         self.showRoomUI(inRoom: true)
+    }
     @IBAction func disconnect(sender: AnyObject) {
         self.room!.disconnect()
        print("Attempting to disconnect from room \(room!.name)")
@@ -314,14 +322,6 @@ class VideoChatViewController: UIViewController {
             self.remoteView = nil
             self.remoteParticipant = nil
         }
-    }
-}
-
-// MARK:- UITextFieldDelegate
-extension VideoChatViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.connect(sender: textField)
-        return true
     }
 }
 

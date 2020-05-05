@@ -84,6 +84,8 @@
 		A8AFD29A24616E81002B8563 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD29924616E81002B8563 /* VideoChatViewController.swift */; };
 		A8AFD29C24616EDB002B8563 /* TwilioVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */; };
 		A8AFD29D24616EDB002B8563 /* TwilioVideo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A8AFD2A024618F58002B8563 /* SoonestReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */; };
+		A8AFD2A224619153002B8563 /* VideoTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A124619153002B8563 /* VideoTokenResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +280,8 @@
 		A8AFD29724616E65002B8563 /* VideoChatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatUtils.swift; sourceTree = "<group>"; };
 		A8AFD29924616E81002B8563 /* VideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
 		A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwilioVideo.framework; sourceTree = "<group>"; };
+		A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonestReservationResponse.swift; sourceTree = "<group>"; };
+		A8AFD2A124619153002B8563 /* VideoTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTokenResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,11 +470,13 @@
 			isa = PBXGroup;
 			children = (
 				16834432245FEA7300385937 /* FetchDoctorsResponse.swift */,
+				A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */,
 				A8260FC724608A130016CD29 /* GetScheduleResponse.swift */,
 				16834433245FEA7300385937 /* APIResponse.swift */,
 				16834434245FEA7300385937 /* LoginResponse.swift */,
 				A8019E432460108C00C6B0FD /* ArticlesResponse.swift */,
 				A8019E45246032F200C6B0FD /* AvatarResponse.swift */,
+				A8AFD2A124619153002B8563 /* VideoTokenResponse.swift */,
 				A841EA8B246049FC00348B78 /* SepcialitiesResponse.swift */,
 			);
 			path = Responses;
@@ -934,6 +940,7 @@
 				A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
 				161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */,
+				A8AFD2A224619153002B8563 /* VideoTokenResponse.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
 				A8AFD29A24616E81002B8563 /* VideoChatViewController.swift in Sources */,
 				A8260FFB2460AAC90016CD29 /* Card.swift in Sources */,
@@ -985,6 +992,7 @@
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
 				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
 				A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */,
+				A8AFD2A024618F58002B8563 /* SoonestReservationResponse.swift in Sources */,
 				1652C389245F2BBA00EB2442 /* Message.swift in Sources */,
 				161148A0245B98E6000AACB8 /* LoginViewController.swift in Sources */,
 				A8122C7E2460AE1B002F1186 /* CalendarView+DataSource.swift in Sources */,

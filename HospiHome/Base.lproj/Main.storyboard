@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mw0-gv-ZAL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -29,7 +29,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STa-9t-H77">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Seif Hatem" placeholder="Enter your full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STa-9t-H77">
                                 <rect key="frame" x="37" y="279.5" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="e0L-pm-PMc"/>
@@ -43,7 +43,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nni-PB-Iw9">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="seif@seif.com" placeholder="name@address.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nni-PB-Iw9">
                                 <rect key="frame" x="37" y="365" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JyY-fP-LJG"/>
@@ -57,7 +57,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3b-Vh-P4D">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3b-Vh-P4D">
                                 <rect key="frame" x="37" y="450.5" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iMA-F7-Tvc"/>
@@ -71,7 +71,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-7X-wVt">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Enter confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-7X-wVt">
                                 <rect key="frame" x="37" y="536" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zql-mJ-ZqS"/>
@@ -217,7 +217,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-23-HRG">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01100001137" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-23-HRG">
                                 <rect key="frame" x="37" y="329.5" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CdX-rr-rbP"/>
@@ -231,7 +231,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-tK-acM">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-tK-acM">
                                 <rect key="frame" x="37" y="429" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="O1h-Wp-1aA"/>
@@ -935,6 +935,27 @@ Happy Pinning (and reading)!
                                                     <action selector="bookTapped:" destination="7SJ-AE-TBD" eventType="touchUpInside" id="A1Q-OT-bfd"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-Oq-N6I">
+                                                <rect key="frame" x="132" y="1398" width="150" height="50"/>
+                                                <color key="backgroundColor" red="0.94509803920000002" green="0.32549019610000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bD9-r1-ZPU"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="hHv-Dt-Sin"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Connect">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="connectButtonTapped:" destination="7SJ-AE-TBD" eventType="touchUpInside" id="7Yq-ti-jY7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -946,15 +967,21 @@ Happy Pinning (and reading)!
                                             <constraint firstItem="lK9-i3-QiV" firstAttribute="top" secondItem="SBr-Jl-GmX" secondAttribute="bottom" constant="36" id="8C8-vk-yJ5"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="m20-Ht-gMt" secondAttribute="trailing" constant="166" id="CJL-cM-TQH"/>
                                             <constraint firstItem="1lx-VY-0lD" firstAttribute="trailing" secondItem="lK9-i3-QiV" secondAttribute="trailing" id="DJD-O3-gyK"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="top" secondItem="gdX-Qv-aT2" secondAttribute="top" id="DgL-Zi-Q1P"/>
                                             <constraint firstItem="gdX-Qv-aT2" firstAttribute="top" secondItem="3e3-Mz-P02" secondAttribute="bottom" constant="20" id="EJ5-0z-rJb"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="height" secondItem="gdX-Qv-aT2" secondAttribute="height" id="Kng-Kz-o4Y"/>
                                             <constraint firstItem="gdX-Qv-aT2" firstAttribute="centerX" secondItem="Jua-n0-sYw" secondAttribute="centerX" id="L3W-AQ-h5V"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="centerX" secondItem="Jua-n0-sYw" secondAttribute="centerX" id="MyD-t3-Jy1"/>
                                             <constraint firstAttribute="bottom" secondItem="gdX-Qv-aT2" secondAttribute="bottom" constant="12" id="Neh-AN-gWl"/>
                                             <constraint firstItem="3e3-Mz-P02" firstAttribute="top" secondItem="1lx-VY-0lD" secondAttribute="bottom" constant="15" id="QuJ-yg-6qS"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="width" secondItem="gdX-Qv-aT2" secondAttribute="width" id="VlH-V6-rLN"/>
                                             <constraint firstItem="rfQ-nv-8hW" firstAttribute="top" secondItem="Jua-n0-sYw" secondAttribute="top" constant="60" id="YCB-NZ-0ET"/>
                                             <constraint firstItem="lK9-i3-QiV" firstAttribute="leading" secondItem="Jua-n0-sYw" secondAttribute="leading" constant="20" id="YEx-uO-gIe"/>
                                             <constraint firstItem="1lx-VY-0lD" firstAttribute="leading" secondItem="lK9-i3-QiV" secondAttribute="leading" id="c2k-Y9-ikL"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="bottom" secondItem="gdX-Qv-aT2" secondAttribute="bottom" id="dxY-vx-Ur7"/>
                                             <constraint firstItem="rfQ-nv-8hW" firstAttribute="centerX" secondItem="Jua-n0-sYw" secondAttribute="centerX" id="hKp-gG-5HN"/>
                                             <constraint firstItem="nmb-mz-End" firstAttribute="top" secondItem="rfQ-nv-8hW" secondAttribute="bottom" constant="24" id="p2V-h8-UEG"/>
+                                            <constraint firstItem="mhC-Oq-N6I" firstAttribute="centerY" secondItem="gdX-Qv-aT2" secondAttribute="centerY" id="p99-aT-pT4"/>
                                             <constraint firstItem="m20-Ht-gMt" firstAttribute="top" secondItem="nmb-mz-End" secondAttribute="bottom" constant="10" id="pYw-G4-AY8"/>
                                             <constraint firstItem="3e3-Mz-P02" firstAttribute="leading" secondItem="lK9-i3-QiV" secondAttribute="leading" id="sQO-Wy-d2W"/>
                                             <constraint firstItem="1lx-VY-0lD" firstAttribute="top" secondItem="lK9-i3-QiV" secondAttribute="bottom" constant="12" id="vTf-Tf-IG2"/>
@@ -985,6 +1012,8 @@ Happy Pinning (and reading)!
                     <connections>
                         <outlet property="avatarImageView" destination="rfQ-nv-8hW" id="G2Z-Bg-TSd"/>
                         <outlet property="bioLabel" destination="lK9-i3-QiV" id="ykb-fE-Vy2"/>
+                        <outlet property="bookButton" destination="gdX-Qv-aT2" id="7af-pt-VT3"/>
+                        <outlet property="connectToDoctor" destination="mhC-Oq-N6I" id="AL7-pe-gZs"/>
                         <outlet property="feesLabel" destination="3e3-Mz-P02" id="530-pK-UWj"/>
                         <outlet property="nameLabel" destination="nmb-mz-End" id="a4N-e1-k89"/>
                     </connections>
@@ -1711,7 +1740,7 @@ Happy Pinning (and reading)!
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="connectWithSender:" destination="1Ip-N8-ifg" eventType="touchUpInside" id="8vT-hR-dhU"/>
+                                    <action selector="connectButtonTappedWithSender:" destination="1Ip-N8-ifg" eventType="touchUpInside" id="mdD-gk-Qcb"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wy-hj-yoS" userLabel="Room Line">
@@ -1786,13 +1815,7 @@ Happy Pinning (and reading)!
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qjw-lR-Yh4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="okQ-uH-gDW">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="WtX-h2-CrD">
-                            <connections>
-                                <action selector="connectOptionsButtonTapped:" destination="1Ip-N8-ifg" id="80a-m5-JCi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="okQ-uH-gDW"/>
                     <connections>
                         <outlet property="connectButton" destination="NlN-OY-bK6" id="Jrm-kh-hOS"/>
                         <outlet property="disconnectButton" destination="xZL-XV-6ZM" id="hpJ-Wd-zi3"/>

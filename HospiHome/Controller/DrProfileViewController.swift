@@ -46,8 +46,6 @@ class DrProfileViewController: UIViewController {
                             
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateFormat="dd/MM/yyyy HH:mm"
-                            
-                          
                             let timeString = dateFormatter.string(from:  Date(timeIntervalSince1970: TimeInterval(exactly: Double(reservation.time)!)!))
 
                             

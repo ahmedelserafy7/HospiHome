@@ -18,17 +18,21 @@ var baseURL = "http://142.93.138.37/~hospihome/api/"
         case otpForgot = "otp?action=forgotpassword"
         case forgotPassword = "forgotpassword"
         case signup = "signup"
+        
         case avatar = "fetchAvatar"
         case fetchDoctors = "fetchDoctors"
         case fetchArticles = "fetchArticles"
         case fetchSpecialaities = "fetchSpecialities"
-        case getOwnSchedule = "doctors/getSchedule"
-        case updateSchedule = "doctors/updateSchedule"
+        
         case getFreeTimeSlots = "reservations/getAvailableSlots"
         case reserve = "reservations/reserve"
         case soonestReservation = "reservations/soonestReservation"
         case videoToken = "reservations/createVideoToken"
+        
         case getMyReservations = "doctors/getReservations"
+        case getOwnSchedule = "doctors/getSchedule"
+        case updateSchedule = "doctors/updateSchedule"
+        case balance = "doctors/balance"
         
         
         

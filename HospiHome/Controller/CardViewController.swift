@@ -30,11 +30,27 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         if profile?.accountType == AccountType.Doctor{
             cardNames.append("Create/Update Schedule")
-            
             cardIcons.append(UIImage(systemName: "calendar")!)
+            
+            cardNames.append("Check My Balance")
+            cardIcons.append(UIImage(systemName: "dollarsign.circle.fill")!)
         }
         
         setupViews()
+    }
+    
+    func fetchBalance(){
+        API().httpGETRequest(endpoint: .balance) { (data, error) in
+            if let data = data{
+                let response = try? JSONDecoder().decode(APIResponse.self, from: data)
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Result", message: response?.msg, preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.parent?.present(alert, animated: true) {
+                           }
+                       }
+            }
+        }
     }
     
     func setupViews() {
@@ -91,7 +107,11 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
         } else if cardNames[indexPath.item] == "About" {
             navigateAboutVC()
         }
+        else if cardNames[indexPath.item] == "Check My Balance"{
+            fetchBalance()
+        }
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

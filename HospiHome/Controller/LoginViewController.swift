@@ -159,8 +159,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapForgot(_ sender: Any) {
+        if phoneNumberTextField.text!.count < 10 {
+                 alertError(withMessage: "Please enter your mobile number to change password")
+                 return
+             }
+        
         let forgotViewController = storyboard?.instantiateViewController(identifier: "forgot") as! ForgotPasswordViewController
-        forgotViewController.modalPresentationStyle = .fullScreen
+        forgotViewController.passedMobileNumber = "+2"+phoneNumberTextField.text!
+        //forgotViewController.modalPresentationStyle = .fullScreen
         self.present(forgotViewController, animated: false, completion: nil)
     }
     
@@ -182,10 +188,7 @@ class LoginViewController: UIViewController {
             let alert = UIAlertController(title: "Error", message: withMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true) {
-//                self.blackView.alpha = 0
-//                self.activityIndicator.stopAnimating()
             }
-//            self.present(alert, animated: true, completion: nil)
         }
 
     }

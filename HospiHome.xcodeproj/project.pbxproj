@@ -397,14 +397,14 @@
 		1610C998245A90F0001B178B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */,
+				16834427245FE5DC00385937 /* OTPViewController.swift */,
+				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */,
 				A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */,
 				A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */,
 				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
-				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
-				161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */,
 				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
-				16834427245FE5DC00385937 /* OTPViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
 				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
 				1676DD24245E1A7F0075178B /* DrProfileViewController.swift */,

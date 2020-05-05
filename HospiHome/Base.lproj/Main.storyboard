@@ -1642,7 +1642,7 @@ Happy Pinning (and reading)!
                                     <constraint firstAttribute="height" constant="40" id="Uj2-pV-5DN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm new Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-Mr-A7d">
                                 <rect key="frame" x="37" y="399.5" width="365" height="21.5"/>
@@ -1656,7 +1656,7 @@ Happy Pinning (and reading)!
                                     <constraint firstAttribute="height" constant="40" id="ZDe-vh-Hia"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZW-Il-pFP" userLabel="containerView">
                                 <rect key="frame" x="87" y="501" width="240" height="62"/>
@@ -1695,6 +1695,7 @@ Happy Pinning (and reading)!
                     </view>
                     <connections>
                         <outlet property="confirmNewPassword" destination="RoE-Q3-1Ta" id="yj4-ow-Tzd"/>
+                        <outlet property="containerView" destination="bZW-Il-pFP" id="xdM-sY-6eT"/>
                         <outlet property="newPasswordTextField" destination="hDf-OC-ihu" id="SLI-i6-NSC"/>
                     </connections>
                 </viewController>

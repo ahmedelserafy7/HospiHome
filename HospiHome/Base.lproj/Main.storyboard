@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zbI-Bq-TGG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zbI-Bq-TGG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="53t-Qh-rsd">
-                                <rect key="frame" x="142" y="68" width="130" height="130"/>
+                                <rect key="frame" x="142" y="68" width="130.00000000000011" height="130.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="OHD-fA-ECB"/>
                                     <constraint firstAttribute="width" constant="130" id="wrY-qd-sF9"/>
@@ -189,6 +189,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dNm-PM-6iy"/>
                     </view>
                 </viewController>
@@ -205,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wpw-jy-aGB">
-                                <rect key="frame" x="142" y="83" width="130" height="130"/>
+                                <rect key="frame" x="142" y="83" width="130.00000000000011" height="130.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="FwW-mf-Ave"/>
                                     <constraint firstAttribute="height" constant="130" id="WyC-CA-iCD"/>
@@ -1329,7 +1330,7 @@ Happy Pinning (and reading)!
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-R3-6v3" userLabel="containerView">
                                 <rect key="frame" x="87" y="417" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="XET-TD-NeT"/>
                                     <constraint firstAttribute="height" constant="62" id="ij3-Lt-LeA"/>
@@ -1612,7 +1613,7 @@ Happy Pinning (and reading)!
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cjo-oB-gwT">
-                                <rect key="frame" x="142" y="83" width="130" height="130"/>
+                                <rect key="frame" x="142" y="83" width="130.00000000000011" height="130.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="GiL-CZ-him"/>
                                     <constraint firstAttribute="height" constant="130" id="fjy-DO-VU6"/>
@@ -1651,7 +1652,7 @@ Happy Pinning (and reading)!
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZW-Il-pFP" userLabel="containerView">
                                 <rect key="frame" x="87" y="501" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="ddt-dq-XoB"/>
                                     <constraint firstAttribute="width" constant="240" id="fbL-uU-Ayq"/>
@@ -1940,7 +1941,7 @@ Happy Pinning (and reading)!
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
         <image name="ahmed" width="429" height="429"/>
-        <image name="bubble.right.fill" catalog="system" width="64" height="56"/>
+        <image name="bubble.right.fill" catalog="system" width="64" height="54"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
         <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>

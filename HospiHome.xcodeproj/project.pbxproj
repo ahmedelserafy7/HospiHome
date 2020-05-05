@@ -86,6 +86,9 @@
 		A8AFD29D24616EDB002B8563 /* TwilioVideo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A8AFD2A024618F58002B8563 /* SoonestReservationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */; };
 		A8AFD2A224619153002B8563 /* VideoTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A124619153002B8563 /* VideoTokenResponse.swift */; };
+		A8AFD2A424619868002B8563 /* DoctorReservationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */; };
+		A8AFD2A624619932002B8563 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */; };
+		A8AFD2A824619B6F002B8563 /* DoctorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +285,9 @@
 		A8AFD29B24616EDB002B8563 /* TwilioVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwilioVideo.framework; sourceTree = "<group>"; };
 		A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonestReservationResponse.swift; sourceTree = "<group>"; };
 		A8AFD2A124619153002B8563 /* VideoTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTokenResponse.swift; sourceTree = "<group>"; };
+		A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorReservationsResponse.swift; sourceTree = "<group>"; };
+		A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
+		A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */,
+				A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */,
+				A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */,
 				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */,
@@ -470,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				16834432245FEA7300385937 /* FetchDoctorsResponse.swift */,
+				A8AFD2A324619868002B8563 /* DoctorReservationsResponse.swift */,
 				A8AFD29F24618F58002B8563 /* SoonestReservationResponse.swift */,
 				A8260FC724608A130016CD29 /* GetScheduleResponse.swift */,
 				16834433245FEA7300385937 /* APIResponse.swift */,
@@ -947,9 +956,11 @@
 				A8260FF52460AAC90016CD29 /* LBZSpinner.swift in Sources */,
 				16834435245FEA7400385937 /* FetchDoctorsResponse.swift in Sources */,
 				161148AA245C11F6000AACB8 /* ArticlesCell.swift in Sources */,
+				A8AFD2A424619868002B8563 /* DoctorReservationsResponse.swift in Sources */,
 				161148AC245C9929000AACB8 /* CardViewController.swift in Sources */,
 				A8122C7F2460AE1B002F1186 /* CalendarView.swift in Sources */,
 				1683442E245FEA0A00385937 /* GlobalVariables.swift in Sources */,
+				A8AFD2A824619B6F002B8563 /* DoctorHomeViewController.swift in Sources */,
 				1683442D245FEA0A00385937 /* Extensions+Dictionary.swift in Sources */,
 				A8122C832460AE1B002F1186 /* CalendarHeaderView.swift in Sources */,
 				1610C960245A2F11001B178B /* AppDelegate.swift in Sources */,
@@ -990,6 +1001,7 @@
 				1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */,
 				A8AFD29824616E65002B8563 /* VideoChatUtils.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
+				A8AFD2A624619932002B8563 /* HomeNavigationViewController.swift in Sources */,
 				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
 				A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */,
 				A8AFD2A024618F58002B8563 /* SoonestReservationResponse.swift in Sources */,

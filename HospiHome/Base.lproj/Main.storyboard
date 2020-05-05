@@ -1089,7 +1089,7 @@ Happy Pinning (and reading)!
         <!--Home View Controller-->
         <scene sceneID="SkR-fo-r0l">
             <objects>
-                <viewController id="qA7-fn-GP0" customClass="HomeViewController" customModule="HospiHome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="qA7-fn-GP0" customClass="HomeViewController" customModule="HospiHome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FBj-lA-neI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1254,7 +1254,7 @@ Happy Pinning (and reading)!
         <!--Home-->
         <scene sceneID="AOv-5d-KNa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VlH-LI-4no" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VlH-LI-4no" customClass="HomeNavigationViewController" customModule="HospiHome" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="53y-ed-8Km"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YQh-c8-aU4">
@@ -1265,9 +1265,6 @@ Happy Pinning (and reading)!
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qA7-fn-GP0" kind="relationship" relationship="rootViewController" id="SqN-Ne-vlS"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eF6-6v-bk8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1829,6 +1826,148 @@ Happy Pinning (and reading)!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci8-18-pcG" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6801" y="-92"/>
+        </scene>
+        <!--Doctor Home View Controller-->
+        <scene sceneID="dy6-Wb-3eT">
+            <objects>
+                <viewController storyboardIdentifier="doctorhome" id="Azv-3C-geq" customClass="DoctorHomeViewController" customModule="HospiHome" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ntA-UK-Rno">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uxe-Lj-z5g">
+                                <rect key="frame" x="0.0" y="110" width="414" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="110" id="hK4-bm-zNK" customClass="HomeCell" customModule="HospiHome" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hK4-bm-zNK" id="G1p-jA-pFq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7H9-1B-d4Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dr_profile_img" translatesAutoresizingMaskIntoConstraints="NO" id="DI5-5U-mIU">
+                                                            <rect key="frame" x="12" y="24" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="70" id="Axl-KA-p76"/>
+                                                                <constraint firstAttribute="width" constant="70" id="Xdc-iZ-heq"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="35"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Ahmed Samir Elserafy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-RP-WzA">
+                                                            <rect key="frame" x="94" y="27" width="308" height="21"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-ke-NH9">
+                                                            <rect key="frame" x="94" y="56" width="220" height="21"/>
+                                                            <string key="text">LabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLabLabelLabelLabelLab</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Fees: 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57D-8S-9D9">
+                                                            <rect key="frame" x="94" y="89" width="308" height="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gm-TN-3QL">
+                                                            <rect key="frame" x="328" y="48" width="70" height="36"/>
+                                                            <color key="backgroundColor" red="0.94509803920000002" green="0.32549019610000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="36" id="Ypn-65-LU6"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="eaE-Ik-r7B"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Book">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="bookButtonTapped:" destination="hK4-bm-zNK" eventType="touchUpInside" id="PWF-ba-dB4"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="57D-8S-9D9" secondAttribute="trailing" constant="12" id="0Hg-48-SAO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ekX-RP-WzA" secondAttribute="trailing" constant="12" id="3S8-nh-eJU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6Gm-TN-3QL" secondAttribute="trailing" constant="16" id="5bF-kv-En2"/>
+                                                        <constraint firstItem="bvT-ke-NH9" firstAttribute="top" secondItem="ekX-RP-WzA" secondAttribute="bottom" constant="8" id="BFr-et-Vgd"/>
+                                                        <constraint firstItem="57D-8S-9D9" firstAttribute="top" secondItem="bvT-ke-NH9" secondAttribute="bottom" constant="12" id="CAV-O3-CNP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="57D-8S-9D9" secondAttribute="bottom" constant="4" id="Ez0-JB-bhz"/>
+                                                        <constraint firstItem="DI5-5U-mIU" firstAttribute="leading" secondItem="7H9-1B-d4Q" secondAttribute="leading" constant="12" id="Szt-Ow-wis"/>
+                                                        <constraint firstItem="DI5-5U-mIU" firstAttribute="top" secondItem="7H9-1B-d4Q" secondAttribute="top" constant="24" id="U19-le-Aes"/>
+                                                        <constraint firstItem="6Gm-TN-3QL" firstAttribute="top" secondItem="7H9-1B-d4Q" secondAttribute="top" constant="48" id="WuL-kz-SwG"/>
+                                                        <constraint firstItem="6Gm-TN-3QL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bvT-ke-NH9" secondAttribute="trailing" constant="12" id="ZCF-bQ-aFk"/>
+                                                        <constraint firstItem="ekX-RP-WzA" firstAttribute="leading" secondItem="DI5-5U-mIU" secondAttribute="trailing" constant="12" id="oFK-U5-AHf"/>
+                                                        <constraint firstItem="bvT-ke-NH9" firstAttribute="leading" secondItem="ekX-RP-WzA" secondAttribute="leading" id="oZZ-e1-RO5"/>
+                                                        <constraint firstItem="57D-8S-9D9" firstAttribute="leading" secondItem="bvT-ke-NH9" secondAttribute="leading" id="yKi-L2-Mue"/>
+                                                        <constraint firstItem="ekX-RP-WzA" firstAttribute="top" secondItem="7H9-1B-d4Q" secondAttribute="top" constant="27" id="zd4-5N-dVa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7H9-1B-d4Q" firstAttribute="leading" secondItem="G1p-jA-pFq" secondAttribute="leading" id="235-rO-O8j"/>
+                                                <constraint firstAttribute="bottom" secondItem="7H9-1B-d4Q" secondAttribute="bottom" id="LHW-ID-iIv"/>
+                                                <constraint firstAttribute="trailing" secondItem="7H9-1B-d4Q" secondAttribute="trailing" id="k40-G3-E5L"/>
+                                                <constraint firstItem="7H9-1B-d4Q" firstAttribute="top" secondItem="G1p-jA-pFq" secondAttribute="top" id="mId-lJ-IKk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarView" destination="DI5-5U-mIU" id="aqo-YR-K4u"/>
+                                            <outlet property="bioLabel" destination="bvT-ke-NH9" id="Zxv-9L-abn"/>
+                                            <outlet property="bookButton" destination="6Gm-TN-3QL" id="G5A-Si-Gq1"/>
+                                            <outlet property="feesLabel" destination="57D-8S-9D9" id="0Ak-vO-kOB"/>
+                                            <outlet property="nameLabel" destination="ekX-RP-WzA" id="XnF-iK-jjq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Azv-3C-geq" id="dQX-7d-Ope"/>
+                                    <outlet property="delegate" destination="Azv-3C-geq" id="kAp-JX-bCQ"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-aW-OWl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ERM-aW-OWl" firstAttribute="leading" secondItem="y0Z-Gb-i2B" secondAttribute="leading" id="MCj-oA-HUB"/>
+                            <constraint firstItem="ERM-aW-OWl" firstAttribute="top" secondItem="y0Z-Gb-i2B" secondAttribute="top" id="W7h-Fe-Kaf"/>
+                            <constraint firstItem="uxe-Lj-z5g" firstAttribute="leading" secondItem="y0Z-Gb-i2B" secondAttribute="leading" id="YZb-lK-p9I"/>
+                            <constraint firstItem="uxe-Lj-z5g" firstAttribute="top" secondItem="ERM-aW-OWl" secondAttribute="bottom" constant="10" id="ZYN-7L-CwO"/>
+                            <constraint firstAttribute="bottom" secondItem="uxe-Lj-z5g" secondAttribute="bottom" id="a1P-g6-s3l"/>
+                            <constraint firstItem="ERM-aW-OWl" firstAttribute="trailing" secondItem="y0Z-Gb-i2B" secondAttribute="trailing" id="pyE-Fx-Fxp"/>
+                            <constraint firstItem="uxe-Lj-z5g" firstAttribute="trailing" secondItem="y0Z-Gb-i2B" secondAttribute="trailing" id="tBK-uH-ix0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y0Z-Gb-i2B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KOM-hz-ECE"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ERM-aW-OWl" id="lSH-3e-Zfm"/>
+                        <outlet property="tableView" destination="uxe-Lj-z5g" id="2Bw-g5-82N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Noe-9z-MrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4332" y="-763"/>
         </scene>
     </scenes>
     <resources>

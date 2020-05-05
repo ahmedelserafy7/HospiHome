@@ -81,7 +81,7 @@ class LoginViewController: UIViewController {
     }()
     
     let activityIndicator: UIActivityIndicatorView = {
-        let aI = UIActivityIndicatorView(style: .white)
+        let aI = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         aI.hidesWhenStopped = true
         aI.translatesAutoresizingMaskIntoConstraints = false
         return aI

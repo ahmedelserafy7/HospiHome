@@ -34,9 +34,7 @@ class DrProfileViewController: UIViewController {
             }
         }
     }
-    
-
-    
+        
     func setupNavBar() {
         navigationController?.navigationBar.isTranslucent = false
     }

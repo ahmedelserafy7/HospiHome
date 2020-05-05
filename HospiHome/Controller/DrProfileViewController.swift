@@ -21,7 +21,6 @@ class DrProfileViewController: UIViewController {
         setupNavBar()
         hideWhenSwipe()
         
-        
         fetchDrProfileDetails()
     }
     

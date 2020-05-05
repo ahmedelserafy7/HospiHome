@@ -23,6 +23,12 @@ class DrProfileViewController: UIViewController {
         fetchDrProfileDetails()
     }
     
+    func navigateToBookVC() {
+        let reservationViewController = self.parent!.storyboard?.instantiateViewController(identifier: "book") as! ReservationViewController
+        reservationViewController.doctor = self.doctor!
+        self.navigationController?.pushViewController(reservationViewController, animated: true)
+    }
+    
     func fetchDrProfileDetails() {
         if let doctor = doctor {
             feesLabel.text = doctor.info.fees + " EGP"
@@ -32,6 +38,9 @@ class DrProfileViewController: UIViewController {
                 avatarImageView.image = UIImage(data: image)
             }
         }
+    }
+    @IBAction func bookTapped(_ sender: Any) {
+        navigateToBookVC()
     }
     
     func hideWhenSwipe() {

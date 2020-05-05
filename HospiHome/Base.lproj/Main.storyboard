@@ -931,6 +931,9 @@ Happy Pinning (and reading)!
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bookTapped:" destination="7SJ-AE-TBD" eventType="touchUpInside" id="A1Q-OT-bfd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1688,7 +1691,7 @@ Happy Pinning (and reading)!
         <!--Video Chat View Controller-->
         <scene sceneID="JJx-Mn-w2z">
             <objects>
-                <viewController storyboardIdentifier="videochat" id="1Ip-N8-ifg" customClass="VideoChatViewController" customModule="SlotsUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videochat" id="1Ip-N8-ifg" customClass="VideoChatViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LEc-9u-dol"/>
                         <viewControllerLayoutGuide type="bottom" id="X31-vh-foK"/>

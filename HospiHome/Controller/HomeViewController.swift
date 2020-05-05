@@ -40,15 +40,29 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavBar()
-        searchBar.delegate = self
-        searchBar.searchTextField.delegate = self
+        searchBarSetup()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         tableView.estimatedRowHeight = 110
         tableView.separatorColor = UIColor.clear
         tableView.rowHeight = UITableView.automaticDimension
+        
         fetchSpecialities()
         fetchDoctorsList()
+    }
+    
+    func searchBarSetup() {
+        
+        searchBar.delegate = self
+        searchBar.searchTextField.delegate = self
+        
+        searchBar.placeholder = "Search Doctors"
+        
+        searchBar.backgroundImage = UIImage()
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(r: 240, g: 240, b: 240)
     }
     
     func setupNavBar() {
@@ -60,6 +74,34 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func setupMenuBarButton(cell: UICollectionViewCell, indexPath: IndexPath){
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor(r: 101, g: 101, b: 137), for: .normal)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(16)
+        button.widthAnchor.constraint(equalToConstant: 99).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 38).isActive = true
+        button.layer.cornerRadius = 8
+        button.setTitle(specialitiesArray[indexPath.row].name, for: .normal)
+        button.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
+        
+        
+        cell.contentView.addSubview(button)
+        
+        filterButtons.append(button)
+        
+        if (button.titleLabel?.text == "All"){ allButton = button}
+        
+        if let selectedButton = lastSelectedFilterButton {
+            if(selectedButton.titleLabel?.text == button.titleLabel?.text){
+                setButtonAsClicked(button)
+            }
+        } else {
+            setButtonAsClicked(allButton!)
+            lastSelectedFilterButton = allButton!
+        }
+    }
+    
     @objc func filterButtonTapped(_ sender: UIButton) {
         lastSelectedFilterButton = sender
         searchBar.resignFirstResponder()
@@ -69,14 +111,14 @@ class HomeViewController: UIViewController {
     
     //Filter button UI Modifiers
     func setButtonAsClicked(_ button: UIButton){
-        button.backgroundColor = UIColor.systemPink
+        button.backgroundColor = UIColor(r: 0, g: 199, b: 154)
         button.setTitleColor(UIColor.white, for: .normal)
     }
     
     func setAllButtonsAsUnclickedExcept(_ button: UIButton){
         for buttono in filterButtons{
             buttono.backgroundColor = UIColor.white
-            buttono.setTitleColor(UIColor.black, for: .normal)
+            buttono.setTitleColor(UIColor(r: 101, g: 101, b: 137), for: .normal)
         }
         setButtonAsClicked(button)
     }
@@ -89,10 +131,9 @@ class HomeViewController: UIViewController {
             if let doctorsResponse = try? JSONDecoder().decode(FetchDoctorsResponse.self, from: data){
                 self.doctorsArray = doctorsResponse.doctors
                 self.filteredArray =  self.doctorsArray
-            }
-            else{
+            } else {
                 self.alertError(withMessage: "An error occured while fetching doctors list, please try again later");
-                return;
+                return
             }
         }
     }
@@ -104,7 +145,7 @@ class HomeViewController: UIViewController {
             if let specialitiesResponse = try? JSONDecoder().decode(SepcialitiesResponse.self, from: data){
                 self.specialitiesArray = [Speciality(name: "All")] + specialitiesResponse.specialities
             }
-            else{
+            else {
                 self.alertError(withMessage: "An error occured while fetching specialities list, please try again later");
                 return;
             }
@@ -112,43 +153,36 @@ class HomeViewController: UIViewController {
     }
     
     func filterResults(){
-        
         if String(lastSelectedFilterButton!.title(for: .normal)!) == "All"{
             filteredArray = doctorsArray
-        }
-        else
-        {
-          filteredArray = doctorsArray.filter { (doctor) -> Bool in
-            doctor.info.speciality == (lastSelectedFilterButton!.title(for: .normal)!)
-        }
+        } else {
+            filteredArray = doctorsArray.filter { (doctor) -> Bool in
+                doctor.info.speciality == (lastSelectedFilterButton!.title(for: .normal)!)
+            }
         }
         
         let searchText = searchBar.searchTextField.text!
         if !searchText.isEmpty {
-           filteredArray = filteredArray.filter { (doctor) -> Bool in
+            filteredArray = filteredArray.filter { (doctor) -> Bool in
                 doctor.info.name.contains(searchText)
             }
         }
-           self.tableView.reloadData()
+        self.tableView.reloadData()
     }
 }
 
 // MARK: UISearchBar
 extension HomeViewController: UITextFieldDelegate {
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    self.view.endEditing(true)
-    return false
-        }
+        self.view.endEditing(true)
+        return false
+    }
 }
 extension HomeViewController: UISearchBarDelegate {
-
-
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-   filterResults()
+        filterResults()
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         if searchController.isActive {
             filteredArray = doctorsArray
@@ -171,16 +205,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.parent = self
         cell.doctor = filteredArray[indexPath.section]
         cell.bioLabel.text? = self.filteredArray[indexPath.section].info.bio
-                          cell.nameLabel.text? = self.filteredArray[indexPath.section].info.name
-                          cell.feesLabel.text? = self.filteredArray[indexPath.section].info.fees + " EGP"
-                           if let image = self.filteredArray[indexPath.row].info.image{cell.avatarView.image = UIImage(data: image)}
+        cell.nameLabel.text? = self.filteredArray[indexPath.section].info.name
+        cell.feesLabel.text? = self.filteredArray[indexPath.section].info.fees + " EGP"
+        if let image = self.filteredArray[indexPath.row].info.image{cell.avatarView.image = UIImage(data: image)}
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
         let drProfileViewController = storyboard?.instantiateViewController(identifier: "dr") as! DrProfileViewController
-        drProfileViewController.doctor = filteredArray[indexPath.row]
+        drProfileViewController.doctor = filteredArray[indexPath.section]
         navigationController?.pushViewController(drProfileViewController, animated: true)
     }
     
@@ -195,51 +229,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.specialitiesArray.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.specialitiesArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        let installedButtons = cell.contentView.subviews.filter{$0 is UIButton}
+        if installedButtons.count>0, let installedButton = installedButtons[0] as? UIButton{
+            installedButton.removeFromSuperview()
+            filterButtons.removeAll { (button: UIButton) -> Bool in
+                return button == installedButton
+            }
+        }
+        
+        setupMenuBarButton(cell: cell, indexPath: indexPath)
+        return cell
+    }
 }
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-    
-    let installedButtons = cell.contentView.subviews.filter{$0 is UIButton}
-         if installedButtons.count>0, let installedButton = installedButtons[0] as? UIButton{
-             installedButton.removeFromSuperview()
-             filterButtons.removeAll { (button: UIButton) -> Bool in
-                 return button == installedButton
-             }
-         }
-         
-         let button = UIButton()
-         button.translatesAutoresizingMaskIntoConstraints = false
-         button.setTitleColor(UIColor.black, for: .normal)
-         button.titleLabel?.font = button.titleLabel?.font.withSize(13)
-         button.widthAnchor.constraint(equalToConstant: 99).isActive = true
-         button.heightAnchor.constraint(equalToConstant: 38).isActive = true
-         button.layer.cornerRadius = 7
-         button.layer.borderWidth = 1
-         button.layer.borderColor = UIColor.black.cgColor
-        button.setTitle(specialitiesArray[indexPath.row].name, for: .normal)
-         button.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
-         
-         
-         cell.contentView.addSubview(button)
-         
-         filterButtons.append(button)
-         
-         if (button.titleLabel?.text == "All"){ allButton = button}
-         
-         if let selectedButton = lastSelectedFilterButton {
-             if(selectedButton.titleLabel?.text == button.titleLabel?.text){
-                 setButtonAsClicked(button)
-             }
-         }
-         else{
-             setButtonAsClicked(allButton!)
-              lastSelectedFilterButton = allButton!
-         }
-    
-    
-    return cell
-}
-}

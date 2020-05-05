@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6dM-dL-1sg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1284,7 +1284,7 @@ Happy Pinning (and reading)!
         <scene sceneID="nhH-aK-eHR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ROH-Ak-jst" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" image="bubble.right" catalog="system" id="n6p-Pd-BRR"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="bubble.right.fill" catalog="system" id="n6p-Pd-BRR"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9Xd-jc-Kq9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yUr-aR-XKX">
@@ -1329,7 +1329,7 @@ Happy Pinning (and reading)!
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6U-R3-6v3" userLabel="containerView">
                                 <rect key="frame" x="87" y="417" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="XET-TD-NeT"/>
                                     <constraint firstAttribute="height" constant="62" id="ij3-Lt-LeA"/>
@@ -1651,7 +1651,7 @@ Happy Pinning (and reading)!
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZW-Il-pFP" userLabel="containerView">
                                 <rect key="frame" x="87" y="501" width="240" height="62"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="ddt-dq-XoB"/>
                                     <constraint firstAttribute="width" constant="240" id="fbL-uU-Ayq"/>
@@ -1940,7 +1940,7 @@ Happy Pinning (and reading)!
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
         <image name="ahmed" width="429" height="429"/>
-        <image name="bubble.right" catalog="system" width="64" height="54"/>
+        <image name="bubble.right.fill" catalog="system" width="64" height="56"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
         <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>

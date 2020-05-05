@@ -27,10 +27,6 @@ class MessageViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            if(chatContacts.count == 0){
-                self.noContactslabel.isHidden = false
-                //self.tableView.isHidden=true
-            }
         }
         super.viewWillAppear(true)
     }
@@ -41,6 +37,11 @@ class MessageViewController: UITableViewController {
                 if let response = try? JSONDecoder().decode(GetContactsResponse.self, from: data){
                     chatContacts = response.contacts
                     DispatchQueue.main.async {
+                        if(chatContacts.count == 0){
+                            self.noContactslabel.isHidden = false
+                            //self.tableView.isHidden=true
+                        }
+                        
                         self.tableView.reloadData()
                     }
                 }

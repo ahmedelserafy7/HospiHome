@@ -102,20 +102,21 @@ class RegisterViewController: UIViewController {
         self.blackView.alpha = 1
         self.activityIndicator.startAnimating()
         
-        if nameTextField.text!.count < 6 || nameTextField.text!.count > 50{
+        if nameTextField.text!.count < 6 || nameTextField.text!.count > 50 {
             alertError(withMessage: "Please enter a valid name")
             return
-        } else if emailTextField.text!.trim().count < 5 || emailTextField.text!.trim().count > 50 || !emailTextField.text!.trim().contains("@"){
+        }
+        if emailTextField.text!.trim().count < 5 || emailTextField.text!.trim().count > 50 || !emailTextField.text!.trim().contains("@"){
             alertError(withMessage: "Please enter a valid email")
             return
-        } else if passwordTextField.text!.count < 6 || emailTextField.text!.count > 24{
+        }
+        if passwordTextField.text!.count < 6 || emailTextField.text!.count > 24 {
             alertError(withMessage: "Password must be 6-24 characters")
             return
-        } else if passwordTextField.text! != confirmPasswordTextField.text!{
+        }
+        if passwordTextField.text! != confirmPasswordTextField.text!{
             alertError(withMessage: "Both passwords should be the same")
             return
-        } else {
-            alertError(withMessage: "All Fields are required to fill in")
         }
     }
     

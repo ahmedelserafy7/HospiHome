@@ -97,13 +97,11 @@ class LoginViewController: UIViewController {
         if phoneNumberTextField.text!.count < 10 || phoneNumberTextField.text!.count > 15 {
             alertError(withMessage: "Please enter a valid mobile number")
             return
-        } else if passwordTextField.text!.count < 6 || passwordTextField.text!.count > 24 {
+        }
+        if passwordTextField.text!.count < 6 || passwordTextField.text!.count > 24 {
             alertError(withMessage: "Please enter a valid password between 6-24 characters")
             return
-        } else {
-            alertError(withMessage: "Please fill the missing fields")
         }
-        
         login()
     }
     

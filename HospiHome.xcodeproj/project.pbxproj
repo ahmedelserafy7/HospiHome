@@ -33,11 +33,11 @@
 		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
 		161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9EFF24610E4500CA6C61 /* AboutViewController.swift */; };
 		161B9F11246166BF00CA6C61 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */; };
+		161B9F242462136300CA6C61 /* ChainedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9F232462136200CA6C61 /* ChainedTextViewController.swift */; };
 		1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C386245E81ED00EB2442 /* MessageInputTextView.swift */; };
 		1652C389245F2BBA00EB2442 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C388245F2BBA00EB2442 /* Message.swift */; };
 		1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */; };
 		1676DD25245E1A7F0075178B /* DrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD24245E1A7F0075178B /* DrProfileViewController.swift */; };
-		16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16834416245FD89D00385937 /* ChainedTextViewController.swift */; };
 		16834421245FE5AC00385937 /* KWTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441A245FE5AA00385937 /* KWTextFieldView.swift */; };
 		16834422245FE5AC00385937 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441C245FE5AA00385937 /* UIViewExtension.swift */; };
 		16834423245FE5AC00385937 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683441D245FE5AA00385937 /* StringExtension.swift */; };
@@ -159,11 +159,11 @@
 		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		161B9EFF24610E4500CA6C61 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		161B9F232462136200CA6C61 /* ChainedTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainedTextViewController.swift; sourceTree = "<group>"; };
 		1652C386245E81ED00EB2442 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		1652C388245F2BBA00EB2442 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		1676DD24245E1A7F0075178B /* DrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrProfileViewController.swift; sourceTree = "<group>"; };
-		16834416245FD89D00385937 /* ChainedTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedTextViewController.swift; sourceTree = "<group>"; };
 		1683441A245FE5AA00385937 /* KWTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWTextFieldView.swift; sourceTree = "<group>"; };
 		1683441C245FE5AA00385937 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1683441D245FE5AA00385937 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -404,14 +404,14 @@
 		1610C998245A90F0001B178B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				161B9F232462136200CA6C61 /* ChainedTextViewController.swift */,
+				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
 				161B9F10246166BE00CA6C61 /* ForgotPasswordViewController.swift */,
 				16834427245FE5DC00385937 /* OTPViewController.swift */,
 				1611489F245B98E6000AACB8 /* LoginViewController.swift */,
 				A8260FE42460AA9C0016CD29 /* ReservationViewController.swift */,
 				A8AFD2A724619B6F002B8563 /* DoctorHomeViewController.swift */,
 				A8AFD2A524619932002B8563 /* HomeNavigationViewController.swift */,
-				16834416245FD89D00385937 /* ChainedTextViewController.swift */,
-				1611489D245B95B2000AACB8 /* RegisterViewController.swift */,
 				1610C99E245AC061001B178B /* CustomTabBarController.swift */,
 				161148A1245BC6B1000AACB8 /* HomeViewController.swift */,
 				1676DD24245E1A7F0075178B /* DrProfileViewController.swift */,
@@ -996,6 +996,7 @@
 				A8260FE52460AA9C0016CD29 /* ReservationViewController.swift in Sources */,
 				161148A2245BC6B1000AACB8 /* HomeViewController.swift in Sources */,
 				A8122C862460AE1B002F1186 /* CalendarFlowLayout.swift in Sources */,
+				161B9F242462136300CA6C61 /* ChainedTextViewController.swift in Sources */,
 				A82158982461E7D8003AB8CD /* GetContactsResponse.swift in Sources */,
 				1610C990245A5BB7001B178B /* MessageCell.swift in Sources */,
 				A8122C812460AE1B002F1186 /* CalendarView+Extensions.swift in Sources */,
@@ -1018,7 +1019,6 @@
 				A8AFD29824616E65002B8563 /* VideoChatUtils.swift in Sources */,
 				1610C99F245AC061001B178B /* CustomTabBarController.swift in Sources */,
 				A8AFD2A624619932002B8563 /* HomeNavigationViewController.swift in Sources */,
-				16834417245FD89D00385937 /* ChainedTextViewController.swift in Sources */,
 				A8122C802460AE1B002F1186 /* CalendarView+Delegate.swift in Sources */,
 				A8AFD2A024618F58002B8563 /* SoonestReservationResponse.swift in Sources */,
 				1652C389245F2BBA00EB2442 /* Message.swift in Sources */,

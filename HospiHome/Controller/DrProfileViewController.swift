@@ -18,7 +18,6 @@ class DrProfileViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setupNavBar()
         hideWhenSwipe()
         
         fetchDrProfileDetails()
@@ -33,10 +32,6 @@ class DrProfileViewController: UIViewController {
                 avatarImageView.image = UIImage(data: image)
             }
         }
-    }
-        
-    func setupNavBar() {
-        navigationController?.navigationBar.isTranslucent = false
     }
     
     func hideWhenSwipe() {

@@ -11,7 +11,7 @@ import UIKit
 class ArticleDetailsViewController: UIViewController {
     var article: Article?
     
-
+    
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var bodyLabel: UILabel!
@@ -20,21 +20,16 @@ class ArticleDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavBar()
         hideWhenSwipe()
         
-        if let article=article{
+        if let article = article{
             dateLabel.text = article.fullDate
-        bodyLabel.text = article.body
-        titleLabel.text = article.title
-        if let posterImage = article.posterImage{
-            posterImageView.image = UIImage(data: posterImage)
+            bodyLabel.text = article.body
+            titleLabel.text = article.title
+            if let posterImage = article.posterImage{
+                posterImageView.image = UIImage(data: posterImage)
+            }
         }
-        }
-    }
-    
-    func setupNavBar() {
-        navigationController?.navigationBar.isTranslucent = false
     }
     
     func hideWhenSwipe() {

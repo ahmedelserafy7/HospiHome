@@ -46,10 +46,40 @@ class VideoChatViewController: UIViewController {
             self.camera = nil
         }
     }
+    
+    func checkForCameraPermissions(){
+        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+            //already authorized
+        } else {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                if granted {
+                    //access allowed
+                } else {
+                                        self.alertError(withMessage: "The app cannot access your camera, you can allow it in your device settings")
+                }
+            })
+        }
+    }
+
+    func checkForMicPermissions(){
+        if AVCaptureDevice.authorizationStatus(for: .audio) ==  .authorized {
+            //already authorized
+        } else {
+            AVCaptureDevice.requestAccess(for: .audio, completionHandler: { (granted: Bool) in
+                if granted {
+                    //access allowed
+                } else {
+                    self.alertError(withMessage: "The app cannot access your microphone, you can allow it in your device settings")
+                }
+            })
+        }
+    }
 
     // MARK:- UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkForMicPermissions()
+        checkForCameraPermissions()
         //self.waitingLabel.isHidden = true
         
         let dateFormatter = DateFormatter()
@@ -156,6 +186,18 @@ class VideoChatViewController: UIViewController {
             }
         
  
+    }
+ 
+    
+    func alertError(withMessage: String){
+        
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Video Chat Error", message: withMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true) {
+            }
+        }
+
     }
     
     func connectToRoom(){

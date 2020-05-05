@@ -40,6 +40,7 @@ field that can open new opportunities in the **medical field** and may also brea
  * AES Encryption for credit card payment
  * Time Pickers
  * Time Stamps and Date Conversion
+ * Fetching REST JSON API by Codable.
  * Table Views
  * Collection Views
  * Core Animation 

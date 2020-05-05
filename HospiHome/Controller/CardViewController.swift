@@ -23,14 +23,17 @@ class CardViewController: UIViewController {
         return tv
     }()
     
-    var cardNames = ["Notification", "Settings", "Help", "Give us feedback", "Log out"]
-    var cardIcons = ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
+    var cardNames = ["Notification", "Settings", "Help", "Give us feedback", "About", "Log out"]
+    var cardIcons: [UIImage] = [UIImage(systemName: "bell.fill")!, UIImage(systemName: "") ?? UIImage(), UIImage(systemName: "questionmark.circle.fill")!, UIImage(systemName:"bubble.left.fill")!, UIImage(systemName: "info")!, UIImage(systemName: "arrow.left")!]
+//        ["bell.fill", "", "info", "bubble.left.fill", "arrow.left"]
     override func viewDidLoad() {
         super.viewDidLoad()
         if profile?.accountType == AccountType.Doctor{
             cardNames.append("Create/Update Schedule")
-            cardIcons.append("")
+            
+            cardIcons.append(UIImage(systemName: "calender") ?? UIImage())
         }
+        
         setupViews()
     }
     
@@ -53,16 +56,23 @@ class CardViewController: UIViewController {
     func navigateToLoginVC() {
         DispatchQueue.main.async {
             let loginViewController = self.parent?.storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.present(loginViewController, animated: true, completion: nil)
         }
     }
     
     func navigateToScheduleVC() {
         DispatchQueue.main.async {
-            let loginViewController = self.parent?.storyboard?.instantiateViewController(identifier: "schedule") as! CreateScheduleViewController
-        loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true, completion: nil)
+            let scheduleViewController = self.parent?.storyboard?.instantiateViewController(identifier: "schedule") as! CreateScheduleViewController
+        scheduleViewController.modalPresentationStyle = .fullScreen
+        self.present(scheduleViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func navigateAboutVC() {
+        DispatchQueue.main.async {
+            let aboutViewController = self.parent?.storyboard?.instantiateViewController(identifier: "about") as! AboutViewController
+            self.navigationController?.pushViewController(aboutViewController, animated: true)
         }
     }
     
@@ -76,12 +86,11 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if cardNames[indexPath.row] == "Log out"{
             self.logout()
-        }
-        
-        if cardNames[indexPath.row] == "Create/Update Schedule"{
+        } else if cardNames[indexPath.row] == "Create/Update Schedule"{
             navigateToScheduleVC()
+        } else if cardNames[indexPath.item] == "About" {
+            navigateAboutVC()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,7 +102,7 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 {
             cell.imageName.image = UIImage(named: "settings")?.withRenderingMode(.alwaysTemplate)
         } else {
-            cell.imageName.image = UIImage(systemName: cardIcons[indexPath.row])
+            cell.imageName.image = cardIcons[indexPath.row]
         }
         
         cell.tintColor = .gray

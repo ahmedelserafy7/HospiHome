@@ -31,6 +31,7 @@
 		161148AC245C9929000AACB8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148AB245C9929000AACB8 /* CardViewController.swift */; };
 		161148B4245CC6A3000AACB8 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 161148B3245CC6A3000AACB8 /* CardViewController.xib */; };
 		161148B6245CD86C000AACB8 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161148B5245CD86C000AACB8 /* ProfileCell.swift */; };
+		161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B9EFF24610E4500CA6C61 /* AboutViewController.swift */; };
 		1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C386245E81ED00EB2442 /* MessageInputTextView.swift */; };
 		1652C389245F2BBA00EB2442 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652C388245F2BBA00EB2442 /* Message.swift */; };
 		1676DD23245E120B0075178B /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */; };
@@ -128,6 +129,7 @@
 		161148AB245C9929000AACB8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		161148B3245CC6A3000AACB8 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		161148B5245CD86C000AACB8 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		161B9EFF24610E4500CA6C61 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1652C386245E81ED00EB2442 /* MessageInputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputTextView.swift; sourceTree = "<group>"; };
 		1652C388245F2BBA00EB2442 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1676DD22245E120B0075178B /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				161148B3245CC6A3000AACB8 /* CardViewController.xib */,
 				161148AB245C9929000AACB8 /* CardViewController.swift */,
 				A8260FC3246083C50016CD29 /* CreateScheduleViewController.swift */,
+				161B9EFF24610E4500CA6C61 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				A8122E2D2460C317002F1186 /* RNCryptor.swift in Sources */,
 				A8260FC6246084160016CD29 /* DoctorSchedule.swift in Sources */,
 				1610C994245A8D67001B178B /* ChatInputContainerView.swift in Sources */,
+				161B9F0024610E4500CA6C61 /* AboutViewController.swift in Sources */,
 				1652C387245E81ED00EB2442 /* MessageInputTextView.swift in Sources */,
 				A8260FFB2460AAC90016CD29 /* Card.swift in Sources */,
 				A8260FF52460AAC90016CD29 /* LBZSpinner.swift in Sources */,

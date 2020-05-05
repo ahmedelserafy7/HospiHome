@@ -787,6 +787,55 @@ Happy Pinning (and reading)!
             </objects>
             <point key="canvasLocation" x="4167" y="1430"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="UEc-hf-scY">
+            <objects>
+                <viewController storyboardIdentifier="about" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iiP-iv-rUH" customClass="AboutViewController" customModule="HospiHome" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JEn-KC-5P7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seif" translatesAutoresizingMaskIntoConstraints="NO" id="tKM-X9-RSH">
+                                <rect key="frame" x="217" y="278" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="5nW-sw-rP0"/>
+                                    <constraint firstAttribute="width" constant="160" id="uX8-IP-gl1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ahmed" translatesAutoresizingMaskIntoConstraints="NO" id="B86-OY-h2r">
+                                <rect key="frame" x="37" y="278" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Ifa-nV-9Ka"/>
+                                    <constraint firstAttribute="height" constant="160" id="qj5-Xc-X0z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B86-OY-h2r" firstAttribute="centerX" secondItem="JEn-KC-5P7" secondAttribute="centerX" constant="-90" id="JYE-jy-iqI"/>
+                            <constraint firstItem="tKM-X9-RSH" firstAttribute="top" secondItem="B86-OY-h2r" secondAttribute="top" id="lVY-z6-Gv7"/>
+                            <constraint firstItem="tKM-X9-RSH" firstAttribute="centerX" secondItem="JEn-KC-5P7" secondAttribute="centerX" constant="90" id="sHU-KV-Nz5"/>
+                            <constraint firstItem="B86-OY-h2r" firstAttribute="centerY" secondItem="JEn-KC-5P7" secondAttribute="centerY" constant="-90" id="sw3-Jp-Eit"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hVF-3e-efA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6m-2g-ZUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080" y="1424"/>
+        </scene>
         <!--Dr Profile View Controller-->
         <scene sceneID="BmG-gt-NSt">
             <objects>
@@ -1525,12 +1574,14 @@ Happy Pinning (and reading)!
     <resources>
         <image name="2" width="300" height="168"/>
         <image name="3" width="800" height="600"/>
+        <image name="ahmed" width="429" height="429"/>
         <image name="doc.fill" catalog="system" width="56" height="64"/>
         <image name="dr_profile_img" width="76" height="76"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="location1" width="92" height="132"/>
         <image name="logo" width="60" height="60"/>
         <image name="profile_img" width="76" height="76"/>
+        <image name="seif" width="960" height="960"/>
         <image name="user" width="24" height="24"/>
     </resources>
 </document>

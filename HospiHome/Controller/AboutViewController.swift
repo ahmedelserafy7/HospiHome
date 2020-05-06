@@ -36,8 +36,8 @@ class AboutViewController: UIViewController {
     func setupViews() {
         view.addSubview(dialogueLabel)
         
-        dialogueLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
-        dialogueLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8).isActive = true
+        dialogueLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        dialogueLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         dialogueLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant:
         50).isActive = true
     }

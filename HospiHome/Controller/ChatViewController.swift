@@ -105,22 +105,23 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func handleNavigationTitle() {
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        navigationItem.title = recipientContact!.name
+       /* let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         titleView.backgroundColor = .red
         
-        //        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "elon"))
-        //        profileImageView.contentMode = .scaleAspectFill
-        //        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        //        profileImageView.layer.cornerRadius = 20
-        //        profileImageView.layer.masksToBounds = true
-        //
-        //        titleView.addSubview(profileImageView)
+        let profileImageView = UIImageView(image: #imageLiteral(resourceName: "dr_profile_img"))
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.layer.cornerRadius = 20
+        profileImageView.layer.masksToBounds = true
         
-        //        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-        //        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
-        //        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        //        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        //
+        titleView.addSubview(profileImageView)
+        
+        profileImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+        profileImageView.leftAnchor.constraint(equalTo: titleView.leftAnchor, constant: 8).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = recipientContact!.name
@@ -132,7 +133,7 @@ class ChatViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         nameLabel.rightAnchor.constraint(equalTo: titleView.rightAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        navigationItem.titleView = titleView
+        navigationItem.titleView = titleView*/
     }
     
     @objc func handleVideo() {

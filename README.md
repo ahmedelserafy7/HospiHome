@@ -5,7 +5,7 @@
 
 ## Description
 
-**HospiHome** is an application that connects patients to doctors remotely using an iOS device. In other words, it is an e-clinic.
+[**HospiHome**](https://youtu.be/Ug_Qoxyx45E) is an application that connects patients to doctors remotely using an iOS device. In other words, it is an e-clinic.
 
 ## What's the problem?
 With the increasing number of **Covid-19**🦠 cases daily worldwide, the risk on the doctors is also increasing. **Doctors**🥼 may deal with up-to 1000 patients daily and if a single patient is infected with Covid-19 the doctor, his family, and all the other patients are going to be infected.
